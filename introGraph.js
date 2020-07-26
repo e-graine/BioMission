@@ -16,26 +16,58 @@ var rectInHeight = Math.floor(document.getElementById('introImg').height / rectS
 var colors = [
     'black',
     'white',
+    // '#1b3449',
+    // '#2a4252',
+    // '#243239',
+    // '#011229',
+    // '#0d213b',
+    // '#373c40',
+    // '#272b30',
+    // '#1f231e',
+    // '#687173',
+    // '#7a827a',
+    // '#afac85',
+    // '#c8b583',
+    // '#e0ae6d',
+    // '#f1b959',
+    // '#fae9c8',
+    // '#321d05',
+    // '#4b2907',
+    // '#6e3909',
+    // '#8c4009',
+    // '#c06c16',
+    // '#e6871a',
+    // '#e88e15',
+    // '#471804'
+
 ]
 
 function random(max) {
     return Math.floor(Math.random() * (max));
 }
 
-function pixelize() {
-    var canvas = document.getElementById('introGraph');
+var canvas = document.getElementById('introGraph');
+
+
+function pixelize(ratioWhite) {
     var ctx = canvas.getContext('2d');
-    // ctx.fillStyle = 'blue';
-    // ctx.fillRect(10, 10, 5, 5);
     for (i = 0; i < pixRatio; i++) {
-        var xPos = i * rectSize;
         for (j = 0; j < rectInHeight; j++) {
-            // console.log(rectInHeight);
+            var xPos = i * rectSize;
             var yPos = j * rectSize;
-            var color = colors[random(colors.length)]
-            ctx.fillStyle = color;
-            // console.log(color);
-            ctx.fillRect(xPos, yPos, rectSize, rectSize);
+            ctx.clearRect(xPos, yPos, rectSize, rectSize);
+            var test = random(ratioWhite) + 1;
+            if (test === ratioWhite) {
+                ctx.fillStyle = "white";
+                // console.log("test");
+
+                // var color = colors[random(colors.length)]
+                ctx.fillRect(xPos, yPos, rectSize, rectSize);
+                // } else {
+                //     // ctx.fillStyle = "black";
+                //     ctx.fillStyle = rgb(80, 0, 0);;
+                // }
+            }
         }
     }
 }
@@ -43,10 +75,23 @@ function pixelize() {
 
 // pixelize();
 // setTimeout(pixelize, 5000);
-setInterval(function () {
-    pixelize();
-    console.log('test');
-}, 100);
+function introGraph() {
+
+    var max = 50;
+    var min = 2;
+    var counter = max;
+    var switcher;
+    var pixLooper = setInterval(function () {
+
+        counter -= 1;
+        pixelize(counter);
+
+        if (counter < min) {
+            clearInterval(pixLooper)
+            endStep('introGraph');
+        }
+    }, 100);
+}
 
 // ctx.fillStyle = "white";
 // ctx.fillRect(0, 0, rectSize, rectSize);
