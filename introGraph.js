@@ -2,8 +2,8 @@
 // ctx.fillRect(10, 10, 5, 5);
 
 var pixRatio = 200;
-var rectSize = Math.floor(window.innerWidth / pixRatio);
-var rectInHeight = Math.floor(window.innerHeight / rectSize);
+var rectSize = Math.floor(window.visualViewport.width / pixRatio);
+var rectInHeight = Math.floor(window.visualViewport.width / rectSize);
 
 // console.log((window.innerWidth * window.innerHeight) / 200);
 // var w = window.innerWidth;
