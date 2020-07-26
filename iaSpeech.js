@@ -6,7 +6,7 @@ speechText.className = 'speech-text';
 var speechWhiteChar = document.createElement('span');
 speechWhiteChar.className = 'speech-white-char';
 
-function iaSpeakin(speech, specialSpeech) {
+function iaSpeaking(speech, specialSpeech) {
 
     var speechBox = document.getElementById('iaSpeech');
     if (specialSpeech) speechBox = document.getElementById(specialSpeech);
@@ -27,7 +27,7 @@ function iaSpeakin(speech, specialSpeech) {
             // speechText.appendChild(speechWhiteChar);
         } else {
             clearInterval(looper);
-            speechBox.removeChild(speechWhiteChar);
+            // speechBox.removeChild(speechWhiteChar);
         }
     }, 50);
 }

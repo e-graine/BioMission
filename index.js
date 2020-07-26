@@ -1,2 +1,2 @@
-iaSpeakin(introSpeech, 'introSpeech');
+iaSpeaking(introSpeech, 'introSpeech');
 // iaSpeakin(welcomeSpeech);
