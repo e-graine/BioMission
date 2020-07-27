@@ -8,9 +8,9 @@ function endStep(step) {
 
     switch (step) {
         case 'openApp':
-            iaSpeaking(introSpeech, 'introSpeech', 'introSpeech');
+            // iaSpeaking(introSpeech, 'introSpeech', 'introSpeech');
             break;
-        case 'introSpeech':
+        case 'introSpeech' || 'loading':
             introGraph();
             break;
         case 'introGraph':

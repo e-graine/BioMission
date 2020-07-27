@@ -1,13 +1,6 @@
-// ctx.fillStyle = 'blue';
-// ctx.fillRect(10, 10, 5, 5);
-
-console.log(document.getElementById('introImg').width);
-console.log(document.getElementById('introImg').height);
-console.log(window.innerWidth);
-console.log(window.innerHeight);
 var pixRatio = 200;
-var rectSize = Math.floor(document.getElementById('introImg').width / pixRatio);
-var rectInHeight = Math.floor(document.getElementById('introImg').height / rectSize);
+var rectSize = Math.floor(window.innerWidth / pixRatio);
+var rectInHeight = Math.floor(window.innerHeight / rectSize);
 
 // console.log((window.innerWidth * window.innerHeight) / 200);
 // var w = window.innerWidth;
