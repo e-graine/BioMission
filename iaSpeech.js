@@ -33,10 +33,10 @@ function iaSpeaking(speech, speechName, specialSpeech) {
     if (speech.length > 0) {
         speechBox.innerHTML = '';
         var line = speech.shift()
-        var letters = line.split("");
+        // var letters = line.split("");
         var words = line.split(" ");
 
-        words = letters.map(function (word) {
+        words = words.map(function (word) {
             return "<span style='opacity: 0'>" + word + "&nbsp;</span>";
         });
         for (word of words) {
@@ -61,7 +61,7 @@ function iaSpeaking(speech, speechName, specialSpeech) {
                     iaSpeaking(speech, speechName, specialSpeech);
                 }, 2000)
             }
-        }, 50);
+        }, 100);
     } else {
         endStep(speechName);
     }
