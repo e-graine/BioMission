@@ -1,5 +1,11 @@
 var pixRatio = 200;
-var rectSize = Math.floor(window.innerWidth / pixRatio);
+// var rectSize = Math.floor(window.innerWidth / pixRatio);
+
+function vw(v) {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    return (v * w) / 100;
+}
+var rectSize = Math.floor(vw(100 / pixRatio));
 var rectInHeight = Math.floor(window.innerHeight / rectSize);
 
 // console.log((window.innerWidth * window.innerHeight) / 200);

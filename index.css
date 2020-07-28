@@ -92,7 +92,7 @@ body {
 
 #loading .glow {
     color: #f00;
-    text-shadow: 0px 0px 5vw #f00;
+    text-shadow: 0px 0px 2vw #f00, 0px 0px 4vw #f00, 0px 0px 6vw #f00;
 }
 
 #loading span {

@@ -25,11 +25,6 @@ var welcomeSpeech = [
     'Eu.. Je veux dire, bonne chance,... humain.'
 ]
 
-var speechText = document.createElement('div');
-speechText.className = 'speech-text';
-var speechWhiteChar = document.createElement('span');
-speechWhiteChar.className = 'speech-white-char';
-
 function iaSpeaking(speech, speechName, specialSpeech) {
 
     var speechBox = document.getElementById('iaSpeech');
@@ -39,12 +34,24 @@ function iaSpeaking(speech, speechName, specialSpeech) {
         speechBox.innerHTML = '';
         var line = speech.shift()
         var letters = line.split("");
+
+        letters = letters.map(function (letter) {
+            return "<span style='opacity: 0'>" + letter + "</span>";
+        });
+        for (letter of letters) {
+            speechBox.innerHTML += letter;
+        }
+        // speechBox.querySelector("span:nth-child(2)").style.display = "block";
+        console.log(letters);
+        var counter = 0;
         var writer = setInterval(function () {
-            if (letters.length > 0) {
-                var letter = letters.shift();
-                requestAnimationFrame(function () {
-                    test(letter, speechBox)
-                });
+            if (letters.length > counter) {
+                counter++;
+                speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
+                // var letter = letters.shift();
+                // requestAnimationFrame(function () {
+                //     test(letter, speechBox)
+                // });
                 // speechBox.innerHTML += letter;
             } else {
                 clearInterval(writer);
@@ -77,6 +84,6 @@ window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequest
 //     }
 // }
 
-function test(letter, speechBox) {
-    speechBox.innerHTML += letter;
-}
+// function test(letter, speechBox) {
+//     speechBox.innerHTML += letter;
+// }
