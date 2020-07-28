@@ -37,7 +37,7 @@ function iaSpeaking(speech, speechName, specialSpeech) {
         var words = line.split(" ");
 
         words = words.map(function (word) {
-            return "<span style='opacity: 0'>" + word + "&nbsp;</span>";
+            return "<span style='opacity: 0'>" + word + " " + "</span>";
         });
         for (word of words) {
             speechBox.innerHTML += word;

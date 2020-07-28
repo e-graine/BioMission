@@ -1,12 +1,16 @@
-var pixRatio = 200;
-// var rectSize = Math.floor(window.innerWidth / pixRatio);
+var canvas = document.getElementById('introGraph');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-function vw(v) {
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    return (v * w) / 100;
-}
-var rectSize = Math.floor(vw(100 / pixRatio));
-var rectInHeight = Math.floor(window.innerHeight / rectSize);
+var pixRatio = 100;
+var rectSize = Math.ceil(canvas.width / pixRatio);
+
+// function vw(v) {
+//     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+//     return (v * w) / 100;
+// }
+// var rectSize = Math.floor(vw(100 / pixRatio));
+var rectInHeight = Math.ceil(window.innerHeight / rectSize);
 
 // console.log((window.innerWidth * window.innerHeight) / 200);
 // var w = window.innerWidth;
@@ -45,7 +49,7 @@ function random(max) {
     return Math.floor(Math.random() * (max));
 }
 
-var canvas = document.getElementById('introGraph');
+
 
 
 function pixelize(ratioWhite) {
