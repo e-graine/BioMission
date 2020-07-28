@@ -25,15 +25,20 @@ var welcomeSpeech = [
     'Eu.. Je veux dire, bonne chance,... humain.'
 ]
 
+var speechBox;
+var currentSpeech;
+var letters;
+
 function iaSpeaking(speech, speechName, specialSpeech) {
 
-    var speechBox = document.getElementById('iaSpeech');
+    speechBox = document.getElementById('iaSpeech');
     if (specialSpeech) speechBox = document.getElementById(specialSpeech);
+    currentSpeech = speech;
 
-    if (speech.length > 0) {
+    if (currentSpeech.length > 0) {
         speechBox.innerHTML = '';
-        var line = speech.shift()
-        var letters = line.split("");
+        var line = currentSpeech.shift()
+        letters = line.split("");
 
         letters = letters.map(function (letter) {
             return "<span style='opacity: 0'>" + letter + "</span>";
@@ -42,24 +47,24 @@ function iaSpeaking(speech, speechName, specialSpeech) {
             speechBox.innerHTML += letter;
         }
         // speechBox.querySelector("span:nth-child(2)").style.display = "block";
-        console.log(letters);
-        var counter = 0;
-        var writer = setInterval(function () {
-            if (letters.length > counter) {
-                counter++;
-                speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
-                // var letter = letters.shift();
-                // requestAnimationFrame(function () {
-                //     test(letter, speechBox)
-                // });
-                // speechBox.innerHTML += letter;
-            } else {
-                clearInterval(writer);
-                setTimeout(function () {
-                    iaSpeaking(speech, speechName, specialSpeech);
-                }, 2000)
-            }
-        }, 50);
+        // var counter = 0;
+        // var writer = setInterval(function () {
+        //     if (letters.length > counter) {
+        //         counter++;
+        //         speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
+        //         // var letter = letters.shift();
+        //         // requestAnimationFrame(function () {
+        //         //     test(letter, speechBox)
+        //         // });
+        //         // speechBox.innerHTML += letter;
+        //     } else {
+        //         clearInterval(writer);
+        //         setTimeout(function () {
+        //             iaSpeaking(speech, speechName, specialSpeech);
+        //         }, 2000)
+        //     }
+        // }, 100);
+        requestAnimationFrame(step);
     } else {
         endStep(speechName);
     }
@@ -69,20 +74,34 @@ window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequest
     window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
 
-// var start = null;
+var start = null;
+loopCounter = 1;
 
-// var d = 'test';
+var d = 'test';
 
-// function step(timestamp) {
-//     var progress;
-//     if (start === null) start = timestamp;
-//     progress = timestamp - start;
-//     //   d.style.left = Math.min(progress/10, 200) + "px";
-//     console.log(d);
-//     if (progress > 2000) {
-//         requestAnimationFrame(step);
-//     }
-// }
+function step(timestamp) {
+    var progress;
+    if (start === null) start = timestamp;
+    progress = timestamp - start;
+
+    if (progress < 50) {
+        requestAnimationFrame(step);
+    } else {
+        // console.log(speechBox);
+        speechBox.querySelector("span:nth-child(" + loopCounter + ")").style.opacity = "1";
+        loopCounter++;
+        start = null;
+
+        if (loopCounter < letters.length) {
+            requestAnimationFrame(step);
+        } else {
+            iaSpeaking(currentSpeech)
+            loopCounter = 1;
+        }
+    }
+}
+
+// step('montest');
 
 // function test(letter, speechBox) {
 //     speechBox.innerHTML += letter;
