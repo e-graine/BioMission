@@ -13,6 +13,7 @@ body {
   background-color: white;
   background-size: cover;
   border-radius: 20%;
+  margin: 10px;
 }
 
 .button-pulse {
@@ -43,7 +44,7 @@ body {
 
 .prev-next-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .prev-next-buttons button {
@@ -122,16 +123,11 @@ body {
   position: absolute;
   width: 90vw;
   margin: 5vw;
-  /* height: 5vw; */
   background-color: black;
   color: white;
   font-weight: 200;
-
   letter-spacing: 4px;
   text-transform: uppercase;
-  /* display: flex;
-    justify-content: center; */
-  /* align-items: flex-end; */
   text-align: center;
   text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 20px #fff,
     0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 50px #fff, 0px 0px 60px #fff;
@@ -143,7 +139,7 @@ body {
 }
 
 .ia-speech {
-  top: 75%;
+  top: 60%;
 }
 
 .speech-white-char {
@@ -172,4 +168,26 @@ body {
 #loading span {
   /* display: inline-block; */
   padding: 0 2vw;
+}
+
+@media screen and (max-width: 1280px) {
+  /* Rédigez vos propriétés CSS ici */
+  .prev-next-buttons button {
+    font-size: 30px;
+  }
+
+  .speech {
+    position: absolute;
+    width: 90%;
+    margin: 5%;
+  }
+
+  @keyframes radial-pulse {
+    0% {
+      box-shadow: 0 0 0 0vw white;
+    }
+    100% {
+      box-shadow: 0 0 0 10px rgba(255, 100, 100, 0);
+    }
+  }
 }
