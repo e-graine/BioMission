@@ -114,6 +114,11 @@ body {
   left: 0;
 }
 
+.board {
+  display: flex;
+  justify-content: center;
+}
+
 .ia-graph {
   width: 100%;
   position: absolute;
@@ -125,7 +130,7 @@ body {
 .speech {
   position: absolute;
   width: 80vw;
-  margin: 10vw;
+  /* margin: 10vw; */
   background-color: black;
   color: white;
   font-weight: 200;
