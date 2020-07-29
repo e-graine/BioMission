@@ -115,6 +115,7 @@ body {
 }
 
 .ia-graph {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -123,8 +124,8 @@ body {
 
 .speech {
   position: absolute;
-  width: 90vw;
-  margin: 5vw;
+  width: 80vw;
+  margin: 10vw;
   background-color: black;
   color: white;
   font-weight: 200;
@@ -180,10 +181,10 @@ body {
     font-size: 30px;
   }
 
-  .speech {
+  /* .speech {
     width: 100%;
     padding: 5%;
-  }
+  } */
 
   @keyframes radial-pulse {
     0% {
