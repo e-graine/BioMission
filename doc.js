@@ -12,6 +12,7 @@ var nbDoc = 0;
 
 function resetDoc() {
     nbDoc = 0;
+    displayDoc();
 }
 
 function nextDoc() {

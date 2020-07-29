@@ -4,7 +4,7 @@ var gameStatus = {
     viewMissions: false
 };
 
-endStep('openApp');
+endStep('transitionIntro');
 
 function endStep(step) {
     gameStatus.step = step;

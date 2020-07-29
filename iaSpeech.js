@@ -22,7 +22,7 @@ var welcomeSpeech = [
     '...Notions...',
     'Je dispose d\'une base de données qui t\'aidera à prendre les bonnes décisions',
     'Elle est accessible via le bouton en haut à gauche',
-    'Qui s\'illumine à la découverte d\'un nouvel incdice',
+    'Qui s\'illumine à la découverte d\'un nouvel indice',
 ]
 
 var welcomeSpeech2 = [

@@ -37,7 +37,7 @@ body {
 
 .button-exit {
   top: 2vw;
-  left: 90vw;
+  right: 2vw;
   background-image: url(ui/exit.svg);
   display: none;
 }
@@ -45,6 +45,7 @@ body {
 .prev-next-buttons {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .prev-next-buttons button {
@@ -73,7 +74,8 @@ body {
 }
 
 /* .doc {
-  color: white;
+  display: flex;
+  flex-direction: column;
 } */
 
 .doc-container {
@@ -170,14 +172,17 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
+  .doc-container {
+    justify-content: flex-end;
+  }
+
   .prev-next-buttons button {
     font-size: 30px;
   }
 
   .speech {
-    position: absolute;
-    width: 90%;
-    margin: 5%;
+    width: 100%;
+    padding: 5%;
   }
 
   @keyframes radial-pulse {
