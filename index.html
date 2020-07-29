@@ -7,25 +7,44 @@
     <link rel="stylesheet" href="index.css" />
     <link href="https://fonts.googleapis.com/css?family=Sora:thin,regular,bold,Semi-Bold,black" rel="stylesheet" />
     <title>BioMissions</title>
-    testpage
 </head>
 
 <body>
-    <div id='intro' class="intro">
+    <canvas id='transitionGraph' class="transition-graph"></canvas>
+    <div id='whiteScreen' class="white-screen screen-div"></div>
+    <div id='intro' class="intro screen-div">
         <div id="loading"> LOADING</div>
         <!-- <div id='introSpeech' class="intro-speech speech"></div> -->
         <!-- <img src="earth4.jpg" id="introImg" /> -->
         <canvas id='introGraph' class="intro-graph"></canvas>
     </div>
-    <canvas id='iaGraph' class="ia-graph"></canvas>
-    <div id='iaSpeech' class="ia-speech speech"></div>
+    <div id='board' class="board screen-div">
+        <canvas id='iaGraph' class="ia-graph"></canvas>
+        <div id='iaSpeech' class="ia-speech speech"></div>
+        <div class='button button-doc' id='buttonDoc' onclick='screenCall("doc"); resetDoc()'></div>
+    </div>
+    <div id='doc' class="doc screen-div" isclosable>
+        <div id='docContainer' class="doc-container">
+            <h2 id="titleDoc" class="title-doc"></h2>
+            <p id="bodyDoc" class="body-doc"></p>
+            <div class="prev-next-buttons">
+                <button id="prevDoc" class="button-prev-doc" onclick="prevDoc()">
+                    <</button> <button id="nextDoc" class="button-next-doc" onclick="nextDoc()">>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id='missions' class="missions screen-div"></div>
+    <div id='exitButton' class="button button-exit" onclick="screenCall('board')"></div>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="iaSpeech.js"></script>
 <!-- <script type="text/javascript" src="html2canvas.min.js"></script> -->
 <script type="text/javascript" src="loading.js"></script>
 <script type="text/javascript" src="introGraph.js"></script>
+<script type="text/javascript" src="transitionGraph.js"></script>
 <script type="text/javascript" src="iaGraph.js"></script>
+<script type="text/javascript" src="doc.js"></script>
 <script type="text/javascript" src="index.js"></script>
 
 </html>
