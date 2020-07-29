@@ -56,7 +56,7 @@ body {
 }
 
 .prev-next-buttons button:disabled {
-  color: #1e1e1e;
+  color: #323232;
 }
 
 .screen-div {
@@ -153,10 +153,10 @@ body {
   top: 50%;
   /* margin: -30px auto; */
   text-align: center;
-  color: #1e1e1e;
+  color: #323232;
   font-family: Consolas, Courier, monospace;
   font-size: 15vw;
-  text-shadow: 0 0 5vw #1e1e1e;
+  text-shadow: 0 0 5vw #323232;
   height: 100%;
 }
 
@@ -166,12 +166,10 @@ body {
 }
 
 #loading span {
-  /* display: inline-block; */
   padding: 0 2vw;
 }
 
 @media screen and (max-width: 1280px) {
-  /* Rédigez vos propriétés CSS ici */
   .prev-next-buttons button {
     font-size: 30px;
   }
