@@ -1,10 +1,11 @@
 var gameStatus = {
     step: null,
     viewDoc: false,
-    viewMissions: false
+    viewMissions: false,
+    currentScreen: 'intro',
 };
 
-endStep('openApp');
+endStep('transitionIntro');
 
 function endStep(step) {
     gameStatus.step = step;
@@ -32,8 +33,11 @@ function endStep(step) {
             iaSpeaking(welcomeSpeech2, 'welcomeSpeech2');
             break;
         case 'tutoDoc':
-            // console.log('test');
             iaSpeaking(welcomeSpeech3, 'welcomeSpeech3');
+            document.getElementById("buttonMissions").classList.add("button-pulse");
+            break;
+        case 'tutoMissions':
+            iaSpeaking(welcomeSpeech4, 'welcomeSpeech4');
         default:
             console.log('step bug with ' + step);
     }
@@ -44,6 +48,8 @@ function screenDisplay(screenToShow) {
     for (screen of screens) {
         screen.style.display = 'none';
     }
+
+    majStatus(screenToShow);
 
     var screenToShow = document.getElementById(screenToShow);
     screenToShow.style.display = 'flex';
@@ -59,4 +65,17 @@ function screenCall(screen) {
     button = document.getElementById(event.srcElement.id);
     button.classList.remove("button-pulse");
     transitionGraph(0, 5, screen);
+}
+
+function majStatus(screen) {
+
+    gameStatus.currentScreen = screen;
+
+    if (gameStatus.step === 'welcomeSpeech2' && screen === 'board') {
+        console.log('yop');
+        endStep('tutoDoc');
+    } else if (gameStatus.step === 'welcomeSpeech3' && screen === 'board') {
+
+        endStep('tutoMissions');
+    }
 }

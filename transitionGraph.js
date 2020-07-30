@@ -47,10 +47,8 @@ function transitionGraph(min, max, screen, step) {
             clearInterval(pixLooper)
 
             canvas.style.display = 'none';
-            console.log(gameStatus + " " + screen);
-            if (gameStatus.step === 'welcomeSpeech2' && screen === 'board') {
-                endStep('tutoDoc');
-            }
+            // console.log(gameStatus + " " + screen);
+
             if (step) {
                 endStep('transition' + step);
             }
