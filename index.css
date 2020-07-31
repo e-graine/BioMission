@@ -185,13 +185,14 @@ body {
 
 .progress-zone {
   position: absolute;
-  bottom: 2vw;
+  top: 60vh;
   width: 95%;
 }
 
 .bar-container {
   height: 30px;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
@@ -231,8 +232,8 @@ body {
 }
 .progress-bar .glow::after {
   background: linear-gradient(to right, black 0%, transparent 100%);
-  height: calc(100% + 10px + 10px);
-  width: calc(100% + 10px);
+  /* height: calc(100% + 10px + 10px);
+  width: calc(100% + 10px); */
   top: -10px;
   left: -10px;
   z-index: -3;
@@ -270,7 +271,7 @@ body {
 .label {
   font-weight: 400;
   text-align: left;
-  width: 100px;
+  width: 150px;
   animation: label 0.5s ease-out 0s;
   animation-fill-mode: forwards;
   /* opacity: 0; */
