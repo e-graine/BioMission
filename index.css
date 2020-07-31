@@ -153,7 +153,7 @@ body {
 }
 
 .ia-speech {
-  top: 60%;
+  top: 50%;
 }
 
 .speech-white-char {
@@ -181,6 +181,113 @@ body {
 
 #loading span {
   padding: 0 2vw;
+}
+
+.progress-zone {
+  position: absolute;
+  bottom: 2vw;
+  width: 95%;
+}
+
+.bar-container {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  height: 1px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  background-color: #323232;
+}
+.progress-bar .progress {
+  position: relative;
+  height: 100%;
+  background-color: white;
+  transition: width 0.5s ease-out;
+  border-radius: 0px 2px 2px 0px;
+}
+.progress-bar .glow {
+  width: 60px;
+  max-width: 100%;
+  height: 100%;
+  float: right;
+}
+.progress-bar .glow::before,
+.progress-bar .glow::after {
+  content: "";
+  display: block;
+  position: relative;
+  border-radius: 0px 2px 2px 0px;
+}
+.progress-bar .glow::before {
+  background: transparent;
+  height: 100%;
+  box-shadow: 0px 0px 2px white, 0px 0px 4px white, 0px 0px 6px white,
+    0px 0px 8px white, 0px 0px 10px white, 0px 0px 10px #04bfff;
+  z-index: -5;
+}
+.progress-bar .glow::after {
+  background: linear-gradient(to right, black 0%, transparent 100%);
+  height: calc(100% + 10px + 10px);
+  width: calc(100% + 10px);
+  top: -10px;
+  left: -10px;
+  z-index: -3;
+}
+
+.fill-1 {
+  animation: fill-1 0.5s ease-out 0s;
+  animation-fill-mode: forwards;
+  width: 0%;
+}
+
+.fill-2 {
+  animation: fill-2 0.5s ease-out 0.5s;
+  animation-fill-mode: forwards;
+  width: 0%;
+}
+
+@keyframes fill-1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes fill-2 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+
+.label {
+  font-weight: 400;
+  text-align: left;
+  width: 100px;
+  animation: label 0.5s ease-out 0s;
+  animation-fill-mode: forwards;
+  /* opacity: 0; */
+  /* color: white; */
+  color: #323232;
+  margin: 10px;
+}
+
+@keyframes label {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 1280px) {

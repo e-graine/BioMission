@@ -2,7 +2,7 @@ var canvas = document.getElementById('transitionGraph');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-var pixRatio = 25;
+var pixRatio = 50;
 var rectSize = Math.ceil(canvas.width / pixRatio);
 
 var rectInHeight = Math.ceil(window.innerHeight / rectSize)
@@ -26,8 +26,6 @@ function pixelize(ratioWhite) {
             var test = random(ratioWhite) + 1;
             if (test === ratioWhite) {
                 ctx.fillStyle = "white";
-                ctx.shadowColor = "white";
-                ctx.shadowBlur = 20;
                 ctx.fillRect(xPos, yPos, rectSize, rectSize);
             }
         }

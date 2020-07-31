@@ -5,7 +5,7 @@ var gameStatus = {
     currentScreen: 'intro',
 };
 
-endStep('transitionIntro');
+endStep('openApp');
 
 function endStep(step) {
     gameStatus.step = step;
@@ -64,7 +64,7 @@ function screenDisplay(screenToShow) {
 function screenCall(screen) {
     button = document.getElementById(event.srcElement.id);
     button.classList.remove("button-pulse");
-    transitionGraph(0, 5, screen);
+    transitionGraph(0, 4, screen);
 }
 
 function majStatus(screen) {
