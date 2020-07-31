@@ -185,7 +185,7 @@ body {
 
 .progress-zone {
   position: absolute;
-  top: 60vh;
+  bottom: 2vw;
   width: 95%;
 }
 
@@ -203,69 +203,63 @@ body {
   z-index: 10;
   background-color: #323232;
 }
-.progress-bar .progress {
+
+#winProgress {
+  height: 100%;
+  width: 80%;
+}
+
+#timeProgress {
+  height: 100%;
+  width: 80%;
+}
+
+.progress {
   position: relative;
   height: 100%;
   background-color: white;
   transition: width 0.5s ease-out;
   border-radius: 0px 2px 2px 0px;
+  animation: fill-progress 0.5s ease-out 0s;
+  animation-fill-mode: forwards;
 }
-.progress-bar .glow {
+
+@keyframes fill-progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.glow {
   width: 60px;
   max-width: 100%;
   height: 100%;
   float: right;
 }
-.progress-bar .glow::before,
-.progress-bar .glow::after {
+.glow::before,
+.glow::after {
   content: "";
   display: block;
   position: relative;
   border-radius: 0px 2px 2px 0px;
 }
-.progress-bar .glow::before {
+.glow::before {
   background: transparent;
   height: 100%;
   box-shadow: 0px 0px 2px white, 0px 0px 4px white, 0px 0px 6px white,
     0px 0px 8px white, 0px 0px 10px white, 0px 0px 10px #04bfff;
   z-index: -5;
 }
-.progress-bar .glow::after {
+.glow::after {
   background: linear-gradient(to right, black 0%, transparent 100%);
-  /* height: calc(100% + 10px + 10px);
-  width: calc(100% + 10px); */
+  height: calc(100% + 10px + 10px);
+  width: calc(100% + 10px);
   top: -10px;
   left: -10px;
   z-index: -3;
-}
-
-.fill-1 {
-  animation: fill-1 0.5s ease-out 0s;
-  animation-fill-mode: forwards;
-  width: 0%;
-}
-
-.fill-2 {
-  animation: fill-2 0.5s ease-out 0.5s;
-  animation-fill-mode: forwards;
-  width: 0%;
-}
-
-@keyframes fill-1 {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 70%;
-  }
-}
-@keyframes fill-2 {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 40%;
-  }
 }
 
 .label {

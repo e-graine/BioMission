@@ -2,7 +2,7 @@ var canvas = document.getElementById('transitionGraph');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-var pixRatio = 50;
+var pixRatio = 100;
 var rectSize = Math.ceil(canvas.width / pixRatio);
 
 var rectInHeight = Math.ceil(window.innerHeight / rectSize)

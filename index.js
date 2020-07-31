@@ -5,7 +5,8 @@ var gameStatus = {
     currentScreen: 'intro',
 };
 
-endStep('openApp');
+endStep('transitionIntro');
+// endStep('openApp');
 
 function endStep(step) {
     gameStatus.step = step;
