@@ -186,6 +186,7 @@ body {
 .progress-zone {
   position: absolute;
   bottom: 2vw;
+  left: 2vw;
   width: 95%;
 }
 
@@ -201,7 +202,7 @@ body {
   width: 100%;
   position: relative;
   z-index: 10;
-  background-color: #323232;
+  background-color: #646464;
 }
 
 #winProgress {
@@ -209,10 +210,10 @@ body {
   width: 80%;
 }
 
-#timeProgress {
+/* #timeProgress {
   height: 100%;
   width: 80%;
-}
+} */
 
 .progress {
   position: relative;
@@ -265,12 +266,12 @@ body {
 .label {
   font-weight: 400;
   text-align: left;
-  width: 150px;
+  width: 100px;
   animation: label 0.5s ease-out 0s;
   animation-fill-mode: forwards;
   /* opacity: 0; */
   /* color: white; */
-  color: #323232;
+  color: #646464;
   margin: 10px;
 }
 

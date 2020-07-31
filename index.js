@@ -73,7 +73,6 @@ function majStatus(screen) {
     gameStatus.currentScreen = screen;
 
     if (gameStatus.step === 'welcomeSpeech2' && screen === 'board') {
-        console.log('yop');
         endStep('tutoDoc');
     } else if (gameStatus.step === 'welcomeSpeech3' && screen === 'board') {
 
