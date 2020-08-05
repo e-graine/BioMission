@@ -44,10 +44,10 @@
                 </div>
                 <div class="label">Time's up</div>
             </div>
-        </div> -->
+        </div>
     </div>
     <div id='doc' class="doc screen-div" isclosable>
-        <div id='docContainer' class="doc-container">
+        <div id='docContainer' class="container">
             <div>
                 <h2 id="titleDoc" class="title-doc"></h2>
                 <p id="bodyDoc" class="body-doc"></p>
@@ -59,16 +59,112 @@
             </div>
         </div>
     </div>
-    <div id='missions' class="doc screen-div" isclosable>Work in progress</div>
+    <div id='missions' class="missions screen-div" isclosable>
+        <div class="container" id="missionsContainer"></div>
+    </div>
+    <div id='enigme' class="enigme screen-div" isclosable>
+        <div w3-include-html="enigme1.html"></div>
+        <div id='enigmeContainer' class="container">
+            <div>
+                <div id="bodyEnigme" class="body-enigme"></div>
+                <div id="speechEnigme" class="speech"></div>
+            </div>
+            <!-- <div class="prev-next-buttons">
+                <button id="prevEnigme" class="button-prev-enigme" onclick="prevEnigme()">
+                    <</button> <button id="nextEnigme" class="button-next-enigme" onclick="nextEnigme()">>
+                </button>
+            </div> -->
+        </div>
+    </div>
     <div id='exitButton' class="button button-exit" onclick="screenCall('board')"></div>
+    <script type="text/javascript" src="progress.js"></script>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="transitionGraph.js"></script>
 <script type="text/javascript" src="iaSpeech.js"></script>
-<script type="text/javascript" src="html2canvas.min.js"></script>
+<!-- <script type="text/javascript" src="html2canvas.min.js"></script> -->
 <script type="text/javascript" src="loading.js"></script>
 <script type="text/javascript" src="introGraph.js"></script>
-<script type="text/javascript" src="transitionGraph.js"></script>
-<script type="text/javascript" src="progress.js"></script>
 <script type="text/javascript" src="iaGraph.js"></script>
-<script type="text/javascript" src="doc.js"></script>
 <script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="doc.js"></script>
+<script type="text/javascript" src="enigme.js"></script>
+<script type="text/javascript" src="missions.js"></script>
+
+<div id='enigmeCollection'>
+    <div id='e1'>
+        <h2>Enigme 1</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+    <div id='e2'>
+        <h2>Enigme 2</h2>
+        <button onclick="solvEnigme('e2')">Réussir</button>
+        <button onclick="failEnigme('e2')">Echouer</button>
+    </div>
+    <div id='e3'>
+        <h2>Enigme 3</h2>
+        <button onclick="solvEnigme('e3')">Réussir</button>
+        <button onclick="failEnigme('e3')">Echouer</button>
+    </div>
+    <div id='e4'>
+        <h2>Enigme 4</h2>
+        <button onclick="solvEnigme('e4')">Réussir</button>
+        <button onclick="failEnigme('e4')">Echouer</button>
+    </div>
+    <div id='e5'>
+        <h2>Enigme 5</h2>
+        <button onclick="solvEnigme('e5')">Réussir</button>
+        <button onclick="failEnigme('e5')">Echouer</button>
+    </div>
+    <div id='e6'>
+        <h2>Enigme 6</h2>
+        <button onclick="solvEnigme('e6')">Réussir</button>
+        <button onclick="failEnigme('e6')">Echouer</button>
+    </div>
+    <div id='e7'>
+        <h2>Enigme 7</h2>
+        <button onclick="solvEnigme('e7')">Réussir</button>
+        <button onclick="failEnigme('e7')">Echouer</button>
+    </div>
+    <div id='e8'>
+        <h2>Enigme 8</h2>
+        <button onclick="solvEnigme('e8')">Réussir</button>
+        <button onclick="failEnigme('e8')">Echouer</button>
+    </div>
+    <div id='e9'>
+        <h2>Enigme 9</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+    <div id='e10'>
+        <h2>Enigme 10</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+    <div id='e11'>
+        <h2>Enigme 11</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+    <div id='e12'>
+        <h2>Enigme 12</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+    <div id='e13'>
+        <h2>Enigme 13</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+    <div id='e14'>
+        <h2>Enigme 14</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+    <div id='e15'>
+        <h2>Enigme 15</h2>
+        <button onclick="solvEnigme('e1')">Réussir</button>
+        <button onclick="failEnigme('e1')">Echouer</button>
+    </div>
+</div>

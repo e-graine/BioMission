@@ -47,6 +47,18 @@ var welcomeSpeech4 = [
     'Yesss !!!',
     'Eu... je veux dire... bonne chance,... humain'
 ]
+var nextMissionSpeech = [
+    'Merci, humain !',
+    'D\'autres missions t\'attendent :)',
+]
+
+var looserSpeech = [
+    'looser !'
+]
+
+var endGameSpeech = [
+    'Bravo'
+]
 
 function iaSpeaking(speech, speechName, specialSpeech) {
 

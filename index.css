@@ -24,6 +24,7 @@ body {
   0% {
     box-shadow: 0 0 0 0vw white;
   }
+
   100% {
     box-shadow: 0 0 0 2vw rgba(255, 100, 100, 0);
   }
@@ -77,6 +78,7 @@ body {
     background-repeat: no-repeat; */
   display: flex;
   justify-content: center;
+  /* align-content: center; */
 }
 
 /* .doc {
@@ -84,7 +86,7 @@ body {
   flex-direction: column;
 } */
 
-.doc-container {
+.container {
   width: 90vw;
   max-width: 500px;
   display: flex;
@@ -92,9 +94,19 @@ body {
   justify-content: center;
 }
 
-.doc-container h2 {
+h2 {
   padding-bottom: 1vw;
   border-bottom: 1px solid white;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 .transition-graph {
@@ -106,6 +118,7 @@ body {
   top: 0;
   left: 0;
 }
+
 /* .intro img {
   width: 100%;
   min-width: 1000px;
@@ -134,10 +147,8 @@ body {
 }
 
 .speech {
-  position: absolute;
-  width: 80vw;
   /* margin: 10vw; */
-  background-color: black;
+  /* background-color: black; */
   color: white;
   font-weight: 200;
   letter-spacing: 4px;
@@ -154,6 +165,8 @@ body {
 
 .ia-speech {
   top: 50%;
+  position: absolute;
+  width: 80vw;
 }
 
 .speech-white-char {
@@ -229,6 +242,7 @@ body {
   0% {
     width: 0%;
   }
+
   100% {
     width: 100%;
   }
@@ -240,6 +254,7 @@ body {
   height: 100%;
   float: right;
 }
+
 .progress .glow::before,
 .progress .glow::after {
   content: "";
@@ -247,6 +262,7 @@ body {
   position: relative;
   border-radius: 0px 2px 2px 0px;
 }
+
 .progress .glow::before {
   background: transparent;
   height: 100%;
@@ -254,6 +270,7 @@ body {
     0px 0px 8px white, 0px 0px 10px white, 0px 0px 10px #04bfff;
   z-index: -5;
 }
+
 .progress .glow::after {
   background: linear-gradient(to right, black 0%, transparent 100%);
   height: calc(100% + 10px + 10px);
@@ -275,18 +292,67 @@ body {
   margin: 10px;
 }
 
+.mission-viewer {
+  cursor: pointer;
+  border-bottom: 1px solid white;
+
+}
+
+.missionDisplay {
+  display: none;
+}
+
+.mission-icon {
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.mission-list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.mission-list:last-child {
+  border: 0;
+}
+
+.mission-list li {
+  margin: 10px;
+}
+
+.enigme-waiting-bullet {
+  list-style-type: circle;
+}
+
+.enigme-solved-bullet {
+  list-style-type: disc;
+}
+
+/* .enigme-failed-bullet {
+  list-style-type: disc;
+  color: red;
+} */
+
+#enigmeCollection {
+  display: none;
+}
+
 @keyframes label {
   0% {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 0.9;
     transform: translateY(0);
   }
 }
+
 @media screen and (max-width: 1280px) {
-  .doc-container {
+  .container {
     justify-content: flex-end;
   }
 
@@ -303,6 +369,7 @@ body {
     0% {
       box-shadow: 0 0 0 0vw white;
     }
+
     100% {
       box-shadow: 0 0 0 20px rgba(255, 100, 100, 0);
     }

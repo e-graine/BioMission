@@ -3,10 +3,15 @@ var gameStatus = {
     viewDoc: false,
     viewMissions: false,
     currentScreen: 'intro',
+    currentMission: 'nul',
+    numEnigme: 0,
+    textImpact: '',
+    enigmesToSolv: [],
+    missionTodo: [],
 };
 
+// endStep('transitionIntro');
 endStep('openApp');
-// endStep('openApp');
 
 function endStep(step) {
     gameStatus.step = step;
@@ -39,8 +44,66 @@ function endStep(step) {
             break;
         case 'tutoMissions':
             iaSpeaking(welcomeSpeech4, 'welcomeSpeech4');
+            break;
+        case 'enigmeDone':
+            // gameStatus.numEnigme++;
+            // document.getElementById("speechEnigme").innerHTML = ''
+            // if (gameStatus.numEnigme < dataEnigmes.length) {
+            //     displayEnigme();
+            // } else {
+            //     if (gameStatus.enigmesToSolv === []) {
+            //         endStep('endGame')
+            //     } else {
+            //         endStep('missionDone')
+            //     }
+            // }
+            ending();
+            break;
+            // case 'missionDone':
+            //     // gameStatus.missionTodo = gameStatus.missionTodo.filter(m => m !== gameStatus.currentMission);
+            //     // console.log(gameStatus.missionTodo);
+            //     // document.getElementById(gameStatus.currentMission).style.display = 'none';
+            //     screenDisplay('board');
+            //     iaSpeaking(missionDoneSpeech);
+            //     break;
+        case 'endGame':
+            screenDisplay('board');
+            iaSpeaking(endGameSpeech);
+            break;
         default:
             console.log('step bug with ' + step);
+    }
+}
+
+function ending() {
+    gameStatus.numEnigme++;
+    document.getElementById("speechEnigme").innerHTML = '';
+
+    if (gameStatus.numEnigme < dataEnigmes.length) {
+        displayEnigme();
+        return;
+    }
+
+    if (gameStatus.enigmesToSolv.length === 0) {
+        endStep('endGame');
+        return;
+    }
+
+    gameStatus.missionTodo = gameStatus.missionTodo.filter(m => m !== gameStatus.currentMission);
+    document.getElementById(gameStatus.currentMission).style.display = 'none';
+    for (mission of gameStatus.missionTodo) {
+        if (missions[mission].enigmes.length === 0) {
+            console.log(mission);
+            gameStatus.missionTodo = gameStatus.missionTodo.filter(m => m !== mission);
+            document.getElementById(mission).style.display = 'none';
+        }
+    }
+
+    screenDisplay('board');
+    if (gameStatus.missionTodo.length !== 0) {
+        iaSpeaking(nextMissionSpeech);
+    } else {
+        iaSpeaking(looserSpeech);
     }
 }
 
@@ -64,7 +127,9 @@ function screenDisplay(screenToShow) {
 
 function screenCall(screen) {
     button = document.getElementById(event.srcElement.id);
-    button.classList.remove("button-pulse");
+    if (button) {
+        button.classList.remove("button-pulse");
+    }
     transitionGraph(0, 4, screen);
 }
 
