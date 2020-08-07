@@ -106,15 +106,16 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .transition-graph {
+  background-color: black;
   display: none;
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1000;
+  z-index: 100000;
   top: 0;
   left: 0;
 }
@@ -218,10 +219,10 @@ h3 {
   background-color: #646464;
 }
 
-#winProgress {
+/* #winProgress {
   height: 100%;
   width: 80%;
-}
+} */
 
 /* #timeProgress {
   height: 100%;
@@ -295,6 +296,7 @@ h3 {
 .mission-viewer {
   cursor: pointer;
   border-bottom: 1px solid white;
+  margin-bottom: 10px;
 
 }
 
@@ -352,7 +354,7 @@ h3 {
 }
 
 @media screen and (max-width: 1280px) {
-  .container {
+  .doc .container {
     justify-content: flex-end;
   }
 
@@ -373,5 +375,12 @@ h3 {
     100% {
       box-shadow: 0 0 0 20px rgba(255, 100, 100, 0);
     }
+  }
+
+  .mission-viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 }

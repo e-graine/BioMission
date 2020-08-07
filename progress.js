@@ -1,11 +1,13 @@
-//////////////////////// WIN
+gameStatus.winStep = 100 / gameStatus.enigmesToSolv.length;
 
-/////////////////////// TIME
-setInterval(tic, 6000);
+gameStatus.timeStep = 100 / (30 * 60);
+setInterval(function () {
+    progress('timeProgress', gameStatus.timeStep);
+}, 1000);
 
-function tic() {
-    var timeBar = document.getElementById('timeProgress');
-    var timeProgress = timeBar.style.width;
-    var newTime = (parseFloat(timeProgress) + 0.33) + '%';
-    timeBar.style.width = newTime;
+function progress(bar, step) {
+    var progressBar = document.getElementById(bar);
+    var progress = progressBar.style.width;
+    var newProgress = (parseFloat(progress) + step) + '%';
+    progressBar.style.width = newProgress;
 }

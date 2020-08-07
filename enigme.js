@@ -1,18 +1,18 @@
-var dataEnigmes = []
+// var dataEnigmes = []
 
 function displayEnigme() {
-    document.getElementById('bodyEnigme').innerHTML = document.getElementById(dataEnigmes[gameStatus.numEnigme]).innerHTML;
+    console.log(gameStatus.numEnigme);
+    document.getElementById('bodyEnigme').innerHTML = document.getElementById(gameStatus.dataEnigmes[gameStatus.numEnigme]).innerHTML;
 }
 
 function solvEnigme(enigme) {
+    progress('winProgress', gameStatus.winStep)
+
     var solvedBulett = document.getElementsByClassName('bull' + enigme);
     for (bulett of solvedBulett) {
         bulett.classList.remove("enigme-waiting-bullet");
         bulett.classList.add("enigme-solved-bullet");
     }
-
-    // var missionEnigmes = missions[gameStatus.currentMission].enigmes;
-    // missions[gameStatus.currentMission].enigmes = missionEnigmes.filter(e => e !== enigme);
 
     gameStatus.enigmesToSolv = gameStatus.enigmesToSolv.filter(e => e !== enigme);
 
@@ -49,16 +49,6 @@ function solvEnigme(enigme) {
 }
 
 function failEnigme(enigme) {
-    // var failedBullett = document.getElementById('bull' + gameStatus.currentMission + enigme);
-    // failedBullett.classList.remove("enigme-waiting-bullet");
-    // failedBullett.classList.add("enigme-failed-bullet");
-    // if (gameStatus.failedEnigmes.indexOf(enigme) === -1) {
-    //     gameStatus.failedEnigmes.push(enigme);
-    // }
-    // console.log(gameStatus.failedEnigmes);
-    // var missionEnigmes = missions[gameStatus.currentMission].enigmes;
-    // missions[gameStatus.currentMission].enigmes = missionEnigmes.filter(e => e !== enigme);
-
     var failedEnigmeSpeech = [
         'Hum... Cela ne permet pas de résoudre le problème',
         'Nous le rencontrerons à nouveau',

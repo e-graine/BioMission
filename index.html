@@ -11,21 +11,18 @@
 
 <body>
     <canvas id='transitionGraph' class="transition-graph"></canvas>
+    <!-- <canvas id='introGraph' class="intro-graph"></canvas> -->
     <div id='intro' class="intro screen-div">
         <div id="loading"> LOADING</div>
-        <!-- <div id='introSpeech' class="intro-speech speech"></div> -->
-        <!-- <img src="earth4.jpg" id="introImg" /> -->
-        <canvas id='introGraph' class="intro-graph"></canvas>
     </div>
     <div id='board' class="board screen-div">
         <canvas id='iaGraph' class="ia-graph"></canvas>
         <div id='iaSpeech' class="ia-speech speech"></div>
-        <div class='button button-doc' id='buttonDoc' onclick='screenCall("doc"); resetDoc()'></div>
         <div class='button button-missions' id='buttonMissions' onclick='screenCall("missions")'></div>
         <div id='progressZone' class="progress-zone">
             <div class="bar-container">
                 <div class="progress-bar">
-                    <div id="winProgress">
+                    <div id="winProgress" style="width: 0%; height: 100%;">
                         <div class="progress fill-progress">
                             <div class="glow"></div>
                         </div>
@@ -62,7 +59,7 @@
     <div id='missions' class="missions screen-div" isclosable>
         <div class="container" id="missionsContainer"></div>
     </div>
-    <div id='enigme' class="enigme screen-div" isclosable>
+    <div id='enigme' class="enigme screen-div">
         <div w3-include-html="enigme1.html"></div>
         <div id='enigmeContainer' class="container">
             <div>
@@ -76,20 +73,22 @@
             </div> -->
         </div>
     </div>
+    <div class='button button-doc' id='buttonDoc' onclick='screenCall("doc"); resetDoc()'></div>
     <div id='exitButton' class="button button-exit" onclick="screenCall('board')"></div>
-    <script type="text/javascript" src="progress.js"></script>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="transitionGraph.js"></script>
 <script type="text/javascript" src="iaSpeech.js"></script>
 <!-- <script type="text/javascript" src="html2canvas.min.js"></script> -->
 <script type="text/javascript" src="loading.js"></script>
-<script type="text/javascript" src="introGraph.js"></script>
+<!-- <script type="text/javascript" src="introGraph.js"></script> -->
 <script type="text/javascript" src="iaGraph.js"></script>
-<script type="text/javascript" src="index.js"></script>
 <script type="text/javascript" src="doc.js"></script>
 <script type="text/javascript" src="enigme.js"></script>
 <script type="text/javascript" src="missions.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="progress.js"></script>
+
 
 <div id='enigmeCollection'>
     <div id='e1'>

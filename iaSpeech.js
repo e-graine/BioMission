@@ -53,7 +53,9 @@ var nextMissionSpeech = [
 ]
 
 var looserSpeech = [
-    'looser !'
+    'Tu as terminé toutes les missions',
+    'mais il reste quelques problèmes a régler',
+    'revoyons ça',
 ]
 
 var endGameSpeech = [

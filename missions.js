@@ -22,88 +22,58 @@ var missions = {
     }
 }
 
-solvedEnigmes = [];
+function creaMission() {
+    for (mission in missions) {
 
-for (mission in missions) {
+        gameStatus.missionTodo.push(mission);
 
-    gameStatus.missionTodo.push(mission);
+        var icon = document.createElement('img');
+        icon.src = missions[mission].icon;
+        icon.className = 'mission-icon';
+        var textTitle = document.createElement('div');
+        textTitle.innerHTML = mission;
+        var missionTitle = document.createElement('h3');
+        missionTitle.appendChild(icon);
+        missionTitle.appendChild(textTitle);
 
-    var icon = document.createElement('img');
-    icon.src = missions[mission].icon;
-    icon.className = 'mission-icon';
-    var textTitle = document.createElement('div');
-    textTitle.innerHTML = mission;
-    var missionTitle = document.createElement('h3');
-    missionTitle.appendChild(icon);
-    missionTitle.appendChild(textTitle);
+        var enigmeList = document.createElement('ul');
+        enigmeList.className = 'mission-list';
 
-    var enigmeList = document.createElement('ul');
-    enigmeList.className = 'mission-list';
-
-    for (enigme of missions[mission].enigmes) {
-        if (gameStatus.enigmesToSolv.indexOf(enigme) === -1) {
-            gameStatus.enigmesToSolv.push(enigme);
+        for (enigme of missions[mission].enigmes) {
+            if (gameStatus.enigmesToSolv.indexOf(enigme) === -1) {
+                gameStatus.enigmesToSolv.push(enigme);
+            }
+            var enigmePoint = document.createElement('li');
+            enigmePoint.id = 'bull' + mission + enigme;
+            enigmePoint.className = 'enigme-waiting-bullet bull' + enigme;
+            enigmeList.appendChild(enigmePoint);
         }
-        var enigmePoint = document.createElement('li');
-        enigmePoint.id = 'bull' + mission + enigme;
-        enigmePoint.className = 'enigme-waiting-bullet bull' + enigme;
-        enigmeList.appendChild(enigmePoint);
-    }
 
-    var missionViewer = document.createElement('div');
-    missionViewer.className = 'mission-viewer';
-    missionViewer.id = mission;
-    missionViewer.onclick = function () {
-        goMission(this.id);
-    }
-    missionViewer.appendChild(missionTitle);
-    missionViewer.appendChild(enigmeList);
+        var missionViewer = document.createElement('div');
+        missionViewer.className = 'mission-viewer';
+        missionViewer.id = mission;
+        missionViewer.onclick = function () {
+            goMission(this.id);
+        }
+        missionViewer.appendChild(missionTitle);
+        missionViewer.appendChild(enigmeList);
 
-    var container = document.getElementById('missionsContainer');
-    container.appendChild(missionViewer);
-    // container.appendChild(enigmeList);
+        var container = document.getElementById('missionsContainer');
+        container.appendChild(missionViewer);
+    }
 }
 
 function goMission(mission) {
     gameStatus.currentMission = mission;
-    dataEnigmes = [];
-    // enigmesToSolve.forEach(function (name) {
-    //     var enigme = {
-    //         title: name,
-    //         body: document.getElementById(name)
-    //     }
+    // gameStatus.dataEnigmes = [];
 
-    //     dataEnigmes.push(enigme)
-    // });
+    // for (enigme of missions[mission].enigmes) {
+    //     gameStatus.dataEnigmes.push(enigme);
+    // }
 
-    for (enigme of missions[mission].enigmes) {
-        // console.log(enigme);
-        dataEnigmes.push(enigme);
-        // if (!enigme.status) {
-        //     dataEnigmes.push(enigme);
-        // }
-    }
-
+    gameStatus.dataEnigmes = missions[mission].enigmes;
 
     gameStatus.numEnigme = 0;
     displayEnigme();
     screenCall('enigme');
 }
-
-// var enigmes = {
-//     'Enigme 1': 'Work in progress',
-//     'Enigme 2': 'Work in progress',
-//     'Enigme 3': 'Work in progress',
-//     'Enigme 4': 'Work in progress',
-//     'Enigme 5': 'Work in progress',
-//     'Enigme 6': 'Work in progress',
-//     'Enigme 7': 'Work in progress',
-//     'Enigme 8': 'Work in progress',
-//     'Enigme 9': 'Work in progress',
-//     'Enigme 10': 'Work in progress',
-//     'Enigme 11': 'Work in progress',
-//     'Enigme 12': 'Work in progress',
-//     'Enigme 13': 'Work in progress',
-//     'Enigme 14': 'Work in progress',
-//     'Enigme 15': 'Work in progress',
-// }
