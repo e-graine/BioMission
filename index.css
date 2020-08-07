@@ -120,10 +120,10 @@ h3 {
   left: 0;
 }
 
-/* .intro img {
-  width: 100%;
-  min-width: 1000px;
-} */
+.intro {
+  z-index: 1;
+  background-color: black;
+}
 
 .intro canvas {
   width: 100%;
