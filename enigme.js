@@ -1,18 +1,17 @@
 // var dataEnigmes = []
 
 function displayEnigme() {
-    console.log(gameStatus.numEnigme);
     document.getElementById('bodyEnigme').innerHTML = document.getElementById(gameStatus.dataEnigmes[gameStatus.numEnigme]).innerHTML;
 }
 
 function solvEnigme(enigme) {
     progress('winProgress', gameStatus.winStep)
 
-    var solvedBulett = document.getElementsByClassName('bull' + enigme);
-    for (bulett of solvedBulett) {
-        bulett.classList.remove("enigme-waiting-bullet");
-        bulett.classList.add("enigme-solved-bullet");
-    }
+    // var solvedBulett = document.getElementsByClassName('bull' + enigme);
+    // for (bulett of solvedBulett) {
+    //     bulett.classList.remove("enigme-waiting-bullet");
+    //     bulett.classList.add("enigme-solved-bullet");
+    // }
 
     gameStatus.enigmesToSolv = gameStatus.enigmesToSolv.filter(e => e !== enigme);
 
@@ -20,8 +19,11 @@ function solvEnigme(enigme) {
     for (mission in missions) {
         for (e of missions[mission].enigmes) {
             if (e === enigme) {
-                missionsImpact.push(mission)
+                if (mission !== gameStatus.currentMission) {
+                    missionsImpact.push(mission)
+                }
                 missions[mission].enigmes = missions[mission].enigmes.filter(e => e !== enigme);
+                progress(mission + 'Progress', missions[mission].stepProgress)
             }
         }
     }

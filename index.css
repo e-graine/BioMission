@@ -149,7 +149,7 @@ h3 {
 
 .speech {
   /* margin: 10vw; */
-  /* background-color: black; */
+  background-color: black;
   color: white;
   font-weight: 200;
   letter-spacing: 4px;
@@ -202,6 +202,7 @@ h3 {
   bottom: 2vw;
   left: 2vw;
   width: 95%;
+  background-color: black;
 }
 
 .bar-container {
@@ -295,9 +296,17 @@ h3 {
 
 .mission-viewer {
   cursor: pointer;
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
   margin-bottom: 10px;
+}
 
+.win-mission {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: 800;
+  color: black;
+  background-color: white;
 }
 
 .missionDisplay {
@@ -308,6 +317,7 @@ h3 {
   background-color: white;
   border-radius: 50%;
   margin: 10px;
+  padding: 5px;
 }
 
 .mission-list {
@@ -353,6 +363,29 @@ h3 {
   }
 }
 
+.game-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game-zone {
+  width: 70%;
+}
+
+.img100 {
+  width: 100%;
+}
+
+.click-zone {
+  width: 50px;
+  height: 25px;
+  border: 1 px solid black;
+  position: relative;
+  top: -50%;
+  background-color: tomato;
+}
+
 @media screen and (max-width: 1280px) {
   .doc .container {
     justify-content: flex-end;
@@ -377,10 +410,10 @@ h3 {
     }
   }
 
-  .mission-viewer {
+  /* .mission-viewer {
     display: flex;
     justify-content: center;
     align-items: center;
 
-  }
+  } */
 }
