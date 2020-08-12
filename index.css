@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  font-family: "sora";
+  font-family: "Sora", "Calibri", sans-serif;
   color: white;
 }
 
@@ -14,6 +14,7 @@ body {
   background-size: cover;
   border-radius: 20%;
   margin: 10px;
+  cursor: pointer;
 }
 
 .button-pulse {
@@ -369,6 +370,7 @@ h3 {
   justify-content: center;
   align-items: center;
 }
+
 .game-zone {
   width: 70%;
 }

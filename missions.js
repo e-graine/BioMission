@@ -1,6 +1,17 @@
 var missions = {
     Mobilité: {
         icon: 'ui/mobility.svg',
+        enigmes: ['e1']
+
+    },
+    Energie: {
+        icon: 'ui/energy.svg',
+        enigmes: ['e2']
+    }
+}
+var missions = {
+    Mobilité: {
+        icon: 'ui/mobility.svg',
         enigmes: ['e1', 'e2', 'e3', 'e4', 'e5']
 
     },

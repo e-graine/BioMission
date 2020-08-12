@@ -14,8 +14,8 @@ var gameStatus = {
 // setTimeout(function () {
 //     endStep('rattrapage');
 // }, 2000);
-// endStep("transitionIntro");
-endStep("openApp");
+endStep("transitionIntro");
+// endStep("openApp");
 
 function endStep(step) {
   gameStatus.step = step;
@@ -53,8 +53,12 @@ function endStep(step) {
       ending();
       break;
     case "rattrapage":
+      // missions.Rattrapage = {};
+      // missions.Rattrapage.enigmes = gameStatus.enigmesToSolv;
+      // goMission("Rattrapage");
       gameStatus.dataEnigmes = gameStatus.enigmesToSolv;
       gameStatus.numEnigme = 0;
+      gameStatus.currentMission = null;
       displayEnigme();
       screenCall("enigme");
       break;
@@ -64,7 +68,7 @@ function endStep(step) {
       //   visitCount("endGame");
       break;
     default:
-    // console.log("step bug with " + step);
+      // console.log("step bug with " + step);
   }
 }
 
@@ -85,22 +89,27 @@ function ending() {
   gameStatus.missionTodo = gameStatus.missionTodo.filter(
     (m) => m !== gameStatus.currentMission
   );
+  console.log(gameStatus.currentMission);
 
-  if (missions[gameStatus.currentMission].enigmes.length !== 0) {
-    document.getElementById(gameStatus.currentMission).style.display = "none";
-    delete missions[gameStatus.currentMission];
+  if (gameStatus.currentMission) {
+    if (missions[gameStatus.currentMission].enigmes.length !== 0) {
+      document.getElementById(gameStatus.currentMission).style.display = "none";
+      delete missions[gameStatus.currentMission];
+    }
   }
   // document.getElementById(gameStatus.currentMission).style.display = "none";
-  for (mission of gameStatus.missionTodo) {
+  for (mission in missions) {
     if (missions[mission].enigmes.length === 0) {
+      document.getElementById(mission).style.display = "none";
+      delete missions[mission];
       gameStatus.missionTodo = gameStatus.missionTodo.filter(
         (m) => m !== mission
       );
       // document.getElementById(mission).style.display = "none";
     }
   }
-  console.log(Object.keys(missions));
   screenDisplay("board");
+  console.log(Object.keys(missions));
   if (Object.keys(missions).length !== 0) {
     iaSpeaking(nextMissionSpeech);
   } else {
