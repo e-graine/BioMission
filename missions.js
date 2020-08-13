@@ -25,18 +25,18 @@ var missions = {
     },
     Bruit: {
         icon: 'ui/noise.svg',
-        enigmes: ['e4', 'e5', 'e6', 'e7', 'e8']
+        enigmes: ['e4', 'e5', 'e1', 'e7', 'e8']
     },
     Dépollution: {
         icon: 'ui/depollution.svg',
-        enigmes: ['e8', 'e1', 'e7', 'e2', 'e3']
+        enigmes: ['e8', 'e6', 'e7', 'e2', 'e3']
     }
 }
 
 function creaMission() {
     for (mission in missions) {
 
-        gameStatus.missionTodo.push(mission);
+        // gameStatus.missionTodo.push(mission);
 
         var icon = document.createElement('img');
         icon.src = missions[mission].icon;
@@ -115,6 +115,9 @@ function checkMission() {
 function winMission(winMission) {
     var viewer = document.getElementById(winMission)
 
+    console.log();
+    delete missions[gameStatus.currentMission];
+
     setTimeout(function () {
         viewer.className = 'win-mission'
         viewer.innerHTML = 'YES !'
@@ -122,7 +125,6 @@ function winMission(winMission) {
 
     setTimeout(function () {
         viewer.style.display = 'none';
-        delete missions[gameStatus.currentMission];
     }, 3000)
 
 }

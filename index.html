@@ -100,11 +100,7 @@
       id="buttonDoc"
       onclick='screenCall("doc"); resetDoc()'
     ></div>
-    <div
-      id="exitButton"
-      class="button button-exit"
-      onclick="screenCall('board')"
-    ></div>
+    <div id="exitButton" class="button button-exit" onclick="exit()"></div>
   </body>
 
   <!-- <script type="text/javascript" src="visitCounter/visitCounter.js"></script> -->
@@ -121,17 +117,31 @@
   <script type="text/javascript" src="progress.js"></script>
 
   <div id="enigmeCollection">
-    <div id="e1">
+    <div id="e1" doc="aerodynamisme">
       <h2>Observation</h2>
-      <!-- <div class="game-content">
-        <p>Click sur la zone de l'image qui a inspiré l'homme</p>
-        <div class="game-zone">
-          <img src="imgGame/martin-pecheur.jpg" alt="" class="img100" />
-          <div class="click-zone"></div>
+      <div class="game-content">
+        <p>
+          Il y a dans cette image un élément qui a inspiré l'homme. Click dessus
+          pour faire avancer ta mission
+        </p>
+        <div class="game-zone zone-e1">
+          <!-- <img src="imgGame/martin-pecheur.jpg" alt="" class="img100" /> -->
+          <div class="click-line">
+            <div onclick="solvEnigme('e1')" class="click-zone"></div>
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+          </div>
+          <div class="click-line">
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+          </div>
+          <div class="click-line">
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+          </div>
         </div>
-      </div> -->
-      <button onclick="solvEnigme('e1')">Réussir</button>
-      <button onclick="failEnigme('e1')">Echouer</button>
+      </div>
+      <!-- <button onclick="solvEnigme('e1')">Réussir</button>
+      <button onclick="failEnigme('e1')">Echouer</button> -->
     </div>
     <div id="e2">
       <h2>Enigme 2</h2>

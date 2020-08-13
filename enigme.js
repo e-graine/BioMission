@@ -1,7 +1,17 @@
 // var dataEnigmes = []
 
 function displayEnigme() {
-    document.getElementById('bodyEnigme').innerHTML = document.getElementById(gameStatus.dataEnigmes[gameStatus.numEnigme]).innerHTML;
+    gameStatus.currentEnigme = gameStatus.dataEnigmes[gameStatus.numEnigme];
+    var enigmeElement = document.getElementById(gameStatus.currentEnigme);
+    document.getElementById('bodyEnigme').innerHTML = enigmeElement.innerHTML;
+
+    var doc = enigmeElement.attributes.doc;
+    if (doc) {
+        if (!gameStatus.dataDoc[doc.value]) {
+            addDocInGame(data[doc.value]);
+        }
+    }
+
 }
 
 function solvEnigme(enigme) {

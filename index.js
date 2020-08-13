@@ -3,19 +3,24 @@ var gameStatus = {
   viewDoc: false,
   viewMissions: false,
   currentScreen: "intro",
-  currentMission: "nul",
+  currentMission: null,
+  currentEnigme: null,
   numEnigme: 0,
   textImpact: "",
   enigmesToSolv: [],
   missionTodo: [],
   dataEnigmes: [],
+  dataDoc: [{
+    title: "Sources",
+    body: "Bla blabla... "
+  }],
 };
 
 // setTimeout(function () {
 //     endStep('rattrapage');
 // }, 2000);
-endStep("transitionIntro");
-// endStep("openApp");
+// endStep("transitionIntro");
+endStep("openApp");
 
 function endStep(step) {
   gameStatus.step = step;
@@ -39,16 +44,17 @@ function endStep(step) {
       }, 2000);
       break;
     case "welcomeSpeech":
-      document.getElementById("buttonDoc").classList.add("button-pulse");
+      // document.getElementById("buttonDoc").classList.add("button-pulse");
+      addDocInGame(data.biomimetisme);
       iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
       break;
     case "tutoDoc":
       iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
-      document.getElementById("buttonMissions").classList.add("button-pulse");
+      // document.getElementById("buttonMissions").classList.add("button-pulse");
       break;
-    case "tutoMissions":
-      iaSpeaking(welcomeSpeech4, "welcomeSpeech4");
-      break;
+      // case "tutoMissions":
+      //   iaSpeaking(welcomeSpeech4, "welcomeSpeech4");
+      //   break;
     case "enigmeDone":
       ending();
       break;
@@ -74,6 +80,7 @@ function endStep(step) {
 
 function ending() {
   gameStatus.numEnigme++;
+  gameStatus.currentEnigme = null;
   document.getElementById("speechEnigme").innerHTML = "";
 
   if (gameStatus.numEnigme < gameStatus.dataEnigmes.length) {
@@ -109,7 +116,6 @@ function ending() {
     }
   }
   screenDisplay("board");
-  console.log(Object.keys(missions));
   if (Object.keys(missions).length !== 0) {
     iaSpeaking(nextMissionSpeech);
   } else {
@@ -118,7 +124,7 @@ function ending() {
 }
 
 function screenDisplay(screenToShow) {
-  screens = document.querySelectorAll(".screen-div");
+  var screens = document.querySelectorAll(".screen-div");
   for (screen of screens) {
     screen.style.display = "none";
   }
@@ -151,8 +157,17 @@ function majStatus(screen) {
 
   if (gameStatus.step === "welcomeSpeech2" && screen === "board") {
     endStep("tutoDoc");
-  } else if (gameStatus.step === "welcomeSpeech3" && screen === "board") {
-    endStep("tutoMissions");
+  }
+  // else if (gameStatus.step === "welcomeSpeech3" && screen === "board") {
+  //   endStep("tutoMissions");
+  // }
+}
+
+function exit() {
+  if (gameStatus.currentEnigme) {
+    screenCall('enigme');
+  } else {
+    screenCall('board')
   }
 }
 

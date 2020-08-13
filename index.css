@@ -62,6 +62,7 @@ body {
   color: white;
   background-color: black;
   border: 0;
+  cursor: pointer;
 }
 
 .prev-next-buttons button:disabled {
@@ -295,6 +296,10 @@ h3 {
   margin: 10px;
 }
 
+.missions .container {
+  margin-top: 5vh;
+}
+
 .mission-viewer {
   cursor: pointer;
   /* border-bottom: 1px solid white; */
@@ -372,20 +377,32 @@ h3 {
 }
 
 .game-zone {
-  width: 70%;
+  /* width: 70%; */
+  /* min-width: 300px; */
+  /* min-height: 600px; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.zone-e1 {
+  background-image: url(imgGame/martin-pecheur.jpg);
 }
 
 .img100 {
   width: 100%;
 }
 
+.click-line {
+  display: flex;
+}
+
 .click-zone {
-  width: 50px;
-  height: 25px;
-  border: 1 px solid black;
-  position: relative;
-  top: -50%;
-  background-color: tomato;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  background-color: white;
+  opacity: 0.3;
+  margin: 2px;
 }
 
 @media screen and (max-width: 1280px) {

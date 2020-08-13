@@ -23,19 +23,11 @@ var welcomeSpeech2 = [
 
 var welcomeSpeech3 = [
     'Parfait !',
-    'Maintenant tu as un autre bouton',
-    'Qui s\'illumine à droite',
-    'Ce sont les missions en attente',
-    'Accédes au panneau de missions',
-    'et commence par en choisir trois',
-]
-
-var welcomeSpeech4 = [
-    'Ok très bien,',
-    'j\'enregistre les axes de développement prioritaires... ',
-    'Je vais maintenant te laisser travailler',
-    'Une dernière chose : tu vois ces 2 bars horizontales  en bas ?',
-    'C\'est la progression de ta mission',
+    'Tu as un autre bouton à droite : ',
+    'Ce sont tes missions.',
+    'Avant d\'y aller,',
+    'tu vois ces 2 bars horizontales  en bas ?',
+    'C\'est ta progression,',
     'La première représente les problèmes résolus',
     'Tu veux l\'augmenter au maximum',
     'La deuxième, c\'est le temps qui passe',
@@ -47,6 +39,7 @@ var welcomeSpeech4 = [
     'Yesss !!!',
     'Eu... je veux dire... bonne chance,... humain'
 ]
+
 var nextMissionSpeech = [
     'Merci, humain !',
     'D\'autres missions t\'attendent :)',
