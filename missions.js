@@ -9,29 +9,29 @@ var missions = {
         enigmes: ['e2']
     }
 }
-var missions = {
-    Mobilité: {
-        icon: 'ui/mobility.svg',
-        enigmes: ['e1', 'e2', 'e3', 'e4', 'e5']
+// var missions = {
+//     Mobilité: {
+//         icon: 'ui/mobility.svg',
+//         enigmes: ['e1', 'e2', 'e3', 'e4', 'e5']
 
-    },
-    Energie: {
-        icon: 'ui/energy.svg',
-        enigmes: ['e2', 'e3', 'e1', 'e8', 'e6']
-    },
-    Habitat: {
-        icon: 'ui/habitat.svg',
-        enigmes: ['e3', 'e4', 'e5', 'e6', 'e7']
-    },
-    Bruit: {
-        icon: 'ui/noise.svg',
-        enigmes: ['e4', 'e5', 'e1', 'e7', 'e8']
-    },
-    Dépollution: {
-        icon: 'ui/depollution.svg',
-        enigmes: ['e8', 'e6', 'e7', 'e2', 'e3']
-    }
-}
+//     },
+//     Energie: {
+//         icon: 'ui/energy.svg',
+//         enigmes: ['e2', 'e3', 'e1', 'e8', 'e6']
+//     },
+//     Habitat: {
+//         icon: 'ui/habitat.svg',
+//         enigmes: ['e3', 'e4', 'e5', 'e6', 'e7']
+//     },
+//     Bruit: {
+//         icon: 'ui/noise.svg',
+//         enigmes: ['e4', 'e5', 'e1', 'e7', 'e8']
+//     },
+//     Dépollution: {
+//         icon: 'ui/depollution.svg',
+//         enigmes: ['e8', 'e6', 'e7', 'e2', 'e3']
+//     }
+// }
 
 function creaMission() {
     for (mission in missions) {
@@ -115,7 +115,6 @@ function checkMission() {
 function winMission(winMission) {
     var viewer = document.getElementById(winMission)
 
-    console.log();
     delete missions[gameStatus.currentMission];
 
     setTimeout(function () {

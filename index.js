@@ -28,7 +28,7 @@ function endStep(step) {
     case "openApp":
       screenDisplay("intro");
       loading();
-      //   visitCount("openApp");
+      visitCount("biomissions", "visitcounter", "openApp");
       // iaSpeaking(introSpeech, 'introSpeech', 'introSpeech');
       break;
     case "introSpeech" || "loading":
@@ -44,17 +44,12 @@ function endStep(step) {
       }, 2000);
       break;
     case "welcomeSpeech":
-      // document.getElementById("buttonDoc").classList.add("button-pulse");
       addDocInGame(data.biomimetisme);
       iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
       break;
     case "tutoDoc":
       iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
-      // document.getElementById("buttonMissions").classList.add("button-pulse");
       break;
-      // case "tutoMissions":
-      //   iaSpeaking(welcomeSpeech4, "welcomeSpeech4");
-      //   break;
     case "enigmeDone":
       ending();
       break;
@@ -71,7 +66,7 @@ function endStep(step) {
     case "endGame":
       screenDisplay("board");
       iaSpeaking(endGameSpeech);
-      //   visitCount("endGame");
+      visitCount("endGame");
       break;
     default:
       // console.log("step bug with " + step);
@@ -93,10 +88,9 @@ function ending() {
     return;
   }
 
-  gameStatus.missionTodo = gameStatus.missionTodo.filter(
-    (m) => m !== gameStatus.currentMission
-  );
-  console.log(gameStatus.currentMission);
+  // gameStatus.missionTodo = gameStatus.missionTodo.filter(
+  //   (m) => m !== gameStatus.currentMission
+  // );
 
   if (gameStatus.currentMission) {
     if (missions[gameStatus.currentMission].enigmes.length !== 0) {
@@ -109,9 +103,9 @@ function ending() {
     if (missions[mission].enigmes.length === 0) {
       document.getElementById(mission).style.display = "none";
       delete missions[mission];
-      gameStatus.missionTodo = gameStatus.missionTodo.filter(
-        (m) => m !== mission
-      );
+      gameStatus.missionTodo = gameStatus.missionTodo.filter(function (m) {
+        return m !== mission;
+      });
       // document.getElementById(mission).style.display = "none";
     }
   }
@@ -150,7 +144,6 @@ function screenCall(screen) {
   }
   transitionGraph(2, 4, screen);
 }
-// screenCall('enigme');
 
 function majStatus(screen) {
   gameStatus.currentScreen = screen;
@@ -171,26 +164,11 @@ function exit() {
   }
 }
 
-function visitCount(test) {
-  var testTime = Date.now() / 1000;
-  console.log(testTime);
+function visitCount(db, col, counter) {
   var request = new XMLHttpRequest();
-  request.open("GET", "http://localhost:8080/" + test, true);
+  request.open("GET", "https://ycallier-api.herokuapp.com/countAPI/" + db + "/" + col + "/" + counter, true);
   request.send();
-  //   request.abort();
-  //   request.open("GET", "http://localhost:8080/", true);
-  //   request.send();
 }
-
-// $.ajax({
-//   url: "./visitCounter/visitCounter.js", // La ressource ciblée
-//   type: "GET", // Le type de la requête HTTP.
-// });
-
-// socket = io.connect();
-// socket = io.connect("http://localhost:8080");
 
 //////////////////// lancement
 creaMission();
-// gameStatus.winStep = 100 / gameStatus.enigmesToSolv.length;
-// gameStatus.timeStep = 100 / (30 * 60);

@@ -23,7 +23,9 @@ function solvEnigme(enigme) {
     //     bulett.classList.add("enigme-solved-bullet");
     // }
 
-    gameStatus.enigmesToSolv = gameStatus.enigmesToSolv.filter(e => e !== enigme);
+    gameStatus.enigmesToSolv = gameStatus.enigmesToSolv.filter(function (e) {
+        return e !== enigme
+    });
 
     var missionsImpact = [];
     for (mission in missions) {
@@ -32,7 +34,9 @@ function solvEnigme(enigme) {
                 if (mission !== gameStatus.currentMission) {
                     missionsImpact.push(mission)
                 }
-                missions[mission].enigmes = missions[mission].enigmes.filter(e => e !== enigme);
+                missions[mission].enigmes = missions[mission].enigmes.filter(function (e) {
+                    return e !== enigme
+                });
                 progress(mission + 'Progress', missions[mission].stepProgress)
             }
         }
