@@ -66,7 +66,7 @@ function endStep(step) {
     case "endGame":
       screenDisplay("board");
       iaSpeaking(endGameSpeech);
-      visitCount("endGame");
+      visitCount("biomissions", "visitcounter", "endGame");
       break;
     default:
       // console.log("step bug with " + step);
