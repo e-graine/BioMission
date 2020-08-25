@@ -12,8 +12,8 @@ var gameStatus = {
   dataEnigmes: [],
   dataDoc: [{
     title: "Sources",
-    body: "Bla blabla... "
-  }],
+    body: "Bla blabla... ",
+  }, ],
 };
 
 // setTimeout(function () {
@@ -31,7 +31,11 @@ function endStep(step) {
       visitCount("biomissions", "visitcounter", "openApp");
       // iaSpeaking(introSpeech, 'introSpeech', 'introSpeech');
       break;
-    case "introSpeech" || "loading":
+    case "loading":
+      document.getElementById('fullScreen').style.display = 'block'
+      document.getElementById('clickSpeech').style.display = 'block'
+      break;
+    case "fullScreen":
       transitionGraph(2, 50, "board", "Intro");
       break;
     case "transitionIntro":
@@ -71,6 +75,23 @@ function endStep(step) {
     default:
       // console.log("step bug with " + step);
   }
+}
+
+function openFullscreen() {
+  var elem = document.body;
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) {
+    /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+  endStep('fullScreen');
 }
 
 function ending() {
@@ -158,15 +179,24 @@ function majStatus(screen) {
 
 function exit() {
   if (gameStatus.currentEnigme) {
-    screenCall('enigme');
+    screenCall("enigme");
   } else {
-    screenCall('board')
+    screenCall("board");
   }
 }
 
 function visitCount(db, col, counter) {
   var request = new XMLHttpRequest();
-  request.open("GET", "https://ycallier-api.herokuapp.com/countAPI/" + db + "/" + col + "/" + counter, true);
+  request.open(
+    "GET",
+    "https://ycallier-api.herokuapp.com/countAPI/" +
+    db +
+    "/" +
+    col +
+    "/" +
+    counter,
+    true
+  );
   request.send();
 }
 

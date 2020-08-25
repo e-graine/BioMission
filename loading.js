@@ -30,7 +30,7 @@ function loading() {
     if (letter_count >= word.length) {
       finished = true;
       // setTimeout(reset, 1500);
-      endStep('introSpeech');
+      endStep('loading');
     } else {
       setTimeout(inc, 1000);
     }
