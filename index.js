@@ -10,10 +10,12 @@ var gameStatus = {
   enigmesToSolv: [],
   missionTodo: [],
   dataEnigmes: [],
-  dataDoc: [{
-    title: "Sources",
-    body: "Bla blabla... ",
-  }, ],
+  dataDoc: [
+    {
+      title: "Sources",
+      body: "Bla blabla... ",
+    },
+  ],
 };
 
 // setTimeout(function () {
@@ -32,8 +34,8 @@ function endStep(step) {
       // iaSpeaking(introSpeech, 'introSpeech', 'introSpeech');
       break;
     case "loading":
-      document.getElementById('fullScreen').style.display = 'block'
-      document.getElementById('clickSpeech').style.display = 'block'
+      document.getElementById("fullScreen").style.display = "block";
+      document.getElementById("clickSpeech").style.display = "block";
       break;
     case "fullScreen":
       transitionGraph(2, 50, "board", "Intro");
@@ -73,7 +75,7 @@ function endStep(step) {
       visitCount("biomissions", "visitcounter", "endGame");
       break;
     default:
-      // console.log("step bug with " + step);
+    // console.log("step bug with " + step);
   }
 }
 
@@ -87,11 +89,15 @@ function openFullscreen() {
   } else if (elem.webkitRequestFullscreen) {
     /* Chrome, Safari and Opera */
     elem.webkitRequestFullscreen();
+    /* Iphone */
+    if (elem.webkitEnterFullScreen) {
+      elem.webkitEnterFullScreen();
+    }
   } else if (elem.msRequestFullscreen) {
     /* IE/Edge */
     elem.msRequestFullscreen();
   }
-  endStep('fullScreen');
+  endStep("fullScreen");
 }
 
 function ending() {
@@ -190,11 +196,11 @@ function visitCount(db, col, counter) {
   request.open(
     "GET",
     "https://ycallier-api.herokuapp.com/countAPI/" +
-    db +
-    "/" +
-    col +
-    "/" +
-    counter,
+      db +
+      "/" +
+      col +
+      "/" +
+      counter,
     true
   );
   request.send();
