@@ -45,14 +45,31 @@ var nextMissionSpeech = [
     'D\'autres missions t\'attendent :)',
 ]
 
-var looserSpeech = [
-    'Tu as terminé toutes les missions',
-    'mais il reste quelques problèmes a régler',
-    'revoyons ça',
+var allSolved = [
+    'Wow tu as tout résolu 0.o'
 ]
 
-var endGameSpeech = [
-    'Bravo'
+var timesUp = [
+    'Times up !'
+]
+
+var looser = [
+    'Tu as terminé toutes les missions :)',
+]
+
+var endGameSpeech1 = [
+    'Merci humain,'
+]
+
+var endGameSpeech2 = []
+
+var endGameSpeech3 = [
+    'La symbiose est l\'association biologique, ',
+    'durable et réciproquement profitable,',
+    'entre deux organismes vivants.',
+    '',
+    'Nous reviendrons de voir,',
+    'si tu le souhaite',
 ]
 
 function iaSpeaking(speech, speechName, specialSpeech) {
@@ -74,18 +91,10 @@ function iaSpeaking(speech, speechName, specialSpeech) {
         }
         var counter = 0;
         var writer = setInterval(function () {
-            // if (words.length > counter) {
-            //     counter++;
-            //     speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
-            // } else {
-            //     clearInterval(writer);
-            //     setTimeout(function () {
-            //         iaSpeaking(speech, speechName, specialSpeech);
-            //     }, 2000)
-            // }
-
             counter++;
-            speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
+            var word = speechBox.querySelector("span:nth-child(" + counter + ")");
+            if (word) word.style.opacity = "1";
+            // speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
             if (words.length === counter) {
                 clearInterval(writer);
                 setTimeout(function () {

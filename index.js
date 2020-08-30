@@ -14,6 +14,7 @@ var gameStatus = {
     title: "Sources",
     body: "Bla blabla... ",
   }, ],
+  timesUp: false,
 };
 
 // setTimeout(function () {
@@ -68,10 +69,22 @@ function endStep(step) {
       screenCall("enigme");
       break;
     case "endGame":
-      screenDisplay("endGame");
-      // iaSpeaking(endGameSpeech);
-      progress('endProgress', 50)
-      visitCount("biomissions", "visitcounter", "endGame");
+      screenCall("board");
+      // visitCount("biomissions", "visitcounter", "endGame");
+      iaSpeaking(gameStatus.endReason, "score");
+      break;
+    case "score":
+      screenCall("endGame");
+      winRateDisplay();
+      break;
+    case "endGameSpeech1":
+      iaSpeaking(endGameSpeech2, 'endGameSpeech2', 'speechEnd2');
+      break;
+    case "endGameSpeech2":
+      iaSpeaking(endGameSpeech3, 'endGameSpeech3', 'speechEnd3');
+      break;
+    case "endGameSpeech3":
+      document.getElementById("buttonReStart").classList.add("button-pulse");
       break;
     default:
       // console.log("step bug with " + step);
@@ -97,50 +110,6 @@ function openFullscreen() {
     elem.msRequestFullscreen();
   }
   endStep("fullScreen");
-}
-
-function ending() {
-  gameStatus.numEnigme++;
-  gameStatus.currentEnigme = null;
-  document.getElementById("speechEnigme").innerHTML = "";
-
-  if (gameStatus.numEnigme < gameStatus.dataEnigmes.length) {
-    displayEnigme();
-    return;
-  }
-
-  if (gameStatus.enigmesToSolv.length === 0) {
-    endStep("endGame");
-    return;
-  }
-
-  // gameStatus.missionTodo = gameStatus.missionTodo.filter(
-  //   (m) => m !== gameStatus.currentMission
-  // );
-
-  if (gameStatus.currentMission) {
-    if (missions[gameStatus.currentMission].enigmes.length !== 0) {
-      document.getElementById(gameStatus.currentMission).style.display = "none";
-      delete missions[gameStatus.currentMission];
-    }
-  }
-  // document.getElementById(gameStatus.currentMission).style.display = "none";
-  for (mission in missions) {
-    if (missions[mission].enigmes.length === 0) {
-      document.getElementById(mission).style.display = "none";
-      delete missions[mission];
-      gameStatus.missionTodo = gameStatus.missionTodo.filter(function (m) {
-        return m !== mission;
-      });
-      // document.getElementById(mission).style.display = "none";
-    }
-  }
-  screenDisplay("board");
-  if (Object.keys(missions).length !== 0) {
-    iaSpeaking(nextMissionSpeech);
-  } else {
-    iaSpeaking(looserSpeech, "rattrapage");
-  }
 }
 
 function screenDisplay(screenToShow) {

@@ -97,6 +97,11 @@
       </div>
       <div class="label">Yes !</div>
     </div> -->
+    <div id="speechEnd1" class="speech"></div>
+    <div class="win-rate speech" id="winRate"></div>
+    <div id="speechEnd2" class="speech" style="margin-bottom:20px"></div>
+    <div id="speechEnd3" class="speech"></div>
+    <div class="button-restart" id="buttonReStart" onclick="restart()">Rejouer</div>
   </div>
   <div class="button button-doc" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'></div>
   <div id="exitButton" class="button button-exit" onclick="exit()"></div>
@@ -112,8 +117,9 @@
 <script type="text/javascript" src="doc.js"></script>
 <script type="text/javascript" src="enigme.js"></script>
 <script type="text/javascript" src="missions.js"></script>
-<script type="text/javascript" src="progress.js"></script>
+<script type="text/javascript" src="endGame.js"></script>
 <script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="progress.js"></script>
 
 <div id="enigmeCollection">
   <div id="e1" doc="aerodynamisme">
