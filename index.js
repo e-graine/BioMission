@@ -132,7 +132,7 @@ function screenDisplay(screenToShow) {
   if (screenToShow.attributes.nodoc) {
     document.getElementById("docButton").style.display = "none";
   } else {
-    document.getElementById("doctButton").style.display = "block";
+    document.getElementById("docButton").style.display = "block";
   }
 }
 
