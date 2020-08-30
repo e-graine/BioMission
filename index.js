@@ -130,9 +130,9 @@ function screenDisplay(screenToShow) {
   }
 
   if (screenToShow.attributes.nodoc) {
-    document.getElementById("docButton").style.display = "none";
+    document.getElementById("buttonDoc").style.display = "none";
   } else {
-    document.getElementById("docButton").style.display = "block";
+    document.getElementById("buttonDoc").style.display = "block";
   }
 }
 
