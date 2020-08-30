@@ -46,7 +46,7 @@ var nextMissionSpeech = [
 ]
 
 var allSolved = [
-    'Wow tu as tout résolu 0.o'
+    'Wow tu as tout résolu !'
 ]
 
 var timesUp = [

@@ -128,6 +128,12 @@ function screenDisplay(screenToShow) {
   } else {
     document.getElementById("exitButton").style.display = "none";
   }
+
+  if (screenToShow.attributes.nodoc) {
+    document.getElementById("docButton").style.display = "none";
+  } else {
+    document.getElementById("doctButton").style.display = "block";
+  }
 }
 
 function screenCall(screen) {

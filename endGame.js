@@ -72,7 +72,6 @@ function restart() {
         body: "Bla blabla... ",
     }, ]
     missions = gameStatus.missionsMemory;
-    console.log(gameStatus.missionsMemory);
     creaMission();
     screenCall('board');
     iaSpeaking(['Hello, human']);
