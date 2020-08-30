@@ -21,7 +21,7 @@ var gameStatus = {
 //     endStep('rattrapage');
 // }, 2000);
 // endStep("transitionIntro");
-endStep("openApp");
+endStep("transitionIntro");
 
 function endStep(step) {
   gameStatus.step = step;
