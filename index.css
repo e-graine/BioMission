@@ -176,7 +176,6 @@ h3 {
   /* margin: 5vw; */
 }
 
-
 .ia-speech {
   top: 50%;
   position: absolute;
@@ -238,6 +237,15 @@ h3 {
   flex-wrap: nowrap;
   align-items: center;
 }
+.full-screen-bar {
+  /* height: 100vw; */
+  width: 100vh;
+
+  transform: rotate(-90deg);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
 
 .progress-bar {
   height: 1px;
@@ -245,6 +253,11 @@ h3 {
   position: relative;
   z-index: 10;
   background-color: #646464;
+}
+
+.full-screen-bar .progress-bar {
+  background-color: black;
+  height: 100px;
 }
 
 /* #winProgress {
@@ -407,6 +420,7 @@ h3 {
   /* min-height: 600px; */
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 10px;
 }
 
 .zone-e1 {
@@ -432,7 +446,7 @@ h3 {
 
 @media screen and (max-width: 1280px) {
   .container {
-    justify-content: unset;
+    /* justify-content: unset; */
     position: relative;
     top: 12vh;
     font-size: smaller;

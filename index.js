@@ -10,12 +10,10 @@ var gameStatus = {
   enigmesToSolv: [],
   missionTodo: [],
   dataEnigmes: [],
-  dataDoc: [
-    {
-      title: "Sources",
-      body: "Bla blabla... ",
-    },
-  ],
+  dataDoc: [{
+    title: "Sources",
+    body: "Bla blabla... ",
+  }, ],
 };
 
 // setTimeout(function () {
@@ -70,12 +68,13 @@ function endStep(step) {
       screenCall("enigme");
       break;
     case "endGame":
-      screenDisplay("board");
-      iaSpeaking(endGameSpeech);
+      screenDisplay("endGame");
+      // iaSpeaking(endGameSpeech);
+      progress('endProgress', 50)
       visitCount("biomissions", "visitcounter", "endGame");
       break;
     default:
-    // console.log("step bug with " + step);
+      // console.log("step bug with " + step);
   }
 }
 
@@ -196,11 +195,11 @@ function visitCount(db, col, counter) {
   request.open(
     "GET",
     "https://ycallier-api.herokuapp.com/countAPI/" +
-      db +
-      "/" +
-      col +
-      "/" +
-      counter,
+    db +
+    "/" +
+    col +
+    "/" +
+    counter,
     true
   );
   request.send();

@@ -74,10 +74,19 @@ function iaSpeaking(speech, speechName, specialSpeech) {
         }
         var counter = 0;
         var writer = setInterval(function () {
-            if (words.length > counter) {
-                counter++;
-                speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
-            } else {
+            // if (words.length > counter) {
+            //     counter++;
+            //     speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
+            // } else {
+            //     clearInterval(writer);
+            //     setTimeout(function () {
+            //         iaSpeaking(speech, speechName, specialSpeech);
+            //     }, 2000)
+            // }
+
+            counter++;
+            speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
+            if (words.length === counter) {
                 clearInterval(writer);
                 setTimeout(function () {
                     iaSpeaking(speech, speechName, specialSpeech);
