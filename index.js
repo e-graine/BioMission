@@ -35,6 +35,7 @@ function endStep(step) {
     case "loading":
       document.getElementById("fullScreen").style.display = "block";
       document.getElementById("clickSpeech").style.display = "block";
+      transitionGraph(2, 50, "board", "Intro");
       break;
     case "fullScreen":
       transitionGraph(2, 50, "board", "Intro");
