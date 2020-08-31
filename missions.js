@@ -26,11 +26,10 @@ var missions = {
     Mobilité: {
         icon: 'ui/mobility.svg',
         enigmes: ['e2', 'e3', 'e4', 'e5']
-
     },
     Energie: {
         icon: 'ui/energy.svg',
-        enigmes: ['e3']
+        enigmes: ['e7', 'e3', 'e6']
     },
     Bruit: {
         icon: 'ui/noise.svg',

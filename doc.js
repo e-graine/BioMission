@@ -30,6 +30,10 @@ var data = {
     chouette: {
         title: "Le silence de la chouette",
         body: "Le bruit causé par une aile est en grande partie causé par le passage de l’air sur sa partie arrière. Pour réduire ces turbulences et rendre son vol furtif, les ailes de la chouette sont recouvertes d’un revêtement duveteux et pelucheux, structure que les chercheurs ont cherché à imiter pour réduire le bruit des hélices des éoliennes."
+    },
+    libellule: {
+        title: "L'éolienne \"Libellule\"",
+        body: "Le vent est imprévisible et la disponibilité de l'énergie éolienne n'est pas constante. Ce n’est donc pas très fiable en tant que source d’énergie de référence. A l’heure actuelle, nous n’avons pas de moyens rentables de stocker l'énergie éolienne. En revanche, une solution inspirée de la libellule a permi la création de petites éoliennes transparentes à deux pales capables de capter les brises légères dans les petits jardins."
     }
 }
 
