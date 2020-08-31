@@ -133,6 +133,11 @@ h2 {
   justify-content: center;
 }
 
+h2 img {
+  width: 100%;
+  height: auto;
+}
+
 h3 {
   display: flex;
   justify-content: center;
@@ -466,10 +471,10 @@ h3 {
   background-image: url(imgGame/martin-pecheur.jpg);
 }
 
-.img100 {
+/* .img100 {
   width: 100%;
   height: auto;
-}
+} */
 
 .click-line {
   display: flex;

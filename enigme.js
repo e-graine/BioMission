@@ -55,7 +55,7 @@ function solvEnigme(enigme) {
     }
 
     var solvedEnigmeSpeech = [
-        'Yessss !',
+        'Exact !',
         'J\'ai pu résoudre des problématiques similaires',
         textImpact,
         'Passons à l\'étape suivante'
@@ -66,8 +66,7 @@ function solvEnigme(enigme) {
 
 function failEnigme(enigme) {
     var failedEnigmeSpeech = [
-        'Hum... Cela ne permet pas de résoudre le problème',
-        'Nous le rencontrerons à nouveau',
+        'Hum... Non ça ne va pas',
         'Passons à l\'étape suivante'
     ];
     document.getElementById("bodyEnigme").innerHTML = '';
