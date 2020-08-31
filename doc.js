@@ -26,6 +26,10 @@ var data = {
     felin: {
         title: "Félins",
         body: "Maître de la chasse discrets et agiles, les félins ressentent les moindres vibrations du sol et dissimulent leur présence lors de déplacements. Ce sont des digitigrades : ils se déplacent sur le bout des doigts. Leurs coussinets inspirent des systèmes d'amortissement des vibrations dans de nombreuses pièces et composants industriels, de l'aéronautique à l'automobile, en passant par l'électroménager et ou le ferroviaire."
+    },
+    chouette: {
+        title: "Le silence de la chouette",
+        body: "Le bruit causé par une aile est en grande partie causé par le passage de l’air sur sa partie arrière. Pour réduire ces turbulences et rendre son vol furtif, les ailes de la chouette sont recouvertes d’un revêtement duveteux et pelucheux, structure que les chercheurs ont cherché à imiter pour réduire le bruit des hélices des éoliennes."
     }
 }
 

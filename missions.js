@@ -34,7 +34,7 @@ var missions = {
     },
     Bruit: {
         icon: 'ui/noise.svg',
-        enigmes: ['e5']
+        enigmes: ['e6', 'e5']
     },
 }
 

@@ -467,7 +467,7 @@ h3 {
 }
 
 .img100 {
-  max-width: 100%;
+  max-width: 100px;
   /* height: auto; */
 }
 
