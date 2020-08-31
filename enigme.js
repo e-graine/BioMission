@@ -42,7 +42,7 @@ function solvEnigme(enigme) {
         }
     }
 
-    var textImpact = '';
+    var textImpact = false;
     if (missionsImpact.length === 1) {
         textImpact = 'dans la mission ' + missionsImpact[0];
     }
@@ -56,10 +56,18 @@ function solvEnigme(enigme) {
 
     var solvedEnigmeSpeech = [
         'Exact !',
-        'J\'ai pu résoudre des problématiques similaires',
-        textImpact,
         'Passons à l\'étape suivante'
     ];
+
+    if (textImpact) {
+        solvedEnigmeSpeech = [
+            'Exact !',
+            'J\'ai pu résoudre des problématiques similaires',
+            textImpact,
+            'Passons à l\'étape suivante'
+        ];
+    }
+
     document.getElementById("bodyEnigme").innerHTML = '';
     iaSpeaking(solvedEnigmeSpeech, 'enigmeDone', 'speechEnigme');
 }

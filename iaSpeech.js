@@ -17,13 +17,15 @@ var introSpeech = [
 // ]
 
 var welcomeSpeech = [
-    'ALERTE - Système en surcharge ! ',
+    '/!\ ALERTE /!\ ',
+    'Système en surcharge ! ',
     'L’ordinateur a détecté une quantité trop importante de défis à résoudre.',
     'Crash du système prévu dans 30 minutes… ',
     'Et si la solution était dans la Nature ? ',
     'Réponds vite aux défis cliquant sur le bouton en haut à droite. ',
     'Trouves des indices dans ma base de donnée en haut à gauche',
-    'Je compte sur toi... nous n’avons plus de temps à perdre !'
+    'Je compte sur toi... ',
+    'nous n’avons plus de temps à perdre !'
 ]
 
 // var welcomeSpeech2 = [
