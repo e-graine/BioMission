@@ -38,6 +38,10 @@ var data = {
     baleine: {
         title: "L'éolienne \"Libellule\"",
         body: "Les baleines à bosse possèdent des “tubercules” sur leurs nageoires. En s’inspirant de ces nageoires, des turbines ont été développées avec des tubercules sur les hélices qui garantissent une meilleure efficacité dans de nombreuses applications allant d’éoliennes aux turbines hydroélectriques en passant par les pompes d’irrigation et  les ventilateurs. Utiliser ces hélices pour les éoliennes peut améliorer leur efficacité jusqu’à 20%, les rendant ainsi compétitives avec d’autres sources d’énergie."
+    },
+    biolum: {
+        title: "Cultiver la lumière",
+        body: "Grâce à une réaction chimique, certains organismes marins, de la même façon que les lucioles, ressemblent à des néons dans la nuit.  Cultiver ces algues et les utiliser pour l’éclairage public permettrait donc de réduire la consommation d'énergie des villes. Prêt pour la lumière bio ?"
     }
 }
 

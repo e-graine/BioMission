@@ -29,7 +29,7 @@ var missions = {
     },
     Energie: {
         icon: 'ui/energy.svg',
-        enigmes: ['e8', 'e7', 'e3', 'e6']
+        enigmes: ['e9', 'e8', 'e7', 'e3', 'e6']
     },
     Bruit: {
         icon: 'ui/noise.svg',

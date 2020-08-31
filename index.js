@@ -33,8 +33,8 @@ function endStep(step) {
       // iaSpeaking(introSpeech, 'introSpeech', 'introSpeech');
       break;
     case "loading":
-      document.getElementById("fullScreen").style.display = "block";
-      document.getElementById("clickSpeech").style.display = "block";
+      // document.getElementById("fullScreen").style.display = "block";
+      // document.getElementById("clickSpeech").style.display = "block";
       setTimeout(function () {
         transitionGraph(2, 50, "board", "Intro");
       }, 500);
