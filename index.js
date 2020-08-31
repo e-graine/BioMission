@@ -21,7 +21,7 @@ var gameStatus = {
 //     endStep('rattrapage');
 // }, 2000);
 // endStep("transitionIntro");
-endStep("transitionIntro");
+endStep("openApp");
 
 function endStep(step) {
   gameStatus.step = step;
@@ -41,20 +41,21 @@ function endStep(step) {
       break;
     case "transitionIntro":
       screenDisplay("board");
+      addDocInGame(data.biomimetisme);
       setTimeout(function () {
         iaGraphFct(2);
       }, 500);
       setTimeout(function () {
         iaSpeaking(welcomeSpeech, "welcomeSpeech");
-      }, 2000);
+      }, 1000);
       break;
     case "welcomeSpeech":
-      addDocInGame(data.biomimetisme);
-      iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
+
+      // iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
       break;
-    case "tutoDoc":
-      iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
-      break;
+      // case "tutoDoc":
+      //   iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
+      //   break;
     case "enigmeDone":
       ending();
       break;

@@ -4,6 +4,15 @@ body {
   color: white;
 }
 
+input {
+  margin: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 .button {
   position: absolute;
   width: 5vw;
@@ -17,16 +26,23 @@ body {
   cursor: pointer;
 }
 
-.button-restart {
+.button-text {
   position: relative;
   background-color: white;
   color: black;
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: 20px;
   font-weight: 600;
   border-radius: 20px;
   padding: 15px;
   margin: 20px;
   cursor: pointer;
+  text-align: center;
+  min-width: 50px;
+}
+
+.button-text-small {
+  font-size: small;
 }
 
 .button-pulse {
@@ -194,13 +210,22 @@ h3 {
   width: 80vw;
 }
 
-.click-speech {
-  display: none;
-  top: 20%;
+.loading-speech {
+  top: 5%;
   position: absolute;
   width: 80vw;
+  font-size: smaller;
+}
+
+.loading-speech div {
+  margin: 20px;
+}
+
+.click-speech {
+  display: none;
   animation: blinker 1s linear infinite;
 }
+
 
 @keyframes blinker {
   50% {
@@ -249,6 +274,7 @@ h3 {
   flex-wrap: nowrap;
   align-items: center;
 }
+
 .full-screen-bar {
   /* height: 100vw; */
   width: 100vh;
@@ -445,6 +471,7 @@ h3 {
 
 .click-line {
   display: flex;
+  justify-content: center;
 }
 
 .click-zone {

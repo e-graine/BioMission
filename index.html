@@ -25,7 +25,12 @@
   <div id="intro" class="intro screen-div">
     <div id="loading">LOADING</div>
     <div id="fullScreen" class="full-screen" onclick="openFullscreen()"></div>
-    <div id="clickSpeech" class="click-speech speech">click anywhere</div>
+    <div class="speech loading-speech">
+      <div>Bienvenue sur le panneau de contrôle de l’intelligence artificielle bio-mission</div>
+      <div>Système de résolution des défis de la ville durable de Symbio-city</div>
+      <div id="clickSpeech" class="click-speech">click anywhere</div>
+    </div>
+
   </div>
   <div id="board" class="board screen-div">
     <canvas id="iaGraph" class="ia-graph"></canvas>
@@ -101,7 +106,7 @@
     <div class="win-rate speech" id="winRate"></div>
     <div id="speechEnd2" class="speech" style="margin-bottom:20px"></div>
     <div id="speechEnd3" class="speech"></div>
-    <div class="button-restart" id="buttonReStart" onclick="restart()">Rejouer</div>
+    <div class="button-text" id="buttonReStart" onclick="restart()">Rejouer</div>
   </div>
   <div class="button button-doc" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'></div>
   <div id="exitButton" class="button button-exit" onclick="exit()"></div>
@@ -146,25 +151,46 @@
     <!-- <button onclick="solvEnigme('e1')">Réussir</button>
       <button onclick="failEnigme('e1')">Echouer</button> -->
   </div>
-  <div id="e2">
-    <h2>Enigme 2</h2>
-    <button onclick="solvEnigme('e2')">Réussir</button>
-    <button onclick="failEnigme('e2')">Echouer</button>
+  <div id="e2" doc="transportsGES">
+    <h2><img src="imgGame/cars.png" alt="" class="img100" /></h2>
+    <div>Quelle est la part d’émissions de gaz à effet de serre liée aux transports ?</div>
+    <!-- <div> <input type="radio" id="e2-1" name="e2-answer" value="e2-1">5%</div>
+      <div> <input type="radio" id="e2-2" name="e2-answer" value="e2-2">15%</div>
+      <div> <input type="radio" id="e2-3" name="e2-answer" value="e2-3">25%</div>
+      <div> <input type="radio" id="e2-4" name="e2-answer" value="e2-4">33%</div> -->
+    <div class="click-line">
+      <div onclick="failEnigme('e2')" class="button-text">5%</div>
+      <div onclick="failEnigme('e2')" class="button-text">15%</div>
+    </div>
+    <div class="click-line">
+      <div onclick="solvEnigme('e2')" class="button-text">25%</div>
+      <div onclick="failEnigme('e2')" class="button-text">33%</div>
+    </div>
   </div>
-  <div id="e3">
-    <h2>Enigme 3</h2>
-    <button onclick="solvEnigme('e3')">Réussir</button>
-    <button onclick="failEnigme('e3')">Echouer</button>
+  <div id="e3" doc="microlatisse">
+    <h2><img src="imgGame/microlatisse.png" alt="" class="img100" /></h2>
+    <div>De quoi s’inspire le micro-latisse, le matériau le plus léger du monde, composé à 99,99% d’air ?</div>
+    <div onclick="solvEnigme('e3')" class="button-text button-text-small">Les alvéoles des os humains</div>
+    <div onclick="failEnigme('e3')" class="button-text button-text-small">La fibre des plumes d’oiseaux</div>
+    <div onclick="failEnigme('e3')" class="button-text button-text-small">Le fil de la toile d’araignée</div>
+    <div onclick="failEnigme('e3')" class="button-text button-text-small">Du balsa (un bois ultra-léger)</div>
   </div>
-  <div id="e4">
-    <h2>Enigme 4</h2>
-    <button onclick="solvEnigme('e4')">Réussir</button>
-    <button onclick="failEnigme('e4')">Echouer</button>
+  <div id="e4" doc="labyrinthe">
+    <h2><img src="imgGame/labyrinthe.png" alt="" class="img100" /></h2>
+    <div>Qui a réussi à reproduire le réseau du métro de Tokyo en trouvant le chemin le plus court vers la sortie d’un
+      labyrinthe ?</div>
+    <div onclick="failEnigme('e4')" class="button-text button-text-small">Le Rat</div>
+    <div onclick="solvEnigme('e4')" class="button-text button-text-small">Le Blob</div>
+    <div onclick="failEnigme('e4')" class="button-text button-text-small">Le Cafard</div>
+    <div onclick="failEnigme('e4')" class="button-text button-text-small">La Fourmi</div>
   </div>
-  <div id="e5">
-    <h2>Enigme 5</h2>
-    <button onclick="solvEnigme('e5')">Réussir</button>
-    <button onclick="failEnigme('e5')">Echouer</button>
+  <div id="e5" doc="felin">
+    <h2><img src="imgGame/tigre.jpg" alt="" class="img100" /></h2>
+    <div>Qu’est-ce qui permet aux tigres d’être aussi silencieux ?</div>
+    <div onclick="failEnigme('e5')" class="button-text button-text-small">Leur souplesse</div>
+    <div onclick="failEnigme('e5')" class="button-text button-text-small">Leur silhouette ergonomique</div>
+    <div onclick="solvEnigme('e5')" class="button-text button-text-small">Les coussinets sous leurs pattes</div>
+    <div onclick="failEnigme('e5')" class="button-text button-text-small">Leur pelage</div>
   </div>
   <div id="e6">
     <h2>Enigme 6</h2>

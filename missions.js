@@ -25,13 +25,17 @@
 var missions = {
     Mobilité: {
         icon: 'ui/mobility.svg',
-        enigmes: ['e1', 'e2']
+        enigmes: ['e2', 'e3', 'e4', 'e5']
 
     },
     Energie: {
         icon: 'ui/energy.svg',
-        enigmes: ['e1', 'e2']
-    }
+        enigmes: ['e3']
+    },
+    Bruit: {
+        icon: 'ui/noise.svg',
+        enigmes: ['e5']
+    },
 }
 
 function creaMission() {
