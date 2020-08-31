@@ -46,7 +46,15 @@ var data = {
     tournesol: {
         title: "L'hormone du soleil",
         body: "Le mouvement de la fleur de tournesol a inspiré un nouveau type de panneaux solaires en forme de fleur qui suivent la lumière du soleil pour mieux emmagasiner l’énergie."
-    }
+    },
+    pommeDePin: {
+        title: "Des écailles réactives",
+        body: "La nature a inspiré un habitat  réactif aux conditions climatiques, notamment au changement d’humidité. Des rainures sont intégrées au sein d’une structure en bois et selon l’humidité qui s’y infiltre, les ouvertures s’ouvriront ou se fermeront tout comme les écailles d’une pomme de pin. L’habitat régule donc lui-même l’entrée de l’air extérieur."
+    },
+    microalgues: {
+        title: "Piège à carbonne",
+        body: "Les micro-algues sont de véritables pièges à carbone et leur efficacité de dépollution va de 75% à 99%. Réaliser une culture de micro-algues sur les murs de nos villes entre deux lames de verre permettrait à la fois d’assurer la dépollution du milieu urbain, mais aussi de réduire jusqu’à 50% les besoins énergétiques du bâtiment."
+    },
 }
 
 function addDocInGame(item) {

@@ -237,9 +237,7 @@ h3 {
 }
 
 .enigme-speech {
-  top: 30%;
-  position: absolute;
-  width: 80vw;
+  margin-top: 30vh;
 }
 
 @keyframes blinker {
@@ -481,7 +479,7 @@ h3 {
 }
 
 .img-title {
-  height: 100px;
+  height: 150px;
   /* width: 100%; */
   background-size: cover;
   background-repeat: no-repeat;
@@ -489,6 +487,46 @@ h3 {
 
 .title-e2 {
   background-image: url(imgGame/cars.png);
+}
+
+.title-e3 {
+  background-image: url(imgGame/microlatisse.png);
+}
+
+.title-e4 {
+  background-image: url(imgGame/labyrinthe.png);
+}
+
+.title-e5 {
+  background-image: url(imgGame/tigre.jpg);
+}
+
+.title-e6 {
+  background-image: url(imgGame/chouette.png);
+}
+
+.title-e7 {
+  background-image: url(imgGame/libellule.jpg);
+}
+
+.title-e8 {
+  background-image: url(imgGame/baleine.jpg);
+}
+
+.title-e9 {
+  background-image: url(imgGame/biolum.jpg);
+}
+
+.title-e10 {
+  background-image: url(imgGame/tournesol.jpg);
+}
+
+.title-e11 {
+  background-image: url(imgGame/h2o.jpg);
+}
+
+.title-e12 {
+  background-image: url(imgGame/microalgues.jpg);
 }
 
 .img100 {

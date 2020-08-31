@@ -29,7 +29,7 @@ var missions = {
     },
     Energie: {
         icon: 'ui/energy.svg',
-        enigmes: ['e10', 'e9', 'e8', 'e7', 'e3', 'e6']
+        enigmes: ['e6', 'e7', 'e8', 'e9', 'e10']
     },
     Bruit: {
         icon: 'ui/noise.svg',
@@ -37,8 +37,12 @@ var missions = {
     },
     Habitat: {
         icon: 'ui/habitat.svg',
-        enigmes: ['e11', 'e4', 'e5', 'e6', 'e7']
+        enigmes: ['e11', 'e12', 'e5', 'e6', 'e7']
     },
+    Dépollution: {
+        icon: 'ui/depollution.svg',
+        enigmes: ['11', 'e9']
+    }
 }
 
 function creaMission() {
