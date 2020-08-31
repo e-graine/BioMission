@@ -169,9 +169,10 @@ h3 {
   display: none;
   width: 100%;
   height: 100%;
-  display: flex;
+  position: absolute;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .board {
@@ -241,14 +242,14 @@ h3 {
 
 #loading {
   position: absolute;
-  top: 50%;
+  bottom: 10%;
   /* margin: -30px auto; */
   text-align: center;
   color: #323232;
   font-family: Consolas, Courier, monospace;
   font-size: 15vw;
   text-shadow: 0 0 5vw #323232;
-  height: 100%;
+  /* height: 100%; */
 }
 
 #loading .glow {
@@ -467,6 +468,7 @@ h3 {
 
 .img100 {
   width: 100%;
+  height: auto;
 }
 
 .click-line {
