@@ -29,11 +29,15 @@ var missions = {
     },
     Energie: {
         icon: 'ui/energy.svg',
-        enigmes: ['e9', 'e8', 'e7', 'e3', 'e6']
+        enigmes: ['e10', 'e9', 'e8', 'e7', 'e3', 'e6']
     },
     Bruit: {
         icon: 'ui/noise.svg',
         enigmes: ['e6', 'e5']
+    },
+    Habitat: {
+        icon: 'ui/habitat.svg',
+        enigmes: ['e11', 'e4', 'e5', 'e6', 'e7']
     },
 }
 

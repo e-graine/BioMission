@@ -79,7 +79,7 @@
     <div class="container" id="missionsContainer"></div>
   </div>
   <div id="enigme" class="enigme screen-div">
-    <div id="enigmeContainer" class="container">
+    <div id="enigmeContainer" class="container enigme-container">
       <div>
         <div id="bodyEnigme" class="body-enigme"></div>
         <div id="speechEnigme" class="speech"></div>
@@ -224,16 +224,21 @@
   </div>
   <div id="e10" doc="tournesol">
     <h2><img src="imgGame/tournesol.jpg" alt="" class="img100" /></h2>
-    <div>Quel phénomène naturel permet d’éclairer vos promenades nocturnes au contact de l’eau sur certaines plages du
-      monde ?</div>
-    <div onclick="failEnigme('e9')" class="button-text button-text-small">La fluorescence</div>
-    <div onclick="solvEnigme('e9')" class="button-text button-text-small">La bioluminescence</div>
-    <div onclick="failEnigme('e9')" class="button-text button-text-small">La phosphorescence</div>
+    <div>Le mouvement de la fleur de tournesol est lié à une hormone de croissance qui se concentre à l’ombre de la tige
+      la faisant pousser plus vite que la partie ensoleillée. Cela crée un déséquilibre qui courbe la tige vers le
+      soleil.</div>
+    <div onclick="solvEnigme('e10')" class="button-text button-text-small">Vrai</div>
+    <div onclick="failEnigme('e10')" class="button-text button-text-small">Faux</div>
   </div>
-  <div id="e11">
-    <h2>Enigme 11</h2>
-    <button onclick="solvEnigme('e1')">Réussir</button>
-    <button onclick="failEnigme('e1')">Echouer</button>
+  <div id="e11" doc="pommeDePin">
+    <h2><img src="imgGame/h2o.jpg" alt="" class="img100" /></h2>
+    <div>Quel fruit est capable de réguler son humidité ?</div>
+    <div onclick="failEnigme('e10')" class="button-text button-text-small"><img src="imgGame/physalis.jpg" alt=""
+        class="img100" />La physalis</div>
+    <div onclick="solvEnigme('e10')" class="button-text button-text-small"><img src="imgGame/pommedepin.jpg" alt=""
+        class="img100" />La pomme de pin</div>
+    <div onclick="failEnigme('e10')" class="button-text button-text-small"><img src="imgGame/chataigne.jpg" alt=""
+        class="img100" />La chataigne</div>
   </div>
   <div id="e12">
     <h2>Enigme 12</h2>

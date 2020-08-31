@@ -121,8 +121,12 @@ form {
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   /* margin-top: 20vh; */
+}
+
+.enigme-container {
+  justify-content: top;
 }
 
 h2 {
@@ -471,10 +475,10 @@ h3 {
   background-image: url(imgGame/martin-pecheur.jpg);
 }
 
-/* .img100 {
+.img100 {
   width: 100%;
   height: auto;
-} */
+}
 
 .click-line {
   display: flex;
