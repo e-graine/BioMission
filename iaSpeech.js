@@ -17,7 +17,7 @@ var introSpeech = [
 // ]
 
 var welcomeSpeech = [
-    '/!\ ALERTE /!\ ',
+    '! ALERTE ! ',
     'Système en surcharge ! ',
     'L’ordinateur a détecté une quantité trop importante de défis à résoudre.',
     'Crash du système prévu dans 30 minutes… ',
@@ -84,37 +84,83 @@ var endGameSpeech3 = [
     'si tu le souhaite',
 ]
 
+// function iaSpeaking(speech, speechName, specialSpeech) {
+
+//     var speechBox = document.getElementById('iaSpeech');
+//     if (specialSpeech) speechBox = document.getElementById(specialSpeech);
+
+//     if (speech.length > 0) {
+//         speechBox.innerHTML = '';
+//         var line = speech.shift()
+//         // var letters = line.split("");
+//         var words = line.split(" ");
+//         // if (parseInt(window.innerWidth) < 1000) {
+//         //     speechBox.innerHTML += words;
+//         //     var timer = words.length * 1000;
+//         //     reSpeek(speech, speechName, specialSpeech, timer);
+//         //     return;
+//         // }
+//         words = words.map(function (word) {
+//             if (parseInt(window.innerWidth) < 1000) {
+//                 return word + " ";
+//             }
+//             return "<span style='opacity: 0'>" + word + " " + "</span>";
+//         });
+//         for (word of words) {
+//             speechBox.innerHTML += word;
+//         }
+//         if (parseInt(window.innerWidth) < 1000) {
+//             var timer = words.length * 500;
+//             reSpeek(speech, speechName, specialSpeech, timer);
+//             return
+//         }
+//         var counter = 0;
+//         var writer = setInterval(function () {
+//             counter++;
+//             var word = speechBox.querySelector("span:nth-child(" + counter + ")");
+//             if (word) word.style.opacity = "1";
+//             // speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
+//             if (words.length === counter) {
+//                 clearInterval(writer);
+//                 reSpeek(speech, speechName, specialSpeech, 2000)
+//             }
+//         }, 100);
+//     } else {
+//         endStep(speechName);
+//     }
+// }
+
+// function reSpeek(speech, speechName, specialSpeech, timer) {
+//     setTimeout(function () {
+//         iaSpeaking(speech, speechName, specialSpeech);
+//     }, timer)
+// }
+
 function iaSpeaking(speech, speechName, specialSpeech) {
 
-    var speechBox = document.getElementById('iaSpeech');
-    if (specialSpeech) speechBox = document.getElementById(specialSpeech);
+    gameStatus.speech = speech;
+    gameStatus.speechLine = speech.shift().split(" ");
+    gameStatus.speechBox = document.getElementById('iaSpeech');
+    if (specialSpeech) gameStatus.speechBox = document.getElementById(specialSpeech);
+    gameStatus.speechBox.innerHTML = '';
+    gameStatus.speechName = speechName;
+    writer(gameStatus.speechLine.shift());
 
-    if (speech.length > 0) {
-        speechBox.innerHTML = '';
-        var line = speech.shift()
-        // var letters = line.split("");
-        var words = line.split(" ");
+}
 
-        words = words.map(function (word) {
-            return "<span style='opacity: 0'>" + word + " " + "</span>";
-        });
-        for (word of words) {
-            speechBox.innerHTML += word;
-        }
-        var counter = 0;
-        var writer = setInterval(function () {
-            counter++;
-            var word = speechBox.querySelector("span:nth-child(" + counter + ")");
-            if (word) word.style.opacity = "1";
-            // speechBox.querySelector("span:nth-child(" + counter + ")").style.opacity = "1";
-            if (words.length === counter) {
-                clearInterval(writer);
-                setTimeout(function () {
-                    iaSpeaking(speech, speechName, specialSpeech);
-                }, 2000)
-            }
-        }, 100);
+function writer(word) {
+    gameStatus.speechBox.innerHTML += word + " ";
+    if (gameStatus.speechLine.length > 0) {
+        setTimeout(function () {
+            writer(gameStatus.speechLine.shift());
+        }, 100)
+    } else if (gameStatus.speech.length > 0) {
+        gameStatus.speechLine = gameStatus.speech.shift().split(" ");
+        setTimeout(function () {
+            gameStatus.speechBox.innerHTML = '';
+            writer(gameStatus.speechLine.shift());
+        }, 2000)
     } else {
-        endStep(speechName);
+        endStep(gameStatus.speechName);
     }
 }

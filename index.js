@@ -60,7 +60,9 @@ function endStep(step) {
       //   iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
       //   break;
     case "enigmeDone":
-      ending();
+      setTimeout(function () {
+        ending()
+      }, 500);
       break;
     case "rattrapage":
       // missions.Rattrapage = {};
