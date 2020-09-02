@@ -16,7 +16,7 @@ var data = {
         body: "Les transports, le secteur le plus polluant en matière d’émissions de gaz à effet de serre ! Des émissions d’autant plus nocives pour la santé que les rejets se produisent surtout en milieu urbain, à proximité des populations."
     },
     microlatisse: {
-        title: "Micro-Latisse",
+        title: "Micro-Lattice",
         body: "Le matériau le plus léger du monde, composé à 99,99% d’air, est une innovation majeure pour l'industrie, en particulier aéronautique. Utilisé pour faire un avion poids-plume, il pourrait permettre de réduire la consommation de carburant et les émissions polluantes. Il s'inspire des os humains, rigides à l'exterieur, mais on peut voir à l'intérieur des petites alvéoles creuses. C'est cela qui les rends très solide mais aussi très léger."
     },
     labyrinthe: {
@@ -54,6 +54,30 @@ var data = {
     microalgues: {
         title: "Piège à carbonne",
         body: "Les micro-algues sont de véritables pièges à carbone et leur efficacité de dépollution va de 75% à 99%. Réaliser une culture de micro-algues sur les murs de nos villes entre deux lames de verre permettrait à la fois d’assurer la dépollution du milieu urbain, mais aussi de réduire jusqu’à 50% les besoins énergétiques du bâtiment."
+    },
+    carbonate: {
+        title: "Des briques qui poussent",
+        body: "Actuellement, les secteurs de la construction et du bâtiment utilisent des matériaux tels que le béton ou l’acier, très énergivores et grand producteur de CO2 (environ 800 millions de tonnes/an rejetées). En découvrant la résistance des coraux et leur dureté, des ingénieurs cherchant des solutions plus respectueuses de notre planète ont eu l'idée de “faire pousser des briques” de la même façon que pousse le corail.",
+    },
+    termitiere: {
+        title: "Des insectes architectes",
+        body: "Pouvant atteindre jusqu’à 8 mètres de haut, l’habitat des termites africaines s’adapte au climat rude (plus de 50° le jour et moins de 0° la nuit) grâce à un système d'auto ventilation lui permettant de garder une température constante. Ses nombreuse aérations permettent à l'air d'entrer par le bas du bâtiment, tandis que de grandes cheminées évacuent l'air chaud qui remonte par convection.",
+    },
+    araignée: {
+        title: "La solidité des toiles d'araignée",
+        body: "Les caractéristiques de la toile d’araignée ont inspirées un matériau acoustique aux propriétés remarquables comme bloquer les ondes sonores et les vibrations mécaniques. Très utile pour la construction de ponts, de structures antisismiques ou de véhicules légers amortissants les vibrations et absorbants les chocs.",
+    },
+    impactBruit: {
+        title: "La pollution sonore",
+        body: '<iframe width="100%" height="315" src="https://www.youtube.com/embed/PaxahsNRSBM" frameborder="0"  allowfullscreen></iframe>'
+    },
+    mycellium: {
+        title: "Le mycellium",
+        body: 'Une méthode de dépollution naturelle des sols avec le blanc des champignons enfouis dans la terre a été découverte ! Une méthode douce qui mime le fonctionnement des sols forestiers.'
+    },
+    aquaporines: {
+        title: "Les aquaporines",
+        body: "Les aquaporines permettent le passage des molécules d'eau à travers les “pores” de la cellule biologique. En produisant des filtres capables de reproduire le même mécanisme, il est possible de produire de l’eau douce ultra-pure à une vitesse foudroyante tout en étant très économe en énergie."
     },
 }
 

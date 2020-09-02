@@ -1,98 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="index.css" />
-  <link href="https://fonts.googleapis.com/css?family=Sora:thin,regular,bold,Semi-Bold,black" rel="stylesheet" />
-  <!-- <script src="/socket.io/socket.io.js"></script> -->
-  <!-- <script src="/visitCounter/socket.io/socket.io.js"></script> -->
-  <!-- <script src="./visitCounter/visitCounter.js"></script> -->
-  <!-- <script src="./visitCounter/node_modules/socket.io/lib/client.js"></script> -->
-  <!-- <script
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sora:thin,regular,bold,Semi-Bold,black"
+      rel="stylesheet"
+    />
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <!-- <script src="/visitCounter/socket.io/socket.io.js"></script> -->
+    <!-- <script src="./visitCounter/visitCounter.js"></script> -->
+    <!-- <script src="./visitCounter/node_modules/socket.io/lib/client.js"></script> -->
+    <!-- <script
       type="text/javascript"
       src="http://localhost:8080//socket.io/socket.io.js"
     ></script> -->
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <title>BioMissions</title>
-</head>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+    ></script>
+    <title>BioMissions</title>
+  </head>
 
-<body id='bodytest'>
-  <canvas id="transitionGraph" class="transition-graph"></canvas>
-  <!-- <canvas id='introGraph' class="intro-graph"></canvas> -->
-  <div id="intro" class="intro screen-div">
-    <div class="speech loading-speech">
-      <div>Bienvenue sur le panneau de contrôle de l’intelligence artificielle bio-mission</div>
-      <div>Système de résolution des défis de la ville durable de Symbio-city</div>
-      <!-- <div id="clickSpeech" class="click-speech">click anywhere</div> -->
+  <body id="bodytest">
+    <canvas id="transitionGraph" class="transition-graph"></canvas>
+    <!-- <canvas id='introGraph' class="intro-graph"></canvas> -->
+    <div id="intro" class="intro screen-div">
+      <div class="speech loading-speech">
+        <div>
+          Bienvenue sur le panneau de contrôle de l’intelligence artificielle
+          bio-mission
+        </div>
+        <div>
+          Système de résolution des défis de la ville durable de Symbio-city
+        </div>
+        <!-- <div id="clickSpeech" class="click-speech">click anywhere</div> -->
+      </div>
+      <div id="loading">LOADING</div>
+      <div id="fullScreen" class="full-screen"></div>
+      <!-- <div id="fullScreen" class="full-screen" onclick="openFullscreen()"></div> -->
     </div>
-    <div id="loading">LOADING</div>
-    <div id="fullScreen" class="full-screen"></div>
-    <!-- <div id="fullScreen" class="full-screen" onclick="openFullscreen()"></div> -->
-
-  </div>
-  <div id="board" class="board screen-div">
-    <canvas id="iaGraph" class="ia-graph"></canvas>
-    <div id="iaSpeech" class="ia-speech speech"></div>
-    <div class="button button-missions" id="buttonMissions" onclick='screenCall("missions"); checkMission()'></div>
-    <div id="progressZone" class="progress-zone">
-      <div class="bar-container">
-        <div class="progress-bar">
-          <div id="winProgress" style="width: 0%; height: 100%;">
-            <div class="progress fill-progress">
-              <div class="glow"></div>
+    <div id="board" class="board screen-div">
+      <canvas id="iaGraph" class="ia-graph"></canvas>
+      <div id="iaSpeech" class="ia-speech speech"></div>
+      <div
+        class="button button-missions"
+        id="buttonMissions"
+        onclick='screenCall("missions"); checkMission()'
+      ></div>
+      <div id="progressZone" class="progress-zone">
+        <div class="bar-container">
+          <div class="progress-bar">
+            <div id="winProgress" style="width: 0%; height: 100%">
+              <div class="progress fill-progress">
+                <div class="glow"></div>
+              </div>
             </div>
           </div>
+          <div class="label">Yes !</div>
         </div>
-        <div class="label">Yes !</div>
-      </div>
 
-      <div class="bar-container">
-        <div class="progress-bar">
-          <div id="timeProgress" style="width: 0%; height: 100%;">
-            <div class="progress fill-progress">
-              <div class="glow"></div>
+        <div class="bar-container">
+          <div class="progress-bar">
+            <div id="timeProgress" style="width: 0%; height: 100%">
+              <div class="progress fill-progress">
+                <div class="glow"></div>
+              </div>
             </div>
           </div>
+          <div class="label">Time's up</div>
         </div>
-        <div class="label">Time's up</div>
       </div>
     </div>
-  </div>
-  <div id="doc" class="doc screen-div" isclosable>
-    <div id="docContainer" class="container">
-      <div>
-        <h2 id="titleDoc" class="title-doc"></h2>
-        <p id="bodyDoc" class="body-doc"></p>
-      </div>
-      <div class="prev-next-buttons">
-        <button id="prevDoc" class="button-prev-doc" onclick="prevDoc()">
-          < </button> <button id="nextDoc" class="button-next-doc" onclick="nextDoc()">
+    <div id="doc" class="doc screen-div" isclosable>
+      <div id="docContainer" class="container">
+        <div>
+          <h2 id="titleDoc" class="title-doc"></h2>
+          <p id="bodyDoc" class="body-doc"></p>
+        </div>
+        <div class="prev-next-buttons">
+          <button id="prevDoc" class="button-prev-doc" onclick="prevDoc()">
+            <
+          </button>
+          <button id="nextDoc" class="button-next-doc" onclick="nextDoc()">
             >
-        </button>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="missions" class="missions screen-div" isclosable>
-    <div class="container" id="missionsContainer"></div>
-  </div>
-  <div id="enigme" class="enigme screen-div">
-    <div id="enigmeContainer" class="container enigme-container">
-      <div>
-        <div id="bodyEnigme" class="body-enigme"></div>
-        <div id="speechEnigme" class="speech enigme-speech"></div>
-      </div>
-      <!-- <div class="prev-next-buttons">
+    <div id="missions" class="missions screen-div" isclosable>
+      <div class="container" id="missionsContainer"></div>
+    </div>
+    <div id="enigme" class="enigme screen-div">
+      <div id="enigmeContainer" class="container enigme-container">
+        <div>
+          <div id="bodyEnigme" class="body-enigme"></div>
+          <div id="speechEnigme" class="speech enigme-speech"></div>
+        </div>
+        <!-- <div class="prev-next-buttons">
                 <button id="prevEnigme" class="button-prev-enigme" onclick="prevEnigme()">
                     <</button> <button id="nextEnigme" class="button-next-enigme" onclick="nextEnigme()">>
                 </button>
             </div> -->
+      </div>
     </div>
-  </div>
-  <div id="endGame" class="end-game screen-div" nodoc>
-    <!-- <div class="full-screen-bar">
+    <div id="endGame" class="end-game screen-div" nodoc>
+      <!-- <div class="full-screen-bar">
       <div class="progress-bar">
         <div id="endProgress" style="width: 0%; height: 100%;">
           <div class="progress fill-progress">
@@ -102,176 +117,345 @@
       </div>
       <div class="label">Yes !</div>
     </div> -->
-    <div id="speechEnd1" class="speech"></div>
-    <div class="win-rate speech" id="winRate"></div>
-    <div id="speechEnd2" class="speech" style="margin-bottom:20px"></div>
-    <div id="speechEnd3" class="speech"></div>
-    <div class="button-text" id="buttonReStart" onclick="restart()">Rejouer</div>
-  </div>
-  <div class="button button-doc" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'></div>
-  <div id="exitButton" class="button button-exit" onclick="exit()"></div>
-</body>
-
-<!-- <script type="text/javascript" src="visitCounter/visitCounter.js"></script> -->
-<script type="text/javascript" src="transitionGraph.js"></script>
-<script type="text/javascript" src="iaSpeech.js"></script>
-<!-- <script type="text/javascript" src="html2canvas.min.js"></script> -->
-<script type="text/javascript" src="loading.js"></script>
-<!-- <script type="text/javascript" src="introGraph.js"></script> -->
-<script type="text/javascript" src="iaGraph.js"></script>
-<script type="text/javascript" src="doc.js"></script>
-<script type="text/javascript" src="enigme.js"></script>
-<script type="text/javascript" src="missions.js"></script>
-<script type="text/javascript" src="endGame.js"></script>
-<script type="text/javascript" src="index.js"></script>
-<script type="text/javascript" src="progress.js"></script>
-
-<div id="enigmeCollection">
-  <div id="e1" doc="aerodynamisme">
-    <h2>Observation</h2>
-    <div class="game-content">
-      Il y a dans cette image un élément qui a inspiré l'homme. Click dessus
-      pour faire avancer ta mission.
-      <div class="game-zone zone-e1">
-        <!-- <img src="imgGame/martin-pecheur.jpg" alt="" class="img100" /> -->
-        <div class="click-line">
-          <div onclick="solvEnigme('e1')" class="click-zone"></div>
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-        </div>
-        <div class="click-line">
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-        </div>
-        <div class="click-line">
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-        </div>
+      <div id="speechEnd1" class="speech"></div>
+      <div class="win-rate speech" id="winRate"></div>
+      <div id="speechEnd2" class="speech" style="margin-bottom: 20px"></div>
+      <div id="speechEnd3" class="speech"></div>
+      <div class="button-text" id="buttonReStart" onclick="restart()">
+        Rejouer
       </div>
     </div>
-    <!-- <button onclick="solvEnigme('e1')">Réussir</button>
+    <div
+      class="button button-doc"
+      id="buttonDoc"
+      onclick='screenCall("doc"); resetDoc()'
+    ></div>
+    <div id="exitButton" class="button button-exit" onclick="exit()"></div>
+  </body>
+
+  <!-- <script type="text/javascript" src="visitCounter/visitCounter.js"></script> -->
+  <script type="text/javascript" src="transitionGraph.js"></script>
+  <script type="text/javascript" src="iaSpeech.js"></script>
+  <!-- <script type="text/javascript" src="html2canvas.min.js"></script> -->
+  <script type="text/javascript" src="loading.js"></script>
+  <!-- <script type="text/javascript" src="introGraph.js"></script> -->
+  <script type="text/javascript" src="iaGraph.js"></script>
+  <script type="text/javascript" src="doc.js"></script>
+  <script type="text/javascript" src="enigme.js"></script>
+  <script type="text/javascript" src="missions.js"></script>
+  <script type="text/javascript" src="endGame.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="progress.js"></script>
+
+  <div id="enigmeCollection">
+    <div id="e1" doc="aerodynamisme">
+      <h2>Observation</h2>
+      <div class="game-content">
+        Il y a dans cette image un élément qui a inspiré l'homme. Click dessus
+        pour faire avancer ta mission.
+        <div class="game-zone zone-e1">
+          <!-- <img src="imgGame/martin-pecheur.jpg" alt="" class="img100" /> -->
+          <div class="click-line">
+            <div onclick="solvEnigme('e1')" class="click-zone"></div>
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+          </div>
+          <div class="click-line">
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+          </div>
+          <div class="click-line">
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+            <div onclick="failEnigme('e1')" class="click-zone"></div>
+          </div>
+        </div>
+      </div>
+      <!-- <button onclick="solvEnigme('e1')">Réussir</button>
       <button onclick="failEnigme('e1')">Echouer</button> -->
-  </div>
-  <div id="e2" doc="transportsGES">
-    <h2 class="img-title title-e2"></h2>
-    <!-- <h2 class="img-title title-e2"><img src="imgGame/cars.png" alt="" class="img100" /></h2> -->
-    <div>Quelle est la part d’émissions de gaz à effet de serre liée aux transports ?</div>
-    <!-- <div> <input type="radio" id="e2-1" name="e2-answer" value="e2-1">5%</div>
+    </div>
+    <div id="e2" doc="transportsGES">
+      <h2 class="img-title title-e2"></h2>
+      <!-- <h2 class="img-title title-e2"><img src="imgGame/cars.png" alt="" class="img100" /></h2> -->
+      <div>
+        Quelle est la part d’émissions de gaz à effet de serre liée aux
+        transports ?
+      </div>
+      <!-- <div> <input type="radio" id="e2-1" name="e2-answer" value="e2-1">5%</div>
       <div> <input type="radio" id="e2-2" name="e2-answer" value="e2-2">15%</div>
       <div> <input type="radio" id="e2-3" name="e2-answer" value="e2-3">25%</div>
       <div> <input type="radio" id="e2-4" name="e2-answer" value="e2-4">33%</div> -->
-    <div class="click-line">
-      <div onclick="failEnigme('e2')" class="button-text">5%</div>
-      <div onclick="failEnigme('e2')" class="button-text">15%</div>
+      <div class="click-line">
+        <div onclick="failEnigme('e2')" class="button-text">5%</div>
+        <div onclick="failEnigme('e2')" class="button-text">15%</div>
+      </div>
+      <div class="click-line">
+        <div onclick="solvEnigme('e2')" class="button-text">25%</div>
+        <div onclick="failEnigme('e2')" class="button-text">33%</div>
+      </div>
     </div>
-    <div class="click-line">
-      <div onclick="solvEnigme('e2')" class="button-text">25%</div>
-      <div onclick="failEnigme('e2')" class="button-text">33%</div>
+    <div id="e3" doc="microlatisse">
+      <h2 class="img-title title-e3"></h2>
+      <!-- <h2><img src="imgGame/microlatisse.png" alt="" class="img100" /></h2> -->
+      <div>
+        De quoi s’inspire le micro-lattice, le matériau le plus léger du monde,
+        composé à 99,99% d’air ?
+      </div>
+      <div onclick="solvEnigme('e3')" class="button-text button-text-small">
+        Les alvéoles des os humains
+      </div>
+      <div onclick="failEnigme('e3')" class="button-text button-text-small">
+        La fibre des plumes d’oiseaux
+      </div>
+      <div onclick="failEnigme('e3')" class="button-text button-text-small">
+        Le fil de la toile d’araignée
+      </div>
+      <div onclick="failEnigme('e3')" class="button-text button-text-small">
+        Du balsa (un bois ultra-léger)
+      </div>
+    </div>
+    <div id="e4" doc="labyrinthe">
+      <h2 class="img-title title-e4"></h2>
+      <!-- <h2><img src="imgGame/labyrinthe.png" alt="" class="img100" /></h2> -->
+      <div>
+        Qui a réussi à reproduire le réseau du métro de Tokyo en trouvant le
+        chemin le plus court vers la sortie d’un labyrinthe ?
+      </div>
+      <div onclick="failEnigme('e4')" class="button-text button-text-small">
+        Le Rat
+      </div>
+      <div onclick="solvEnigme('e4')" class="button-text button-text-small">
+        Le Blob
+      </div>
+      <div onclick="failEnigme('e4')" class="button-text button-text-small">
+        Le Cafard
+      </div>
+      <div onclick="failEnigme('e4')" class="button-text button-text-small">
+        La Fourmi
+      </div>
+    </div>
+    <div id="e5" doc="felin">
+      <h2 class="img-title title-e5"></h2>
+      <!-- <h2><img src="imgGame/tigre.jpg" alt="" class="img100" /></h2> -->
+      <div>Qu’est-ce qui permet aux tigres d’être aussi silencieux ?</div>
+      <div onclick="failEnigme('e5')" class="button-text button-text-small">
+        Leur souplesse
+      </div>
+      <div onclick="failEnigme('e5')" class="button-text button-text-small">
+        Leur silhouette ergonomique
+      </div>
+      <div onclick="solvEnigme('e5')" class="button-text button-text-small">
+        Les coussinets sous leurs pattes
+      </div>
+      <div onclick="failEnigme('e5')" class="button-text button-text-small">
+        Leur pelage
+      </div>
+    </div>
+    <div id="e6" doc="chouette">
+      <h2 class="img-title title-e6"></h2>
+      <!-- <h2><img src="imgGame/chouette.png" alt="" class="img100" /></h2> -->
+      <div>Pourquoi la chouette est-il le rapace le plus silencieux?</div>
+      <div onclick="failEnigme('e6')" class="button-text button-text-small">
+        Grâce à son aérodynamisme
+      </div>
+      <div onclick="solvEnigme('e6')" class="button-text button-text-small">
+        Grâce à son plumage tout doux
+      </div>
+      <div onclick="failEnigme('e6')" class="button-text button-text-small">
+        Grâce à son vol géothermique
+      </div>
+      <div onclick="failEnigme('e6')" class="button-text button-text-small">
+        Grâce à ses talents de ninja
+      </div>
+    </div>
+    <div id="e7" doc="libellule">
+      <h2 class="img-title title-e7"></h2>
+      <!-- <h2><img src="imgGame/libellule.jpg" alt="" class="img100" /></h2> -->
+      <div>
+        Combien de foyers une éolienne de 1,8 mégawatt peut-elle fournir en
+        électricité en moyenne par an ?
+      </div>
+      <div onclick="failEnigme('e7')" class="button-text button-text-small">
+        350 foyers
+      </div>
+      <div onclick="solvEnigme('e7')" class="button-text button-text-small">
+        1000 foyers
+      </div>
+      <div onclick="failEnigme('e7')" class="button-text button-text-small">
+        3000 foyers
+      </div>
+      <div onclick="failEnigme('e7')" class="button-text button-text-small">
+        12000 foyers
+      </div>
+    </div>
+    <div id="e8" doc="baleine">
+      <h2 class="img-title title-e8"></h2>
+      <!-- <h2><img src="imgGame/baleine.jpg" alt="" class="img100" /></h2> -->
+      <div>
+        Les baleines à bosse sont particulièrement agile sous l’eau grâce à leur
+        bosse.
+      </div>
+      <div onclick="failEnigme('e8')" class="button-text button-text-small">
+        Vrai
+      </div>
+      <div onclick="solvEnigme('e8')" class="button-text button-text-small">
+        Faux
+      </div>
+    </div>
+    <div id="e9" doc="biolum">
+      <h2 class="img-title title-e9"></h2>
+      <!-- <h2><img src="imgGame/biolum.jpg" alt="" class="img100" /></h2> -->
+      <div>
+        Quel phénomène naturel permet d’éclairer vos promenades nocturnes au
+        contact de l’eau sur certaines plages du monde ?
+      </div>
+      <div onclick="failEnigme('e9')" class="button-text button-text-small">
+        La fluorescence
+      </div>
+      <div onclick="solvEnigme('e9')" class="button-text button-text-small">
+        La bioluminescence
+      </div>
+      <div onclick="failEnigme('e9')" class="button-text button-text-small">
+        La phosphorescence
+      </div>
+    </div>
+    <div id="e10" doc="tournesol">
+      <h2 class="img-title title-e10"></h2>
+      <!-- <h2><img src="imgGame/tournesol.jpg" alt="" class="img100" /></h2> -->
+      <div>
+        Le mouvement de la fleur de tournesol est lié à une hormone de
+        croissance qui se concentre à l’ombre de la tige la faisant pousser plus
+        vite que la partie ensoleillée. Cela crée un déséquilibre qui courbe la
+        tige vers le soleil.
+      </div>
+      <div onclick="solvEnigme('e10')" class="button-text button-text-small">
+        Vrai
+      </div>
+      <div onclick="failEnigme('e10')" class="button-text button-text-small">
+        Faux
+      </div>
+    </div>
+    <div id="e11" doc="pommeDePin">
+      <h2 class="img-title title-e11"></h2>
+      <!-- <h2><img src="imgGame/h2o.jpg" alt="" class="img100" /></h2> -->
+      <div>Quel fruit est capable de réguler son humidité ?</div>
+      <div onclick="failEnigme('e11')" class="button-text button-text-small">
+        <img src="imgGame/physalis.jpg" alt="" class="img100" />La physalis
+      </div>
+      <div onclick="solvEnigme('e11')" class="button-text button-text-small">
+        <img src="imgGame/pommedepin.jpg" alt="" class="img100" />La pomme de
+        pin
+      </div>
+      <div onclick="failEnigme('e11')" class="button-text button-text-small">
+        <img src="imgGame/chataigne.jpg" alt="" class="img100" />La chataigne
+      </div>
+    </div>
+    <div id="e12" doc="microalgues">
+      <h2 class="img-title title-e12"></h2>
+      <!-- <h2><img src="imgGame/microalgues.jpg" alt="" class="img100" /></h2> -->
+      <div>
+        Les micro-algues ont une efficacité de dépollution allant jusqu’à 40% .
+      </div>
+      <div onclick="failEnigme('e12')" class="button-text button-text-small">
+        Vrai
+      </div>
+      <div onclick="solvEnigme('e12')" class="button-text button-text-small">
+        Faux
+      </div>
+    </div>
+    <div id="e13" doc="carbonate">
+      <br />
+      <div>Lequel de ces éléments contient du carbonate de calcium ?</div>
+      <div onclick="failEnigme('e13')" class="button-text button-text-small">
+        <img src="imgGame/coquillage.jpg" alt="" class="img100" />Les
+        coquillages
+      </div>
+      <div onclick="failEnigme('e13')" class="button-text button-text-small">
+        <img src="imgGame/calcaire.jpg" alt="" class="img100" />Le calcaire
+      </div>
+      <div onclick="failEnigme('e13')" class="button-text button-text-small">
+        <img src="imgGame/corail.jpg" alt="" class="img100" />Le corail
+      </div>
+      <div onclick="solvEnigme('e13')" class="button-text button-text-small">
+        Tous
+      </div>
+    </div>
+    <div id="e14" doc="termitiere">
+      <h2 class="img-title title-e14"></h2>
+      <div>
+        De quelle habitat d'insecte s'inspire l'Eastgate building au Zimbabwe ?
+      </div>
+      <div onclick="failEnigme('e14')" class="button-text button-text-small">
+        D'une ruche
+      </div>
+      <div onclick="failEnigme('e14')" class="button-text button-text-small">
+        D'une fourmilière
+      </div>
+      <div onclick="failEnigme('e14')" class="button-text button-text-small">
+        D'une coquille d'escargot
+      </div>
+      <div onclick="solvEnigme('e14')" class="button-text button-text-small">
+        D'une termitière
+      </div>
+    </div>
+    <div id="e15" doc="araignée">
+      <h2 class="img-title title-e15"></h2>
+      <!-- <h2><img src="imgGame/microalgues.jpg" alt="" class="img100" /></h2> -->
+      <div>
+        Quelles types de caractéristiques possèdent une toile d’araignée ?
+      </div>
+      <div onclick="failEnigme('e15')" class="button-text button-text-small">
+        Hyper-solide, étanche, insonorisant
+      </div>
+      <div onclick="solvEnigme('e15')" class="button-text button-text-small">
+        Hyper-solide, insonorisant, antisismique
+      </div>
+      <div onclick="failEnigme('e15')" class="button-text button-text-small">
+        Hyper-solide, auto-régénérant, multicolor
+      </div>
+    </div>
+    <div id="e16" doc="impactBruit">
+      <h2 class="img-title title-e16"></h2>
+      <!-- <h2><img src="imgGame/microalgues.jpg" alt="" class="img100" /></h2> -->
+      <div>
+        Quels sont les impacts de la pollution sonore sur le corps humain ?
+      </div>
+      <div onclick="failEnigme('e15')" class="button-text button-text-small">
+        Stress, bourdonnement d’oreille, asthme, fatigue
+      </div>
+      <div onclick="failEnigme('e15')" class="button-text button-text-small">
+        Stress, diabète, crise cardiaque
+      </div>
+      <div onclick="solvEnigme('e15')" class="button-text button-text-small">
+        Stress, perte de mémoire, crise cardiaque, fatigue
+      </div>
+    </div>
+    <div id="e17" doc="mycellium">
+      <h2 class="img-title title-e17"></h2>
+      <div>Qu’est-ce que le mycélium ?</div>
+      <div onclick="failEnigme('e17')" class="button-text button-text-small">
+        Le chapeau des champignons7
+      </div>
+      <div onclick="failEnigme('e17')" class="button-text button-text-small">
+        La tige des champignons
+      </div>
+      <div onclick="solvEnigme('e17')" class="button-text button-text-small">
+        Le blanc des champignons
+      </div>
+      <div onclick="failEnigme('e17')" class="button-text button-text-small">
+        Les racines des champignon7
+      </div>
+    </div>
+    <div id="e18" doc="aquaporines">
+      <h2 class="img-title title-e18"></h2>
+      <div>Quelle utilisation peut-on faire des aquaporines ?</div>
+      <div onclick="failEnigme('e18')" class="button-text button-text-small">
+        Dépollution de l’eau
+      </div>
+      <div onclick="failEnigme('e18')" class="button-text button-text-small">
+        Dépollution de l’air
+      </div>
+      <div onclick="solvEnigme('e18')" class="button-text button-text-small">
+        Dépollution des sols
+      </div>
     </div>
   </div>
-  <div id="e3" doc="microlatisse">
-    <h2 class="img-title title-e3"></h2>
-    <!-- <h2><img src="imgGame/microlatisse.png" alt="" class="img100" /></h2> -->
-    <div>De quoi s’inspire le micro-lattice, le matériau le plus léger du monde, composé à 99,99% d’air ?</div>
-    <div onclick="solvEnigme('e3')" class="button-text button-text-small">Les alvéoles des os humains</div>
-    <div onclick="failEnigme('e3')" class="button-text button-text-small">La fibre des plumes d’oiseaux</div>
-    <div onclick="failEnigme('e3')" class="button-text button-text-small">Le fil de la toile d’araignée</div>
-    <div onclick="failEnigme('e3')" class="button-text button-text-small">Du balsa (un bois ultra-léger)</div>
-  </div>
-  <div id="e4" doc="labyrinthe">
-    <h2 class="img-title title-e4"></h2>
-    <!-- <h2><img src="imgGame/labyrinthe.png" alt="" class="img100" /></h2> -->
-    <div>Qui a réussi à reproduire le réseau du métro de Tokyo en trouvant le chemin le plus court vers la sortie d’un
-      labyrinthe ?</div>
-    <div onclick="failEnigme('e4')" class="button-text button-text-small">Le Rat</div>
-    <div onclick="solvEnigme('e4')" class="button-text button-text-small">Le Blob</div>
-    <div onclick="failEnigme('e4')" class="button-text button-text-small">Le Cafard</div>
-    <div onclick="failEnigme('e4')" class="button-text button-text-small">La Fourmi</div>
-  </div>
-  <div id="e5" doc="felin">
-    <h2 class="img-title title-e5"></h2>
-    <!-- <h2><img src="imgGame/tigre.jpg" alt="" class="img100" /></h2> -->
-    <div>Qu’est-ce qui permet aux tigres d’être aussi silencieux ?</div>
-    <div onclick="failEnigme('e5')" class="button-text button-text-small">Leur souplesse</div>
-    <div onclick="failEnigme('e5')" class="button-text button-text-small">Leur silhouette ergonomique</div>
-    <div onclick="solvEnigme('e5')" class="button-text button-text-small">Les coussinets sous leurs pattes</div>
-    <div onclick="failEnigme('e5')" class="button-text button-text-small">Leur pelage</div>
-  </div>
-  <div id="e6" doc="chouette">
-    <h2 class="img-title title-e6"></h2>
-    <!-- <h2><img src="imgGame/chouette.png" alt="" class="img100" /></h2> -->
-    <div>Pourquoi la chouette est-il le rapace le plus silencieux?</div>
-    <div onclick="failEnigme('e6')" class="button-text button-text-small">Grâce à son aérodynamisme</div>
-    <div onclick="solvEnigme('e6')" class="button-text button-text-small">Grâce à son plumage tout doux</div>
-    <div onclick="failEnigme('e6')" class="button-text button-text-small">Grâce à son vol géothermique</div>
-    <div onclick="failEnigme('e6')" class="button-text button-text-small">Grâce à ses talents de ninja</div>
-  </div>
-  <div id="e7" doc="libellule">
-    <h2 class="img-title title-e7"></h2>
-    <!-- <h2><img src="imgGame/libellule.jpg" alt="" class="img100" /></h2> -->
-    <div>Combien de foyers une éolienne de 1,8 mégawatt peut-elle fournir en électricité en moyenne par an ?</div>
-    <div onclick="failEnigme('e7')" class="button-text button-text-small">350 foyers</div>
-    <div onclick="solvEnigme('e7')" class="button-text button-text-small">1000 foyers</div>
-    <div onclick="failEnigme('e7')" class="button-text button-text-small">3000 foyers</div>
-    <div onclick="failEnigme('e7')" class="button-text button-text-small">12000 foyers</div>
-  </div>
-  <div id="e8" doc="baleine">
-    <h2 class="img-title title-e8"></h2>
-    <!-- <h2><img src="imgGame/baleine.jpg" alt="" class="img100" /></h2> -->
-    <div>Les baleines à bosse sont particulièrement agile sous l’eau grâce à leur bosse.</div>
-    <div onclick="failEnigme('e8')" class="button-text button-text-small">Vrai</div>
-    <div onclick="solvEnigme('e8')" class="button-text button-text-small">Faux</div>
-  </div>
-  <div id="e9" doc="biolum">
-    <h2 class="img-title title-e9"></h2>
-    <!-- <h2><img src="imgGame/biolum.jpg" alt="" class="img100" /></h2> -->
-    <div>Quel phénomène naturel permet d’éclairer vos promenades nocturnes au contact de l’eau sur certaines plages du
-      monde ?</div>
-    <div onclick="failEnigme('e9')" class="button-text button-text-small">La fluorescence</div>
-    <div onclick="solvEnigme('e9')" class="button-text button-text-small">La bioluminescence</div>
-    <div onclick="failEnigme('e9')" class="button-text button-text-small">La phosphorescence</div>
-  </div>
-  <div id="e10" doc="tournesol">
-    <h2 class="img-title title-e10"></h2>
-    <!-- <h2><img src="imgGame/tournesol.jpg" alt="" class="img100" /></h2> -->
-    <div>Le mouvement de la fleur de tournesol est lié à une hormone de croissance qui se concentre à l’ombre de la tige
-      la faisant pousser plus vite que la partie ensoleillée. Cela crée un déséquilibre qui courbe la tige vers le
-      soleil.</div>
-    <div onclick="solvEnigme('e10')" class="button-text button-text-small">Vrai</div>
-    <div onclick="failEnigme('e10')" class="button-text button-text-small">Faux</div>
-  </div>
-  <div id="e11" doc="pommeDePin">
-    <h2 class="img-title title-e11"></h2>
-    <!-- <h2><img src="imgGame/h2o.jpg" alt="" class="img100" /></h2> -->
-    <div>Quel fruit est capable de réguler son humidité ?</div>
-    <div onclick="failEnigme('e10')" class="button-text button-text-small"><img src="imgGame/physalis.jpg" alt=""
-        class="img100" />La physalis</div>
-    <div onclick="solvEnigme('e10')" class="button-text button-text-small"><img src="imgGame/pommedepin.jpg" alt=""
-        class="img100" />La pomme de pin</div>
-    <div onclick="failEnigme('e10')" class="button-text button-text-small"><img src="imgGame/chataigne.jpg" alt=""
-        class="img100" />La chataigne</div>
-  </div>
-  <div id="e12" doc="microalgues">
-    <h2 class="img-title title-e12"></h2>
-    <!-- <h2><img src="imgGame/microalgues.jpg" alt="" class="img100" /></h2> -->
-    <div>Les micro-algues ont une efficacité de dépollution allant jusqu’à 40% .</div>
-    <div onclick="failEnigme('e12')" class="button-text button-text-small">Vrai</div>
-    <div onclick="solvEnigme('e12')" class="button-text button-text-small">Faux</div>
-  </div>
-  <div id="e13">
-    <h2>Enigme 13</h2>
-    <button onclick="solvEnigme('e1')">Réussir</button>
-    <button onclick="failEnigme('e1')">Echouer</button>
-  </div>
-  <div id="e14">
-    <h2>Enigme 14</h2>
-    <button onclick="solvEnigme('e1')">Réussir</button>
-    <button onclick="failEnigme('e1')">Echouer</button>
-  </div>
-  <div id="e15">
-    <h2>Enigme 15</h2>
-    <button onclick="solvEnigme('e1')">Réussir</button>
-    <button onclick="failEnigme('e1')">Echouer</button>
-  </div>
-</div>
-
 </html>

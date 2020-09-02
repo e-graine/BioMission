@@ -479,8 +479,7 @@ h3 {
 }
 
 .img-title {
-  height: 150px;
-  /* width: 100%; */
+  height: 350px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -527,6 +526,26 @@ h3 {
 
 .title-e12 {
   background-image: url(imgGame/microalgues.jpg);
+}
+
+.title-e14 {
+  background-image: url(imgGame/eastgate.jpg);
+}
+
+.title-e15 {
+  background-image: url(imgGame/araignee.jpg);
+}
+
+.title-e16 {
+  background-image: url(imgGame/bruit.jpg);
+}
+
+.title-e17 {
+  background-image: url(imgGame/mycellium.jpg);
+}
+
+.title-e18 {
+  background-image: url(imgGame/aquaporines.jpg);
 }
 
 .img100 {
@@ -588,5 +607,11 @@ h3 {
 
   .win-rate {
     font-size: 20vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .img-title {
+    height: 200px;
   }
 }

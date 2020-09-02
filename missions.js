@@ -33,15 +33,15 @@ var missions = {
   },
   Bruit: {
     icon: "ui/noise.svg",
-    enigmes: ["e6", "e5"],
+    enigmes: ["e16", "e6", "e5", "e15"],
   },
   Habitat: {
     icon: "ui/habitat.svg",
-    enigmes: ["e11", "e12", "e5", "e6", "e7"],
+    enigmes: ['e15', "e11", "e12", "e13", "e14"],
   },
   Dépollution: {
     icon: "ui/depollution.svg",
-    enigmes: ["e11", "e9"],
+    enigmes: ["e18", "e12", "e17", "e11", "e9"],
   },
 };
 
