@@ -139,7 +139,8 @@ var endGameSpeech3 = [
 function iaSpeaking(speech, speechName, specialSpeech) {
 
     gameStatus.speech = speech;
-    gameStatus.speechLine = speech.shift().split(" ");
+    // gameStatus.speechLine = speech.shift();
+    gameStatus.speechLine = speech.shift().split("");
     gameStatus.speechBox = document.getElementById('iaSpeech');
     if (specialSpeech) gameStatus.speechBox = document.getElementById(specialSpeech);
     gameStatus.speechBox.innerHTML = '';
@@ -148,14 +149,15 @@ function iaSpeaking(speech, speechName, specialSpeech) {
 
 }
 
-function writer(word) {
-    gameStatus.speechBox.innerHTML += word + " ";
+function writer(letter) {
+    // gameStatus.speechBox.innerHTML += word + " ";
+    gameStatus.speechBox.innerHTML += letter;
     if (gameStatus.speechLine.length > 0) {
         setTimeout(function () {
             writer(gameStatus.speechLine.shift());
-        }, 100)
+        }, 30)
     } else if (gameStatus.speech.length > 0) {
-        gameStatus.speechLine = gameStatus.speech.shift().split(" ");
+        gameStatus.speechLine = gameStatus.speech.shift().split("");
         setTimeout(function () {
             gameStatus.speechBox.innerHTML = '';
             writer(gameStatus.speechLine.shift());
