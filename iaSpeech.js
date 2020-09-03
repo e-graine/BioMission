@@ -1,8 +1,8 @@
 var introSpeech = [
-  "Le joueur découvre l’univers dans lequel il est plongé :",
-  "Une intelligence artificielle d’aide à la décision  est élaborée par les pouvoirs publics locaux.",
-  "A 1/2 heure de son activation, l’I.A prends l’initiative d’étendre ses connaissances",
-  "en s’adressant à un public peu mis à contribution dans la recherche de solution : les moins de 18 ans.",
+    "Le joueur découvre l’univers dans lequel il est plongé :",
+    "Une intelligence artificielle d’aide à la décision  est élaborée par les pouvoirs publics locaux.",
+    "A 1/2 heure de son activation, l’I.A prends l’initiative d’étendre ses connaissances",
+    "en s’adressant à un public peu mis à contribution dans la recherche de solution : les moins de 18 ans.",
 ];
 
 // var welcomeSpeech = [
@@ -16,16 +16,23 @@ var introSpeech = [
 //     'Qui s\'illumine à la découverte d\'un nouvel indice',
 // ]
 
+// var alertSpeech = [
+//     "Système en surcharge ! ",
+//     "L’ordinateur a détecté une quantité trop importante de défis à résoudre.",
+//     "Crash du système prévu dans 30 minutes… ",
+//     "Et si la solution était dans la Nature ? ",
+// ];
+
 var welcomeSpeech = [
-  "! ALERTE ! ",
-  "Système en surcharge ! ",
-  "L’ordinateur a détecté une quantité trop importante de défis à résoudre.",
-  "Crash du système prévu dans 30 minutes… ",
-  "Et si la solution était dans la Nature ? ",
-  'Réponds vite aux défis cliquant sur <br><img/src="ui/missions.svg"/>',
-  'Trouves des indices en cliquant sur <br><img/src="ui/doc.svg"/>',
-  "Je compte sur toi... ",
-  "nous n’avons plus de temps à perdre !",
+    "! Alert !",
+    "Système en surcharge ! ",
+    "L’ordinateur a détecté une quantité trop importante de défis à résoudre.",
+    "Crash du système prévu dans 30 minutes… ",
+    "Et si la solution était dans la Nature ? ",
+    'Réponds vite aux défis cliquant sur <br><img/src="ui/missions.svg"/>',
+    'Trouves des indices en cliquant sur <br><img/src="ui/doc.svg"/>',
+    "Je compte sur toi... ",
+    "nous n’avons plus de temps à perdre !",
 ];
 
 // var welcomeSpeech2 = [
@@ -65,12 +72,12 @@ var endGameSpeech1 = ["Merci humain,"];
 var endGameSpeech2 = [];
 
 var endGameSpeech3 = [
-  "La symbiose est l'association biologique, ",
-  "durable et réciproquement profitable,",
-  "entre deux organismes vivants.",
-  "",
-  "Nous reviendrons de voir,",
-  "si tu le souhaite",
+    "La symbiose est l'association biologique, ",
+    "durable et réciproquement profitable,",
+    "entre deux organismes vivants.",
+    "",
+    "Nous reviendrons de voir,",
+    "si tu le souhaite",
 ];
 
 // function iaSpeaking(speech, speechName, specialSpeech) {
@@ -126,32 +133,31 @@ var endGameSpeech3 = [
 // }
 
 function iaSpeaking(speech, speechName, specialSpeech) {
-  gameStatus.speech = speech;
-  gameStatus.speechLine = speech.shift().split(" ");
-  gameStatus.speechBox = document.getElementById("iaSpeech");
-  if (specialSpeech)
-    gameStatus.speechBox = document.getElementById(specialSpeech);
-  gameStatus.speechBox.innerHTML = "";
-  gameStatus.speechName = speechName;
-  writer(gameStatus.speechLine.shift());
+    gameStatus.speech = speech;
+    gameStatus.speechLine = speech.shift().split(" ");
+    gameStatus.speechBox = document.getElementById("iaSpeech");
+    if (specialSpeech)
+        gameStatus.speechBox = document.getElementById(specialSpeech);
+    gameStatus.speechBox.innerHTML = "";
+    gameStatus.speechName = speechName;
+    writer(gameStatus.speechLine.shift());
 }
 
 function writer(word) {
-  gameStatus.speechBox.innerHTML += word + " ";
-
-  if (gameStatus.speechLine.length > 0) {
-    setTimeout(function () {
-      writer(gameStatus.speechLine.shift());
-    }, 50);
-  } else if (gameStatus.speech.length > 0) {
-    gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-    var timer = gameStatus.speechLine.length * 500;
-    setTimeout(function () {
-      gameStatus.speechBox.innerHTML = "";
-      writer(gameStatus.speechLine.shift());
-    }, timer);
-  } else {
-    endStep(gameStatus.speechName);
-    gameStatus.speechName = "";
-  }
+    gameStatus.speechBox.innerHTML += word + " ";
+    if (gameStatus.speechLine.length > 0) {
+        setTimeout(function () {
+            writer(gameStatus.speechLine.shift());
+        }, 50);
+    } else if (gameStatus.speech.length > 0) {
+        gameStatus.speechLine = gameStatus.speech.shift().split(" ");
+        var timer = gameStatus.speechLine.length * 500;
+        setTimeout(function () {
+            gameStatus.speechBox.innerHTML = "";
+            writer(gameStatus.speechLine.shift());
+        }, timer);
+    } else {
+        endStep(gameStatus.speechName);
+        gameStatus.speechName = "";
+    }
 }

@@ -111,18 +111,11 @@ form {
   /* align-content: center; */
 }
 
-/* .doc {
-  display: flex;
-  flex-direction: column;
-} */
-
 .container {
   width: 90vw;
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* margin-top: 20vh; */
 }
 
 .enigme-container {
@@ -133,7 +126,6 @@ h2 {
   padding-bottom: 1vw;
   border-bottom: 1px solid white;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -184,6 +176,24 @@ h3 {
   align-items: center; */
 }
 
+.alert-screen {
+  animation: red-alert 1s infinite;
+}
+
+@keyframes red-alert {
+  0% {
+    background-color: black;
+  }
+
+  50% {
+    background-color: red;
+  }
+
+  100% {
+    background-color: black;
+  }
+}
+
 .board {
   display: flex;
   justify-content: center;
@@ -218,36 +228,86 @@ h3 {
   margin: 10px;
 }
 
-
 .ia-speech {
   top: 50%;
   position: absolute;
   width: 80vw;
 }
 
-.loading-speech {
-  top: 5%;
-  position: absolute;
-  width: 80vw;
-  font-size: smaller;
-}
-
-.loading-speech div {
-  margin: 20px;
-}
-
-.click-speech {
-  display: none;
-  animation: blinker 1s linear infinite;
-}
-
 .enigme-speech {
   margin-top: 30vh;
+}
+
+.alert-speech {
+  display: flex;
+  /* width: 80vw; */
+  /* width: 80vw; */
+  background-image: url(ui/alert.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+}
+
+/* 
+.alert-text {
+  top: 30%;
+  position: absolute;
+  animation: blinker 1s linear infinite;
+  height: 5vw;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.alert-picto {
+  top: 30%;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  min-width: 50px;
+  min-height: 50px;
+  background-color: red;
+  box-shadow: 0px 0px 2vw red, 0px 0px 4vw red, 0px 0px 6vw red;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 10px;
+  opacity: 0%;
+  animation: blinker2 1s linear infinite;
+}
+
+.alert-speech {
+  top: 50%;
+  position: absolute;
+}
+
+.blink-speech {
+  animation: blinker 1s linear infinite;
+  /* margin: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2vw red, 0px 0px 4vw red, 0px 0px 6vw red; */
+}
+
+.blink-picto {
+  animation: blinker2 1s linear infinite;
+  /* margin: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2vw red, 0px 0px 4vw red, 0px 0px 6vw red; */
 }
 
 @keyframes blinker {
   50% {
     opacity: 0;
+
+  }
+}
+
+@keyframes blinker2 {
+  50% {
+    opacity: 100%;
+
   }
 }
 
@@ -276,6 +336,18 @@ h3 {
 
 #loading span {
   padding: 0 2vw;
+}
+
+.loading-speech {
+  top: 10%;
+  position: absolute;
+  width: 80vw;
+}
+
+.loading-title {
+  font-family: Consolas, Courier, monospace;
+  font-size: 30px;
+  margin: 50px;
 }
 
 .progress-zone {

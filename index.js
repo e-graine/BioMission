@@ -20,8 +20,8 @@ var gameStatus = {
 // setTimeout(function () {
 //     endStep('rattrapage');
 // }, 2000);
-endStep("transitionIntro");
-// endStep("openApp");
+// endStep("transitionIntro");
+endStep("openApp");
 
 function endStep(step) {
   gameStatus.step = step;
@@ -44,7 +44,7 @@ function endStep(step) {
       break;
     case "transitionIntro":
       screenDisplay("board");
-      addDocInGame(data.biomimetisme);
+      // addDocInGame(data.biomimetisme);
       setTimeout(function () {
         iaGraphFct(2);
       }, 500);
@@ -52,8 +52,18 @@ function endStep(step) {
         iaSpeaking(welcomeSpeech, "welcomeSpeech");
       }, 1000);
       break;
+      // case "alertSpeech":
+      //   // screenCall("board");
+      //   // addDocInGame(data.biomimetisme);
+      //   document.getElementById('alertText').style.display = 'none';
+      //   setTimeout(function () {
+      //     iaSpeaking(welcomeSpeech, "welcomeSpeech");
+      //   }, 1000);
+      //   break;
     case "welcomeSpeech":
-
+      document.getElementById('alertPicto').style.display = 'none';
+      addDocInGame(data.biomimetisme);
+      document.getElementById("buttonMissions").classList.add("button-pulse");
       // iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
       break;
       // case "tutoDoc":
