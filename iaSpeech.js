@@ -22,8 +22,8 @@ var welcomeSpeech = [
     'L’ordinateur a détecté une quantité trop importante de défis à résoudre.',
     'Crash du système prévu dans 30 minutes… ',
     'Et si la solution était dans la Nature ? ',
-    'Réponds vite aux défis cliquant sur le bouton en haut à droite. ',
-    'Trouves des indices dans ma base de donnée en haut à gauche',
+    'Réponds vite aux défis cliquant sur <br><img/src="ui/missions.svg"/>',
+    'Trouves des indices en cliquant sur <br><img/src="ui/doc.svg"/>',
     'Je compte sur toi... ',
     'nous n’avons plus de temps à perdre !'
 ]
@@ -139,30 +139,29 @@ var endGameSpeech3 = [
 function iaSpeaking(speech, speechName, specialSpeech) {
 
     gameStatus.speech = speech;
-    // gameStatus.speechLine = speech.shift();
-    gameStatus.speechLine = speech.shift().split("");
+    gameStatus.speechLine = speech.shift().split(" ");
     gameStatus.speechBox = document.getElementById('iaSpeech');
     if (specialSpeech) gameStatus.speechBox = document.getElementById(specialSpeech);
     gameStatus.speechBox.innerHTML = '';
     gameStatus.speechName = speechName;
     writer(gameStatus.speechLine.shift());
-
 }
 
-function writer(letter) {
-    // gameStatus.speechBox.innerHTML += word + " ";
-    gameStatus.speechBox.innerHTML += letter;
+function writer(word) {
+    gameStatus.speechBox.innerHTML += word + " ";
+
     if (gameStatus.speechLine.length > 0) {
         setTimeout(function () {
             writer(gameStatus.speechLine.shift());
-        }, 30)
+        }, 150)
     } else if (gameStatus.speech.length > 0) {
-        gameStatus.speechLine = gameStatus.speech.shift().split("");
+        gameStatus.speechLine = gameStatus.speech.shift().split(" ");
         setTimeout(function () {
             gameStatus.speechBox.innerHTML = '';
             writer(gameStatus.speechLine.shift());
         }, 2000)
     } else {
         endStep(gameStatus.speechName);
+        gameStatus.speechName = "";
     }
 }

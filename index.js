@@ -93,6 +93,7 @@ function endStep(step) {
       document.getElementById("buttonReStart").classList.add("button-pulse");
       break;
     default:
+      break;
       // console.log("step bug with " + step);
   }
 }

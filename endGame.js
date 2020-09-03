@@ -5,6 +5,7 @@ function ending() {
 
     if (gameStatus.numEnigme < gameStatus.dataEnigmes.length) {
         displayEnigme();
+        screenCall("enigme");
         return;
     }
 
@@ -35,7 +36,7 @@ function ending() {
             // document.getElementById(mission).style.display = "none";
         }
     }
-    screenDisplay("board");
+    screenCall("board");
     if (Object.keys(missions).length !== 0) {
         iaSpeaking(nextMissionSpeech);
     } else {
