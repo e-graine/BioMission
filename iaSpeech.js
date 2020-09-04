@@ -26,11 +26,12 @@ var introSpeech = [
 var welcomeSpeech = [
     "! Alert !",
     "Système en surcharge ! ",
-    "L’ordinateur a détecté une quantité trop importante de défis à résoudre.",
+    "Trop de défis à résoudre...",
+    "L’IA est incapable de réaliser la symbiose",
     "Crash du système prévu dans 30 minutes… ",
     "Et si la solution était dans la Nature ? ",
-    'Réponds vite aux défis cliquant sur <br><img/src="ui/missions.svg"/>',
-    'Trouves des indices en cliquant sur <br><img/src="ui/doc.svg"/>',
+    'Résous les défis de l’IA en cliquant sur : <br><img/src="ui/missions.svg"/>',
+    'Trouves des indices dans la database : <br><img/src="ui/doc.svg"/>',
     "Je compte sur toi... ",
     "nous n’avons plus de temps à perdre !",
 ];
@@ -144,20 +145,38 @@ function iaSpeaking(speech, speechName, specialSpeech) {
 }
 
 function writer(word) {
-    gameStatus.speechBox.innerHTML += word + " ";
-    if (gameStatus.speechLine.length > 0) {
-        setTimeout(function () {
+
+    if (word) {
+        gameStatus.speechBox.innerHTML += word + " ";
+        return setTimeout(function () {
+            console.log(word + ' ' + gameStatus.speechName)
             writer(gameStatus.speechLine.shift());
         }, 50);
-    } else if (gameStatus.speech.length > 0) {
+    }
+
+    endLine();
+}
+
+function endLine() {
+
+    if (gameStatus.speech.length > 0) {
         gameStatus.speechLine = gameStatus.speech.shift().split(" ");
         var timer = gameStatus.speechLine.length * 500;
-        setTimeout(function () {
+        return setTimeout(function () {
             gameStatus.speechBox.innerHTML = "";
             writer(gameStatus.speechLine.shift());
         }, timer);
-    } else {
-        endStep(gameStatus.speechName);
-        gameStatus.speechName = "";
     }
+
+    // endSpeech();
+    endStep(gameStatus.speechName);
+}
+
+function endSpeech() {
+    console.log('coucou');
+    // if (gameStatus.speechName) {
+
+    endStep(gameStatus.speechName);
+    gameStatus.speechName = 'nbjhv';
+    // }
 }

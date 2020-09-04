@@ -1,27 +1,3 @@
-// var missions = {
-//     Mobilité: {
-//         icon: 'ui/mobility.svg',
-//         enigmes: ['e1', 'e2', 'e3', 'e4', 'e5']
-
-//     },
-//     Energie: {
-//         icon: 'ui/energy.svg',
-//         enigmes: ['e2', 'e3', 'e1', 'e8', 'e6']
-//     },
-//     Habitat: {
-//         icon: 'ui/habitat.svg',
-//         enigmes: ['e3', 'e4', 'e5', 'e6', 'e7']
-//     },
-//     Bruit: {
-//         icon: 'ui/noise.svg',
-//         enigmes: ['e4', 'e5', 'e1', 'e7', 'e8']
-//     },
-//     Dépollution: {
-//         icon: 'ui/depollution.svg',
-//         enigmes: ['e8', 'e6', 'e7', 'e2', 'e3']
-//     }
-// }
-
 var missions = {
   Mobilité: {
     icon: "ui/mobility.svg",
@@ -44,6 +20,12 @@ var missions = {
     enigmes: ["e18", "e12", "e17", "e11", "e9"],
   },
 };
+// var missions = {
+//   Mobilité: {
+//     icon: "ui/mobility.svg",
+//     enigmes: ["e2"],
+//   },
+// };
 
 function creaMission() {
   gameStatus.missionsMemory = JSON.parse(JSON.stringify(missions));

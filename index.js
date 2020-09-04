@@ -20,8 +20,8 @@ var gameStatus = {
 // setTimeout(function () {
 //     endStep('rattrapage');
 // }, 2000);
-// endStep("transitionIntro");
-endStep("openApp");
+endStep("transitionIntro");
+// endStep("openApp");
 
 function endStep(step) {
   gameStatus.step = step;
@@ -87,7 +87,10 @@ function endStep(step) {
     case "endGame":
       screenCall("board");
       // visitCount("biomissions", "visitcounter", "endGame");
-      iaSpeaking(gameStatus.endReason, "score");
+      iaSpeaking(gameStatus.endReason);
+      setTimeout(function () {
+        endStep('score')
+      }, 3000);
       break;
     case "score":
       screenCall("endGame");

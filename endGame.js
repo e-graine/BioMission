@@ -58,6 +58,8 @@ function winRateDisplay() {
         if (winRate < counter) {
             clearInterval(writer);
             iaSpeaking(endGameSpeech1, 'endGameSpeech1', 'speechEnd1');
+            // iaSpeaking(endGameSpeech2, 'endGameSpeech2', 'speechEnd2');
+
         }
     }, 60);
 }
