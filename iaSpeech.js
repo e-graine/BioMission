@@ -149,7 +149,7 @@ function writer(word) {
     if (word) {
         gameStatus.speechBox.innerHTML += word + " ";
         return setTimeout(function () {
-            console.log(word + ' ' + gameStatus.speechName)
+            // console.log(word + ' ' + gameStatus.speechName)
             writer(gameStatus.speechLine.shift());
         }, 50);
     }
@@ -173,7 +173,7 @@ function endLine() {
 }
 
 function endSpeech() {
-    console.log('coucou');
+    // console.log('coucou');
     // if (gameStatus.speechName) {
 
     endStep(gameStatus.speechName);

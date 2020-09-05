@@ -120,8 +120,13 @@
       Rejouer
     </div>
   </div>
-  <div class="button button-doc" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'></div>
-  <div id="exitButton" class="button button-exit" onclick="exit()"></div>
+  <div class="button-doc button" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'>
+    <div class="speech indice-alert" id="indiceAlert">
+      <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
+    </div>
+  </div>
+  <div id="exitButton" class="button button-exit" onclick="exit()">
+  </div>
 </body>
 
 <!-- <script type="text/javascript" src="visitCounter/visitCounter.js"></script> -->

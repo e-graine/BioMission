@@ -84,6 +84,8 @@ var data = {
 function addDocInGame(item) {
     gameStatus.dataDoc.unshift(item);
     document.getElementById("buttonDoc").classList.add("button-pulse");
+    document.getElementById("indiceSlide").classList.add("indice-slide");
+    document.getElementById("indiceAlert").classList.add("blink-picto");
 }
 
 var nbDoc = 0;

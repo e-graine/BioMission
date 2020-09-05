@@ -20,8 +20,8 @@ var gameStatus = {
 // setTimeout(function () {
 //     endStep('rattrapage');
 // }, 2000);
-// endStep("transitionIntro");
-endStep("openApp");
+endStep("transitionIntro");
+// endStep("openApp");
 
 function endStep(step) {
   gameStatus.step = step;
@@ -161,6 +161,8 @@ function screenCall(screen) {
     var button = document.getElementById(event.srcElement.id);
     if (button) {
       button.classList.remove("button-pulse");
+      document.getElementById("indiceSlide").classList.remove("indice-slide");
+      document.getElementById("indiceAlert").classList.remove("blink-picto");
     }
   }
   transitionGraph(2, 4, screen);
