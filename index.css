@@ -299,7 +299,15 @@ h3 {
   border-radius: 50%;
   margin: 10px;
   opacity: 0%;
+  /* animation: blinker2 1s linear infinite; */
+  -webkit-animation: blinker2 1s linear infinite;
+  /* Safari 4+ */
+  -moz-animation: blinker2 1s linear infinite;
+  /* Fx 5+ */
+  -o-animation: blinker2 1s linear infinite;
+  /* Opera 12+ */
   animation: blinker2 1s linear infinite;
+  /* IE 10+, Fx 29+ */
 }
 
 .alert-speech {
