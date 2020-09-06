@@ -47,21 +47,34 @@ function ending() {
 }
 
 function winRateDisplay() {
-    var box = document.getElementById('winRate');
+    // var box = document.getElementById('winRate');
     var winRate = parseInt(document.getElementById('winProgress').style.width);
     endGameSpeech2 = ['Tu as atteint ' + winRate + ' % de la symbiose'];
 
-    var counter = 0;
-    var writer = setInterval(function () {
-        box.innerHTML = counter;
-        counter++;
-        if (winRate < counter) {
-            clearInterval(writer);
-            iaSpeaking(endGameSpeech1, 'endGameSpeech1', 'speechEnd1');
-            // iaSpeaking(endGameSpeech2, 'endGameSpeech2', 'speechEnd2');
+    // var counter = 0;
+    // var writer = setInterval(function () {
+    //     box.innerHTML = counter;
+    //     counter++;
+    //     if (winRate < counter) {
+    //         clearInterval(writer);
+    //         iaSpeaking(endGameSpeech1, 'endGameSpeech1', 'speechEnd1');
+    //         // iaSpeaking(endGameSpeech2, 'endGameSpeech2', 'speechEnd2');
 
-        }
-    }, 60);
+    //     }
+    // }, 60);
+
+    scoreWriter(0, winRate)
+}
+
+function scoreWriter(counter, limit) {
+    document.getElementById('winRate').innerHTML = counter;
+    counter++;
+    if (limit > counter) {
+        return setTimeout(function () {
+            scoreWriter(counter, limit)
+        }, 60)
+    }
+    iaSpeaking(endGameSpeech1, 'endGameSpeech1', 'speechEnd1');
 }
 
 function restart() {
