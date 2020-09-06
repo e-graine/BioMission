@@ -69,7 +69,7 @@ function winRateDisplay() {
 function scoreWriter(counter, limit) {
     document.getElementById('winRate').innerHTML = counter;
     counter++;
-    if (limit > counter) {
+    if (limit >= counter) {
         return setTimeout(function () {
             scoreWriter(counter, limit)
         }, 60)
