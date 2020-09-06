@@ -1,5 +1,3 @@
-// var dataEnigmes = []
-
 function displayEnigme() {
     gameStatus.currentEnigme = gameStatus.dataEnigmes[gameStatus.numEnigme];
     var enigmeElement = document.getElementById(gameStatus.currentEnigme);
@@ -16,12 +14,6 @@ function displayEnigme() {
 
 function solvEnigme(enigme) {
     progress('winProgress', gameStatus.winStep)
-
-    // var solvedBulett = document.getElementsByClassName('bull' + enigme);
-    // for (bulett of solvedBulett) {
-    //     bulett.classList.remove("enigme-waiting-bullet");
-    //     bulett.classList.add("enigme-solved-bullet");
-    // }
 
     gameStatus.enigmesToSolv = gameStatus.enigmesToSolv.filter(function (e) {
         return e !== enigme
@@ -44,39 +36,30 @@ function solvEnigme(enigme) {
 
     var textImpact = false;
     if (missionsImpact.length === 1) {
-        textImpact = 'dans la mission ' + missionsImpact[0];
+        textImpact = 'la mission ' + missionsImpact[0] + ' !';
     }
     if (missionsImpact.length > 1) {
-        textImpact = 'dans les missions '
+        textImpact = 'les missions '
         for (var i = 0; i < missionsImpact.length - 2; i++) {
             textImpact += missionsImpact[i] + ', ';
         }
         textImpact += missionsImpact[missionsImpact.length - 2] + ' et ' + missionsImpact[missionsImpact.length - 1] + ' !';
     }
 
-    var solvedEnigmeSpeech = [
-        'Exact !',
-        'Passons à l\'étape suivante'
-    ];
-
+    var speech = solvedEnigmeSpeech;
     if (textImpact) {
-        solvedEnigmeSpeech = [
+        speech = [
             'Exact !',
-            'J\'ai pu résoudre des problématiques similaires',
-            textImpact,
+            'J\'ai pu faire aussi avancer ' + textImpact,
             'Passons à l\'étape suivante'
         ];
     }
 
     document.getElementById("bodyEnigme").innerHTML = '';
-    iaSpeaking(solvedEnigmeSpeech, 'enigmeDone', 'speechEnigme');
+    iaSpeaking(speech, 'enigmeDone', 'speechEnigme');
 }
 
 function failEnigme(enigme) {
-    var failedEnigmeSpeech = [
-        'Hum... Non ça ne va pas',
-        'Passons à l\'étape suivante'
-    ];
     document.getElementById("bodyEnigme").innerHTML = '';
     iaSpeaking(failedEnigmeSpeech, 'enigmeDone', 'speechEnigme');
 }
