@@ -86,7 +86,7 @@ function endStep(step) {
       break;
     case "endGame":
       screenCall("board");
-      // visitCount("biomissions", "visitcounter", "endGame");
+      visitCount("biomissions", "visitcounter", "endGame");
       iaSpeaking(gameStatus.endReason);
       setTimeout(function () {
         endStep('score')

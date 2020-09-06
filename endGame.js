@@ -65,7 +65,8 @@ function winRateDisplay() {
 }
 
 function restart() {
-    // visitCount("biomissions", "visitcounter", "reStart");
+    visitCount("biomissions", "visitcounter", "openApp");
+    visitCount("biomissions", "visitcounter", "reStart");
     document.getElementById('winProgress').style.width = 0;
     document.getElementById('timeProgress').style.width = 0;
     gameStatus.timesUp = false;
