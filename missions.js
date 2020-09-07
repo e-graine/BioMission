@@ -1,23 +1,23 @@
 var missions = {
   Mobilité: {
     icon: "ui/mobility.svg",
-    enigmes: ["e2", "e3", "e4", "e5"],
+    enigmes: ["e0", "e2", "e3", "e4", "e5"],
   },
   Energie: {
     icon: "ui/energy.svg",
-    enigmes: ["e6", "e7", "e8", "e9", "e10"],
+    enigmes: ["e0", "e6", "e7", "e8", "e9", "e10"],
   },
   Bruit: {
     icon: "ui/noise.svg",
-    enigmes: ["e16", "e6", "e5", "e15"],
+    enigmes: ["e0", "e16", "e6", "e5", "e15"],
   },
   Habitat: {
     icon: "ui/habitat.svg",
-    enigmes: ['e15', "e11", "e12", "e13", "e14"],
+    enigmes: ["e0", 'e15', "e11", "e12", "e13", "e14"],
   },
   Dépollution: {
     icon: "ui/depollution.svg",
-    enigmes: ["e18", "e12", "e17", "e11", "e9"],
+    enigmes: ["e0", "e18", "e12", "e17", "e11", "e9"],
   },
 };
 // var missions = {

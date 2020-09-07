@@ -63,6 +63,8 @@ form {
   top: 2vw;
   left: 2vw;
   background-image: url(ui/doc.svg);
+  display: flex;
+  align-items: center;
 }
 
 .indice-alert {
@@ -80,14 +82,13 @@ form {
 
 @keyframes slideout {
   100% {
-    transform: translateX(60px);
+    transform: translateX(8vw);
   }
 }
 
 .indice-arrow {
   font-weight: 800;
 }
-
 
 .button-exit {
   top: 2vw;
@@ -271,7 +272,6 @@ h3 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-
 }
 
 /* 
@@ -324,14 +324,12 @@ h3 {
 @keyframes blinker {
   50% {
     opacity: 0;
-
   }
 }
 
 @keyframes blinker2 {
   50% {
     opacity: 100;
-
   }
 }
 
@@ -487,7 +485,7 @@ h3 {
 }
 
 .missions .container {
-  /* margin-top: 20vh; */
+  justify-content: center;
 }
 
 .mission-viewer {
@@ -585,8 +583,12 @@ h3 {
   background-repeat: no-repeat;
 }
 
+.title-e0 {
+  background-image: url(imgGame/biomimetisme.jpg);
+}
+
 .title-e2 {
-  background-image: url(imgGame/cars.png);
+  background-image: url(imgGame/cars.jpg);
 }
 
 .title-e3 {
@@ -594,7 +596,7 @@ h3 {
 }
 
 .title-e4 {
-  background-image: url(imgGame/labyrinthe.png);
+  background-image: url(imgGame/labyrinthe.jpg);
 }
 
 .title-e5 {
@@ -681,7 +683,7 @@ h3 {
 
 @media screen and (max-width: 1280px) {
   .container {
-    /* justify-content: unset; */
+    justify-content: unset;
     position: relative;
     top: 12vh;
     font-size: smaller;
@@ -714,5 +716,13 @@ h3 {
 @media screen and (max-width: 700px) {
   .img-title {
     height: 200px;
+  }
+  .missions .container {
+    justify-content: flex-start;
+  }
+  @keyframes slideout {
+    100% {
+      transform: translateX(60px);
+    }
   }
 }

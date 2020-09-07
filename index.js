@@ -62,7 +62,7 @@ function endStep(step) {
       //   break;
     case "welcomeSpeech":
       document.getElementById('alertPicto').style.display = 'none';
-      addDocInGame(data.biomimetisme);
+      // addDocInGame(data.biomimetisme);
       document.getElementById("buttonMissions").classList.add("button-pulse");
       // iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
       break;
@@ -152,7 +152,7 @@ function screenDisplay(screenToShow) {
   if (screenToShow.attributes.nodoc) {
     document.getElementById("buttonDoc").style.display = "none";
   } else {
-    document.getElementById("buttonDoc").style.display = "block";
+    document.getElementById("buttonDoc").style.display = "flex";
   }
 }
 
