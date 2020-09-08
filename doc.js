@@ -9,7 +9,7 @@ var data = {
     },
     aerodynamisme: {
         title: "Aérodynamisme",
-        body: "L'aérodynamique doit beaucoup à l'étude du vivant : au Japon, un train à grandevitesse, le Shinkansen, relie Osaka et Hakata, en traversant de nombreux tunnels. Or, dans les tunnels, l'air est comprimé donc sa résistance augmente. Comment perdre le moins d'énergie possible et lutter contre ces changements depression ? Les ingénieurs se sont tournés vers un champion de la transition rapide entre deux milieux de densités différentes, le martin-pêcheur. Ils ont imité la forme de son bec et de sa tête pour un résultat étonnant : avec une consommation électrique de -15%, le train est passé d’une vitesse maximale de 210 à 320km/h, réduisant au passage les problèmes de ralentissement et de nuisances sonores au niveau des tunnels. "
+        body: "Un oiseau pécheur de nos campagnes a inspiré la forme d'un des trains les plus rapides du monde : le Shinkansen au Japon. Tellement rapide qu'on entendait \"BANG\" quand il entré dans un tunnel, où l'air est plus comprimé qu'à l'exterieur. Le nez du train reprends aujourd'hui le long bec de l'oiseau, fait pour perforer la surface de l'eau. Grâce à ça le train consomme est moins d'énergie, il fait moins de bruit et il est encore plus rapide !"
     },
     transportsGES: {
         title: "Transport et GES",

@@ -587,6 +587,10 @@ h3 {
   background-image: url(imgGame/biomimetisme.jpg);
 }
 
+.title-e1 {
+  background-image: url(imgGame/martin-pecheur.jpg);
+}
+
 .title-e2 {
   background-image: url(imgGame/cars.jpg);
 }
@@ -665,7 +669,7 @@ h3 {
   width: 100px;
   height: 100px;
   cursor: pointer;
-  background-color: white;
+  background-color: black;
   opacity: 0.3;
   margin: 2px;
 }

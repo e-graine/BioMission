@@ -1,15 +1,15 @@
 var missions = {
   Mobilité: {
     icon: "ui/mobility.svg",
-    enigmes: ["e0", "e2", "e3", "e4", "e5"],
+    enigmes: ["e0", "e1", "e2", "e3", "e4", "e5"],
   },
   Energie: {
     icon: "ui/energy.svg",
-    enigmes: ["e0", "e6", "e7", "e8", "e9", "e10"],
+    enigmes: ["e0", "e6", "e7", "e1", "e8", "e9", "e10"],
   },
   Bruit: {
     icon: "ui/noise.svg",
-    enigmes: ["e0", "e16", "e6", "e5", "e15"],
+    enigmes: ["e0", "e16", "e6", "e5", "e1", "e15"],
   },
   Habitat: {
     icon: "ui/habitat.svg",
