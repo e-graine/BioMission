@@ -47,6 +47,10 @@ function ending() {
 }
 
 function winRateDisplay() {
+    document.getElementById('speechEnd1').innerHTML = "";
+    document.getElementById('speechEnd2').innerHTML = "";
+    document.getElementById('speechEnd3').innerHTML = "";
+    document.getElementById('winRate').innerHTML = "";
     var winRate = parseInt(document.getElementById('winProgress').style.width);
     endGameSpeech2 = ['Tu as atteint ' + winRate + ' % de la symbiose'];
     scoreWriter(0, winRate)
