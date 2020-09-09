@@ -9,7 +9,7 @@ var data = {
     },
     aerodynamisme: {
         title: "Aérodynamisme",
-        body: "Un oiseau pécheur de nos campagnes a inspiré la forme d'un des trains les plus rapides du monde : le Shinkansen au Japon. Tellement rapide qu'on entendait \"BANG\" quand il entré dans un tunnel, où l'air est plus comprimé qu'à l'exterieur. Le nez du train reprends aujourd'hui le long bec de l'oiseau, fait pour perforer la surface de l'eau. Grâce à ça le train consomme est moins d'énergie, il fait moins de bruit et il est encore plus rapide !"
+        body: "Un oiseau pécheur de nos campagnes a inspiré la forme d'un des trains les plus rapides du monde : le Shinkansen au Japon. Tellement rapide qu'on entendait \"BANG\" quand il entrait dans un tunnel, où l'air est plus comprimé qu'à l'exterieur. Le nez du train reprends aujourd'hui le long bec de l'oiseau, fait pour perforer la surface de l'eau. Grâce à ça le train consomme est moins d'énergie, il fait moins de bruit et il est encore plus rapide !"
     },
     transportsGES: {
         title: "Transport et GES",
