@@ -1,24 +1,21 @@
 var welcomeSpeech = [
-    "! Alert !",
-    "Système en surcharge ! ",
+    "! Alert ! <br><br> Système en surcharge !",
     "Trop de défis à résoudre...",
     "L’IA est incapable de réaliser la symbiose",
-    "Crash du système prévu dans 30 minutes… ",
-    "Et si la solution était dans la Nature ? ",
+    "Crash du système prévu dans 30 minutes…",
+    "Et si la solution était dans la Nature ?",
     'Résous les défis de l’IA en cliquant sur : <br><img/src="ui/missions.svg"/>',
     'Trouves des indices dans la database : <br><img/src="ui/doc.svg"/>',
-    "Je compte sur toi... ",
+    "Je compte sur toi...",
     "nous n’avons plus de temps à perdre !",
 ];
 
 var solvedEnigmeSpeech = [
     'Exact !',
-    'Passons à l\'étape suivante'
 ];
 
 var failedEnigmeSpeech = [
     'Hum... Non ça ne va pas',
-    'Passons à l\'étape suivante'
 ];
 
 var nextMissionSpeech = ["Merci, humain !", "D'autres missions t'attendent :)"];
@@ -42,13 +39,24 @@ var endGameSpeech3 = [
     "si tu le souhaite",
 ];
 
+// var speechText = document.createElement("div");
+// var nextLineButton = document.createElement("div");
+// nextLineButton.innerHTML = "Suivant >"
+// nextLineButton.onclick = nextLine;
+
 function iaSpeaking(speech, speechName, speechBox) {
     gameStatus.speech = JSON.parse(JSON.stringify(speech));
 
     gameStatus.speechLine = gameStatus.speech.shift().split(" ");
+    gameStatus.speechLine.push("&#10140;");
     gameStatus.speechBox = document.getElementById("iaSpeech");
     if (speechBox) gameStatus.speechBox = document.getElementById(speechBox);
     gameStatus.speechBox.innerHTML = "";
+    // speechText.innerHTML = "";
+    // gameStatus.speechBox.appendChild(speechText);
+    // gameStatus.speechBox.appendChild(nextLineButton);
+    gameStatus.speechBox.onclick = nextLine;
+
     gameStatus.speechName = speechName;
     writer(gameStatus.speechLine.shift(), speechName);
     // if (word) {
@@ -75,33 +83,47 @@ function writer(word, speechName) {
     // alert(speechName);
     if (word) {
         gameStatus.speechBox.innerHTML += word + " ";
+        // speechText.innerHTML += word + " ";
         return setTimeout(function () {
             // console.log(word + ' ' + gameStatus.speechName)
             writer(gameStatus.speechLine.shift(), speechName);
         }, 50);
     }
     // alert(gameStatus.speechName);
-    endLine(speechName);
+    // endLine(speechName);
 }
 
-function endLine(speechName) {
-
+function nextLine() {
     if (gameStatus.speech.length > 0) {
         gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-        var timer = gameStatus.speechBox.innerHTML.length * 100;
-        return setTimeout(function () {
-            gameStatus.speechBox.innerHTML = "";
-            writer(gameStatus.speechLine.shift(), speechName);
-        }, timer);
+        gameStatus.speechLine.push("&#10140;");
+        console.log(gameStatus.speechLine);
+        // speechText.innerHTML = "";
+        gameStatus.speechBox.innerHTML = "";
+        return writer(gameStatus.speechLine.shift());
     }
-    endStep(speechName);
-}
-
-function endSpeech() {
-    // console.log('coucou');
-    // if (gameStatus.speechName) {
-
+    gameStatus.speechBox.innerHTML = "";
     endStep(gameStatus.speechName);
-    gameStatus.speechName = 'nbjhv';
-    // }
 }
+
+// function endLine(speechName) {
+
+//     if (gameStatus.speech.length > 0) {
+//         gameStatus.speechLine = gameStatus.speech.shift().split(" ");
+//         var timer = gameStatus.speechBox.innerHTML.length * 100;
+//         return setTimeout(function () {
+//             gameStatus.speechBox.innerHTML = "";
+//             writer(gameStatus.speechLine.shift(), speechName);
+//         }, timer);
+//     }
+//     endStep(speechName);
+// }
+
+// function endSpeech() {
+//     // console.log('coucou');
+//     // if (gameStatus.speechName) {
+
+//     endStep(gameStatus.speechName);
+//     gameStatus.speechName = 'nbjhv';
+//     // }
+// }

@@ -20,7 +20,7 @@
   <title>BioMissions</title>
 </head>
 
-<body id="bodytest">
+<body>
   <canvas id="transitionGraph" class="transition-graph"></canvas>
   <!-- <canvas id='introGraph' class="intro-graph"></canvas> -->
   <div id="intro" class="intro screen-div">
@@ -41,6 +41,7 @@
   </div> -->
   <div id="board" class="board screen-div">
     <canvas id="iaGraph" class="ia-graph"></canvas>
+    <!-- <div class="speech" id="alertPicto"><img src="ui/alert.svg"> test </div> -->
     <img src="ui/alert.svg" class="alert-picto" id="alertPicto">
     <div id="iaSpeech" class="ia-speech speech"></div>
     <div class="button button-missions" id="buttonMissions" onclick='screenCall("missions"); checkMission()'></div>
@@ -76,8 +77,8 @@
       </div>
       <div class="prev-next-buttons">
         <button id="prevDoc" class="button-prev-doc" onclick="prevDoc()">
-          < </button> <button id="nextDoc" class="button-next-doc" onclick="nextDoc()">
-            >
+          &lt; </button> <button id="nextDoc" class="button-next-doc" onclick="nextDoc()">
+          &gt;
         </button>
       </div>
     </div>
