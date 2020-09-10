@@ -243,6 +243,7 @@ h3 {
   text-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 20px #fff,
     0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 50px #fff, 0px 0px 60px #fff;
   /* text-shadow: 1px 0px 2px #fff; */
+  cursor: pointer;
 }
 
 .speech img {
@@ -251,6 +252,9 @@ h3 {
   border-radius: 5px;
   width: 30px;
   margin: 10px;
+  position: relative;
+  top: 20px;
+
 }
 
 .ia-speech {
@@ -697,11 +701,6 @@ h3 {
     font-size: 30px;
   }
 
-  /* .speech {
-    width: 100%;
-    padding: 5%;
-  } */
-
   @keyframes radial-pulse {
     0% {
       box-shadow: 0 0 0 0vw white;
@@ -721,9 +720,11 @@ h3 {
   .img-title {
     height: 200px;
   }
+
   .missions .container {
     justify-content: flex-start;
   }
+
   @keyframes slideout {
     100% {
       transform: translateX(60px);

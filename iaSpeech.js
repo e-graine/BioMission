@@ -35,7 +35,7 @@ var endGameSpeech3 = [
     "durable et réciproquement profitable,",
     "entre deux organismes vivants.",
     "",
-    "Nous reviendrons de voir,",
+    "Nous reviendrons te voir,",
     "si tu le souhaite",
 ];
 
@@ -48,7 +48,7 @@ function iaSpeaking(speech, speechName, speechBox) {
     gameStatus.speech = JSON.parse(JSON.stringify(speech));
 
     gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-    gameStatus.speechLine.push("&#10140;");
+    gameStatus.speechLine.push("<br>&#10140;");
     gameStatus.speechBox = document.getElementById("iaSpeech");
     if (speechBox) gameStatus.speechBox = document.getElementById(speechBox);
     gameStatus.speechBox.innerHTML = "";
