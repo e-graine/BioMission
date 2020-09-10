@@ -51,9 +51,33 @@ function winRateDisplay() {
     document.getElementById('speechEnd2').innerHTML = "";
     document.getElementById('speechEnd3').innerHTML = "";
     document.getElementById('winRate').innerHTML = "";
-    var winRate = parseInt(document.getElementById('winProgress').style.width);
-    endGameSpeech2 = ['Tu as atteint ' + winRate + ' % de la symbiose'];
-    scoreWriter(0, winRate)
+
+    if (gameStatus.score) {
+        endGameSpeech1 = ["Salut, j'ai fait " + gameStatus.score + " sur BIO-MISSION !"];
+        endGameSpeech2 = ["C'est un petit jeux écolo"];
+        endGameSpeech3 = ["Tu veux tenter ?"];
+        document.getElementById('buttonReStart').innerHTML = "Jouer";
+        scoreWriter(0, gameStatus.score)
+    } else {
+        var score = parseInt(document.getElementById('winProgress').style.width);
+        // gameStatus.score = parseInt(document.getElementById('winProgress').style.width);
+        endGameSpeech2 = ['Tu as atteint ' + score + ' % de la symbiose'];
+        scoreWriter(0, score)
+    }
+
+
+    var sharers = document.getElementsByClassName('share-button')
+
+    // for (s of sharers) {
+    //     s.href += url
+    // }
+
+    // var copyText = "qerg"
+    // copyText.select();
+    // document.execCommand("copy");
+
+
+
 }
 
 function scoreWriter(counter, limit) {
@@ -82,4 +106,9 @@ function restart() {
     creaMission();
     screenCall('board');
     iaSpeaking(['Hello, human']);
+}
+
+function sharedScore() {
+    var url = window.location.hostname + "?score=" + gameStatus.score;
+    window.prompt("Copie le lien de ton score :", url);
 }

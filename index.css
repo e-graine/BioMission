@@ -41,6 +41,14 @@ form {
   min-width: 50px;
 }
 
+#share-buttons img {
+  width: 35px;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0;
+  display: inline;
+}
+
 .button-text-small {
   font-size: small;
 }
@@ -337,10 +345,8 @@ h3 {
   }
 }
 
-.speech-white-char {
-  background-color: white;
-  width: 2px;
-  height: 20px;
+.share-speech {
+  display: none;
 }
 
 #loading {

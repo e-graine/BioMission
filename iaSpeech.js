@@ -31,10 +31,9 @@ var endGameSpeech1 = ["Merci humain,"];
 var endGameSpeech2 = [];
 
 var endGameSpeech3 = [
-    "La symbiose est l'association biologique, ",
+    "La symbiose est l'association biologique,",
     "durable et réciproquement profitable,",
     "entre deux organismes vivants.",
-    "",
     "Nous reviendrons te voir,",
     "si tu le souhaite",
 ];
@@ -48,7 +47,7 @@ function iaSpeaking(speech, speechName, speechBox) {
     gameStatus.speech = JSON.parse(JSON.stringify(speech));
 
     gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-    gameStatus.speechLine.push("<br>&#10140;");
+    gameStatus.speechLine.push("&#10140;");
     gameStatus.speechBox = document.getElementById("iaSpeech");
     if (speechBox) gameStatus.speechBox = document.getElementById(speechBox);
     gameStatus.speechBox.innerHTML = "";
@@ -97,7 +96,6 @@ function nextLine() {
     if (gameStatus.speech.length > 0) {
         gameStatus.speechLine = gameStatus.speech.shift().split(" ");
         gameStatus.speechLine.push("&#10140;");
-        console.log(gameStatus.speechLine);
         // speechText.innerHTML = "";
         gameStatus.speechBox.innerHTML = "";
         return writer(gameStatus.speechLine.shift());

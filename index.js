@@ -15,13 +15,46 @@ var gameStatus = {
     body: "Bla blabla... ",
   }, ],
   timesUp: false,
-  missionsMemory: null
+  missionsMemory: null,
+  score: null,
 };
+
+window.onbeforeunload = function (e) {
+  var e = e || window.event;
+
+  // For IE and Firefox
+  if (e) {
+    e.returnValue = "Any string";
+  }
+
+  // For Safari
+  return "Any string";
+};
+
+function differentialLoading(query) {
+  if (query === "test") {
+    missions = {
+      Mobilité: {
+        icon: "ui/mobility.svg",
+        enigmes: ["e2"],
+      },
+    };
+    return endStep("transitionIntro");
+  }
+  if (query.split("=")[0] === "score") {
+    gameStatus.score = query.split("=")[1];
+    crypetr(gameStatus.score);
+    return endStep("score");
+  }
+  return endStep("openApp");
+}
+
+differentialLoading(window.location.search.substr(1));
 
 // setTimeout(function () {
 //     endStep('rattrapage');
 // }, 2000);
-endStep("transitionIntro");
+// endStep("transitionIntro");
 // endStep("openApp");
 
 function endStep(step) {
@@ -62,7 +95,7 @@ function endStep(step) {
       //   }, 1000);
       //   break;
     case "welcomeSpeech":
-      document.getElementById('alertPicto').style.display = 'none';
+      document.getElementById("alertPicto").style.display = "none";
       // addDocInGame(data.biomimetisme);
       document.getElementById("buttonMissions").classList.add("button-pulse");
       // iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
@@ -72,7 +105,7 @@ function endStep(step) {
       //   break;
     case "enigmeDone":
       setTimeout(function () {
-        ending()
+        ending();
       }, 500);
       break;
     case "rattrapage":
@@ -88,49 +121,28 @@ function endStep(step) {
     case "endGame":
       screenCall("board");
       visitCount("biomissions", "visitcounter", "endGame");
-      iaSpeaking(gameStatus.endReason);
-      setTimeout(function () {
-        endStep('score')
-      }, 3000);
+      iaSpeaking(gameStatus.endReason, "score");
       break;
     case "score":
       screenCall("endGame");
       winRateDisplay();
       break;
     case "endGameSpeech1":
-      iaSpeaking(endGameSpeech2, 'endGameSpeech2', 'speechEnd2');
+      iaSpeaking(endGameSpeech2, "endGameSpeech2", "speechEnd2");
       break;
     case "endGameSpeech2":
-      iaSpeaking(endGameSpeech3, 'endGameSpeech3', 'speechEnd3');
+      iaSpeaking(endGameSpeech3, "endGameSpeech3", "speechEnd3");
       break;
     case "endGameSpeech3":
       document.getElementById("buttonReStart").classList.add("button-pulse");
+      if (!gameStatus.score) {
+        document.getElementById("shareSpeech").style.display = 'block';
+      }
       break;
     default:
       break;
       // console.log("step bug with " + step);
   }
-}
-
-function openFullscreen() {
-  var elem = document.body;
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) {
-    /* Firefox */
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) {
-    /* Chrome, Safari and Opera */
-    elem.webkitRequestFullscreen();
-    /* Iphone */
-    if (elem.webkitEnterFullScreen) {
-      elem.webkitEnterFullScreen();
-    }
-  } else if (elem.msRequestFullscreen) {
-    /* IE/Edge */
-    elem.msRequestFullscreen();
-  }
-  endStep("fullScreen");
 }
 
 function screenDisplay(screenToShow) {
@@ -200,6 +212,19 @@ function visitCount(db, col, counter) {
     counter,
     true
   );
+  request.send();
+}
+
+function crypetr(data) {
+  var request = new XMLHttpRequest();
+  request.open(
+    "GET",
+    "https://ycallier-api.herokuapp.com/encrypt/" + data,
+    true
+  );
+  request.onload = function () {
+    console.log(request.response);
+  };
   request.send();
 }
 

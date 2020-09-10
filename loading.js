@@ -27,7 +27,7 @@ function loading() {
       letters[i].innerHTML = alphabet[c];
       // document.getElementById("letter" + i).innerHTML = alphabet[c];
       // el.querySelectorAll("span")[i].innerHTML = alphabet[c];
-      // console.log(el.innerHTML);
+      // .log(el.innerHTML);
       // $("span")[i].innerHTML = alphabet[c];
     }
     if (!finished) {

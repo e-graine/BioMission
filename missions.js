@@ -20,12 +20,7 @@ var missions = {
     enigmes: ["e0", "e18", "e12", "e17", "e11", "e9"],
   },
 };
-// var missions = {
-//   Mobilité: {
-//     icon: "ui/mobility.svg",
-//     enigmes: ["e2"],
-//   },
-// };
+
 
 function creaMission() {
   gameStatus.missionsMemory = JSON.parse(JSON.stringify(missions));
