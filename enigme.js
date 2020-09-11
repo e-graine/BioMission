@@ -2,7 +2,7 @@ function displayEnigme() {
     gameStatus.currentEnigme = gameStatus.dataEnigmes[gameStatus.numEnigme];
     var enigmeElement = document.getElementById(gameStatus.currentEnigme);
     document.getElementById('bodyEnigme').innerHTML = enigmeElement.innerHTML;
-
+    document.getElementById("docEnigme").style.display = "none"
     var doc = enigmeElement.attributes.doc;
     if (doc) {
         if (!gameStatus.dataDoc[doc.value]) {
@@ -58,7 +58,7 @@ function solvEnigme(enigme) {
     document.getElementById("indiceSlide").classList.remove("indice-slide");
     document.getElementById("indiceAlert").classList.remove("blink-picto");
     document.getElementById("bodyEnigme").innerHTML = '';
-    document.getElementById("docEnigme").innerHTML = gameStatus.dataDoc[0].body;
+    document.getElementById("docEnigme").style.display = "block";
     iaSpeaking(speech, 'enigmeDone', 'speechEnigme');
 }
 
@@ -67,6 +67,6 @@ function failEnigme(enigme) {
     document.getElementById("indiceSlide").classList.remove("indice-slide");
     document.getElementById("indiceAlert").classList.remove("blink-picto");
     document.getElementById("bodyEnigme").innerHTML = '';
-    document.getElementById("docEnigme").innerHTML = gameStatus.dataDoc[0].body;
+    document.getElementById("docEnigme").style.display = "block"
     iaSpeaking(failedEnigmeSpeech, 'enigmeDone', 'speechEnigme');
 }

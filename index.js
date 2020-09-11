@@ -37,7 +37,7 @@ function differentialLoading(query) {
     missions = {
       Mobilité: {
         icon: "ui/mobility.svg",
-        enigmes: ["e2"],
+        enigmes: ["e0"],
       },
     };
     return endStep("transitionIntro");
@@ -105,7 +105,8 @@ function endStep(step) {
       //   iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
       //   break;
     case "enigmeDone":
-      document.getElementById('docEnigme').innerHTML = "";
+      // document.getElementById('docEnigme').innerHTML = "";
+      document.getElementById("docEnigme").style.display = "none"
       setTimeout(function () {
         ending();
       }, 500);

@@ -69,7 +69,7 @@
       </div>
     </div>
   </div>
-  <div id="doc" class="doc screen-div" isclosable>
+  <div id="doc" class="doc screen-div" isclosable nodoc>
     <div id="docContainer" class="container">
       <div>
         <h2 id="titleDoc" class="title-doc"></h2>
@@ -90,7 +90,11 @@
     <div id="enigmeContainer" class="container enigme-container">
       <div id="bodyEnigme" class="enigme-body"></div>
       <div id="speechEnigme" class="speech enigme-speech"></div>
-      <div id="docEnigme" class="enigme-doc"></div>
+
+      <div class="button-text button-text-small" id="docEnigme" onclick='screenCall("doc"); resetDoc()'">
+        En savoir +
+      </div>
+      <!-- <div id=" docEnigme" class="enigme-doc">test</div> -->
       <!-- <div class="prev-next-buttons">
                 <button id="prevEnigme" class="button-prev-enigme" onclick="prevEnigme()">
                     <</button> <button id="nextEnigme" class="button-next-enigme" onclick="nextEnigme()">>
