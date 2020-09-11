@@ -17,6 +17,7 @@ var gameStatus = {
   timesUp: false,
   missionsMemory: null,
   score: null,
+  doc: "",
 };
 
 window.onbeforeunload = function (e) {
@@ -43,7 +44,7 @@ function differentialLoading(query) {
   }
   if (query.split("=")[0] === "score") {
     gameStatus.score = query.split("=")[1];
-    crypetr(gameStatus.score);
+    // crypetr(gameStatus.score);
     return endStep("score");
   }
   return endStep("openApp");
@@ -104,6 +105,7 @@ function endStep(step) {
       //   iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
       //   break;
     case "enigmeDone":
+      document.getElementById('docEnigme').innerHTML = "";
       setTimeout(function () {
         ending();
       }, 500);

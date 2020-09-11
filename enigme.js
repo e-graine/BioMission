@@ -50,16 +50,23 @@ function solvEnigme(enigme) {
     if (textImpact) {
         speech = [
             'Exact !',
+            'Tout est connecté !',
             'J\'ai pu faire aussi avancer ' + textImpact,
-            'Passons à l\'étape suivante'
         ];
     }
-
+    document.getElementById("buttonDoc").classList.remove("button-pulse");
+    document.getElementById("indiceSlide").classList.remove("indice-slide");
+    document.getElementById("indiceAlert").classList.remove("blink-picto");
     document.getElementById("bodyEnigme").innerHTML = '';
+    document.getElementById("docEnigme").innerHTML = gameStatus.dataDoc[0].body;
     iaSpeaking(speech, 'enigmeDone', 'speechEnigme');
 }
 
 function failEnigme(enigme) {
+    document.getElementById("buttonDoc").classList.remove("button-pulse");
+    document.getElementById("indiceSlide").classList.remove("indice-slide");
+    document.getElementById("indiceAlert").classList.remove("blink-picto");
     document.getElementById("bodyEnigme").innerHTML = '';
+    document.getElementById("docEnigme").innerHTML = gameStatus.dataDoc[0].body;
     iaSpeaking(failedEnigmeSpeech, 'enigmeDone', 'speechEnigme');
 }

@@ -272,7 +272,8 @@ h3 {
 }
 
 .enigme-speech {
-  margin-top: 30vh;
+  margin: 10vh;
+  /* margin-top: 30vh; */
 }
 
 .alert-speech {
@@ -536,14 +537,6 @@ h3 {
 
 .mission-list li {
   margin: 10px;
-}
-
-.enigme-waiting-bullet {
-  list-style-type: circle;
-}
-
-.enigme-solved-bullet {
-  list-style-type: disc;
 }
 
 /* .enigme-failed-bullet {
