@@ -98,8 +98,10 @@ function endStep(step) {
     case "welcomeSpeech":
       document.getElementById("alertPicto").style.display = "none";
       // addDocInGame(data.biomimetisme);
+      iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
+      break;
+    case "welcomeSpeech2":
       document.getElementById("buttonMissions").classList.add("button-pulse");
-      // iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
       break;
       // case "tutoDoc":
       //   iaSpeaking(welcomeSpeech3, "welcomeSpeech3");

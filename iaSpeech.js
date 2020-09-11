@@ -1,11 +1,18 @@
 var welcomeSpeech = [
-    "! Alert ! <br><br> Système en surcharge !",
-    "Trop de défis à résoudre...",
-    "L’IA est incapable de réaliser la symbiose",
+    "Trop de mission en attente…",
+    "Symbiose impossible…",
     "Crash du système prévu dans 30 minutes…",
-    "Et si la solution était dans la Nature ?",
-    'Résous les défis de l’IA en cliquant sur : <br><img/src="ui/missions.svg"/>',
+];
+
+var welcomeSpeech2 = [
+    'Trouves les missions en cliquant sur : <br><img/src="ui/missions.svg"/>',
     'Trouves des indices dans la database : <br><img/src="ui/doc.svg"/>',
+    'Dernière chose :',
+    "tu as 2 barres en bas de l'écran",
+    "La première c'est ta progression",
+    "Elle augmente à chaque mission terminée",
+    "La deuxième c'est le temps qui passe",
+    "Tu aimerais sûrement qu'elle n'augmente pas mais...",
     "Je compte sur toi...",
     "nous n’avons plus de temps à perdre !",
 ];
