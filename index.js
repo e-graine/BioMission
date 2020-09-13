@@ -21,6 +21,10 @@ var gameStatus = {
 };
 
 window.onbeforeunload = function (e) {
+  if (gameStatus.enigmesToSolv.length !== 0) {
+    localStorage.setItem('missions', JSON.stringify(missions));
+  }
+
   var e = e || window.event;
 
   // For IE and Firefox
@@ -37,7 +41,7 @@ function differentialLoading(query) {
     missions = {
       Mobilité: {
         icon: "ui/mobility.svg",
-        enigmes: ["e0"],
+        enigmes: ["e0", "e1"],
       },
     };
     return endStep("transitionIntro");
@@ -47,6 +51,13 @@ function differentialLoading(query) {
     // crypetr(gameStatus.score);
     return endStep("score");
   }
+  var storedMissions = localStorage.getItem('missions');
+  if (storedMissions) {
+    missions = JSON.parse(storedMissions);
+    localStorage.removeItem('missions');
+    return endStep("welcomeBack");
+  }
+
   return endStep("openApp");
 }
 
@@ -78,6 +89,7 @@ function endStep(step) {
       transitionGraph(2, 50, "board", "Intro");
       break;
     case "transitionIntro":
+      document.getElementById("alertPicto").style.display = "block";
       screenDisplay("board");
       // addDocInGame(data.biomimetisme);
       setTimeout(function () {
@@ -103,9 +115,10 @@ function endStep(step) {
     case "welcomeSpeech2":
       document.getElementById("buttonMissions").classList.add("button-pulse");
       break;
-      // case "tutoDoc":
-      //   iaSpeaking(welcomeSpeech3, "welcomeSpeech3");
-      //   break;
+    case "welcomeBack":
+      screenDisplay("board");
+      iaSpeaking(welcomeBackSpeech, "welcomeBackSpeech");
+      break;
     case "enigmeDone":
       // document.getElementById('docEnigme').innerHTML = "";
       document.getElementById("docEnigme").style.display = "none"

@@ -17,6 +17,11 @@ var welcomeSpeech2 = [
     "nous n’avons plus de temps à perdre !",
 ];
 
+var welcomeBackSpeech = [
+    "Te revoilà, human :)",
+    "D'autres missions t'attendent..."
+];
+
 var solvedEnigmeSpeech = [
     'Exact !',
 ];

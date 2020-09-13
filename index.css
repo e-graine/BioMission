@@ -317,6 +317,7 @@ h3 {
   filter: alpha(opacity=0);
   -moz-opacity: 0;
   animation: blinker2 1s linear infinite;
+  display: none;
 }
 
 .picto-text {
