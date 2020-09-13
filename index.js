@@ -21,10 +21,6 @@ var gameStatus = {
 };
 
 window.onbeforeunload = function (e) {
-  if (gameStatus.enigmesToSolv.length !== 0) {
-    localStorage.setItem('missions', JSON.stringify(missions));
-  }
-
   var e = e || window.event;
 
   // For IE and Firefox
@@ -34,6 +30,12 @@ window.onbeforeunload = function (e) {
 
   // For Safari
   return "Any string";
+};
+
+window.onunload = function (e) {
+  if (gameStatus.enigmesToSolv.length !== 0) {
+    localStorage.setItem('missions', JSON.stringify(missions));
+  }
 };
 
 function differentialLoading(query) {
