@@ -1,5 +1,5 @@
 var welcomeSpeech = [
-    "Trop de mission en attente…",
+    "Trop de missions en attente…",
     "Symbiose impossible…",
     "Crash du système prévu dans 30 minutes…",
 ];
@@ -19,15 +19,7 @@ var welcomeSpeech2 = [
 
 var welcomeBackSpeech = [
     "Te revoilà, human :)",
-    "D'autres missions t'attendent..."
-];
-
-var solvedEnigmeSpeech = [
-    'Exact !',
-];
-
-var failedEnigmeSpeech = [
-    'Hum... Non ça ne va pas',
+    "Tes missions t'attendent :)"
 ];
 
 var nextMissionSpeech = ["Merci, humain !", "D'autres missions t'attendent :)"];

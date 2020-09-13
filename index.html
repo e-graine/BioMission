@@ -94,7 +94,6 @@
     <div id="enigmeContainer" class="container enigme-container">
       <div id="bodyEnigme" class="enigme-body"></div>
       <div id="speechEnigme" class="speech enigme-speech"></div>
-
       <div class="button-text button-text-small" id="docEnigme" onclick='screenCall("doc"); resetDoc()'">
         En savoir +
       </div>
@@ -159,329 +158,319 @@
 <script type="text/javascript" src="progress.js"></script>
 
 <div id="enigmeCollection">
-  <div id="e0" doc="biomimetisme">
+  <div id="e0" doc="biomimetisme" answer="Le biomimétisme, c'est s'inspirer de la nature">
     <h2 class="img-title title-e0"></h2>
     <div>
       Le biomimétisme c'est :
     </div>
-    <div onclick="failEnigme('e0')" class="button-text button-text-small">
+    <div onclick="endEnigme('e0')" class="button-text button-text-small">
       Exploiter la nature
     </div>
-    <div onclick="failEnigme('e0')" class="button-text button-text-small">
+    <div onclick="endEnigme('e0')" class="button-text button-text-small">
       Se comporter comme des animaux
     </div>
-    <div onclick="failEnigme('e0')" class="button-text button-text-small">
+    <div onclick="endEnigme('e0')" class="button-text button-text-small">
       Consomer des produits d'origine naturelle
     </div>
-    <div onclick="solvEnigme('e0')" class="button-text button-text-small">
+    <div onclick="endEnigme('e0', true)" class="button-text button-text-small">
       S'inspirer de la nature
     </div>
   </div>
-  <div id="e1" doc="aerodynamisme">
+  <div id="e1" doc="aerodynamisme" answer="Le martin-pêcheur a inspiré des trains aérodynamiques">
     <h2>Observation</h2>
     <div class="game-content">
       Il y a dans cette image un élément qui a inspiré des transports aérodynamiques. Click dessus
       pour faire avancer ta mission.
       <div class="game-zone zone-e1">
         <div class="click-line">
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-          <div onclick="solvEnigme('e1')" class="click-zone"></div>
+          <div onclick="endEnigme('e1')" class="click-zone"></div>
+          <div onclick="endEnigme('e1', true)" class="click-zone"></div>
         </div>
         <div class="click-line">
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
+          <div onclick="endEnigme('e1')" class="click-zone"></div>
+          <div onclick="endEnigme('e1')" class="click-zone"></div>
         </div>
         <div class="click-line">
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
-          <div onclick="failEnigme('e1')" class="click-zone"></div>
+          <div onclick="endEnigme('e1')" class="click-zone"></div>
+          <div onclick="endEnigme('e1')" class="click-zone"></div>
         </div>
       </div>
     </div>
-    <!-- <button onclick="solvEnigme('e1')">Réussir</button>
-      <button onclick="failEnigme('e1')">Echouer</button> -->
   </div>
-  <div id="e2" doc="transportsGES">
+  <div id="e2" doc="transportsGES" answer="La part des transports est de 25%">
     <h2 class="img-title title-e2"></h2>
     <!-- <h2 class="img-title title-e2"><img src="imgGame/cars.png" alt="" class="img100" /></h2> -->
     <div>
-      Quelle est la part d’émissions de gaz à effet de serre liée aux
-      transports ?
+      Quelle est la part d’émissions de gaz à effet de serre liée aux transports ?
     </div>
     <!-- <div> <input type="radio" id="e2-1" name="e2-answer" value="e2-1">5%</div>
       <div> <input type="radio" id="e2-2" name="e2-answer" value="e2-2">15%</div>
       <div> <input type="radio" id="e2-3" name="e2-answer" value="e2-3">25%</div>
       <div> <input type="radio" id="e2-4" name="e2-answer" value="e2-4">33%</div> -->
     <div class="click-line">
-      <div onclick="failEnigme('e2')" class="button-text">5%</div>
-      <div onclick="failEnigme('e2')" class="button-text">15%</div>
+      <div onclick="endEnigme('e2')" class="button-text">1%</div>
+      <div onclick="endEnigme('e2')" class="button-text">10%</div>
     </div>
     <div class="click-line">
-      <div onclick="solvEnigme('e2')" class="button-text">25%</div>
-      <div onclick="failEnigme('e2')" class="button-text">33%</div>
+      <div onclick="endEnigme('e2', true)" class="button-text">25%</div>
+      <div onclick="endEnigme('e2')" class="button-text">75%</div>
     </div>
   </div>
-  <div id="e3" doc="microlatisse">
+  <div id="e3" doc="microlatisse" answer="Le micro-latisse s'inspire des os humains">
     <h2 class="img-title title-e3"></h2>
     <!-- <h2><img src="imgGame/microlatisse.png" alt="" class="img100" /></h2> -->
     <div>
       De quoi s’inspire le micro-lattice, le matériau le plus léger du monde,
       composé à 99,99% d’air ?
     </div>
-    <div onclick="solvEnigme('e3')" class="button-text button-text-small">
+    <div onclick="endEnigme('e3', true)" class="button-text button-text-small">
       Les alvéoles des os humains
     </div>
-    <div onclick="failEnigme('e3')" class="button-text button-text-small">
+    <div onclick="endEnigme('e3')" class="button-text button-text-small">
       La fibre des plumes d’oiseaux
     </div>
-    <div onclick="failEnigme('e3')" class="button-text button-text-small">
+    <div onclick="endEnigme('e3')" class="button-text button-text-small">
       Le fil de la toile d’araignée
     </div>
-    <div onclick="failEnigme('e3')" class="button-text button-text-small">
+    <div onclick="endEnigme('e3')" class="button-text button-text-small">
       Du balsa (un bois ultra-léger)
     </div>
   </div>
-  <div id="e4" doc="labyrinthe">
+  <div id="e4" doc="labyrinthe" answer="Le blob est le roi des labyrinthes">
     <h2 class="img-title title-e4"></h2>
     <!-- <h2><img src="imgGame/labyrinthe.png" alt="" class="img100" /></h2> -->
     <div>
       Qui a réussi à reproduire le réseau du métro de Tokyo en trouvant le
       chemin le plus court vers la sortie d’un labyrinthe ?
     </div>
-    <div onclick="failEnigme('e4')" class="button-text button-text-small">
+    <div onclick="endEnigme('e4')" class="button-text button-text-small">
       Le Rat
     </div>
-    <div onclick="solvEnigme('e4')" class="button-text button-text-small">
+    <div onclick="endEnigme('e4', true)" class="button-text button-text-small">
       Le Blob
     </div>
-    <div onclick="failEnigme('e4')" class="button-text button-text-small">
+    <div onclick="endEnigme('e4')" class="button-text button-text-small">
       Le Cafard
     </div>
-    <div onclick="failEnigme('e4')" class="button-text button-text-small">
+    <div onclick="endEnigme('e4')" class="button-text button-text-small">
       La Fourmi
     </div>
   </div>
-  <div id="e5" doc="felin">
+  <div id="e5" doc="felin" answer="Ce sont les coussinets sous leurs pattes">
     <h2 class="img-title title-e5"></h2>
-    <!-- <h2><img src="imgGame/tigre.jpg" alt="" class="img100" /></h2> -->
     <div>Qu’est-ce qui permet aux tigres d’être aussi silencieux ?</div>
-    <div onclick="failEnigme('e5')" class="button-text button-text-small">
+    <div onclick="endEnigme('e5')" class="button-text button-text-small">
       Leur souplesse
     </div>
-    <div onclick="failEnigme('e5')" class="button-text button-text-small">
+    <div onclick="endEnigme('e5')" class="button-text button-text-small">
       Leur silhouette ergonomique
     </div>
-    <div onclick="solvEnigme('e5')" class="button-text button-text-small">
+    <div onclick="endEnigme('e5', true)" class="button-text button-text-small">
       Les coussinets sous leurs pattes
     </div>
-    <div onclick="failEnigme('e5')" class="button-text button-text-small">
+    <div onclick="endEnigme('e5')" class="button-text button-text-small">
       Leur pelage
     </div>
   </div>
-  <div id="e6" doc="chouette">
+  <div id="e6" doc="chouette" answer="C'est grâce à leur plumage">
     <h2 class="img-title title-e6"></h2>
-    <!-- <h2><img src="imgGame/chouette.png" alt="" class="img100" /></h2> -->
-    <div>Pourquoi la chouette est-il le rapace le plus silencieux?</div>
-    <div onclick="failEnigme('e6')" class="button-text button-text-small">
+    <div>Pourquoi la chouette est-il le rapace le plus silencieux ?</div>
+    <div onclick="endEnigme('e6')" class="button-text button-text-small">
       Grâce à son aérodynamisme
     </div>
-    <div onclick="solvEnigme('e6')" class="button-text button-text-small">
+    <div onclick="endEnigme('e6', true)" class="button-text button-text-small">
       Grâce à son plumage tout doux
     </div>
-    <div onclick="failEnigme('e6')" class="button-text button-text-small">
+    <div onclick="endEnigme('e6')" class="button-text button-text-small">
       Grâce à son vol géothermique
     </div>
-    <div onclick="failEnigme('e6')" class="button-text button-text-small">
+    <div onclick="endEnigme('e6')" class="button-text button-text-small">
       Grâce à ses talents de ninja
     </div>
   </div>
-  <div id="e7" doc="libellule">
-    <h2 class="img-title title-e7"></h2>
-    <!-- <h2><img src="imgGame/libellule.jpg" alt="" class="img100" /></h2> -->
-    <div>
-      Combien de foyers une éolienne de 1,8 mégawatt peut-elle fournir en
-      électricité en moyenne par an ?
-    </div>
-    <div onclick="failEnigme('e7')" class="button-text button-text-small">
-      350 foyers
-    </div>
-    <div onclick="solvEnigme('e7')" class="button-text button-text-small">
-      1000 foyers
-    </div>
-    <div onclick="failEnigme('e7')" class="button-text button-text-small">
-      3000 foyers
-    </div>
-    <div onclick="failEnigme('e7')" class="button-text button-text-small">
-      12000 foyers
+  <div id="e7" doc="libellule" answer="C'est la libellule">
+    <h2>Observation</h2>
+    <div class="game-content">
+      Il y a dans cette image un élément qui a inspiré des éoliennes domestiques. Click dessus
+      pour faire avancer ta mission.
+      <div class="game-zone zone-e1">
+        <div class="click-line">
+          <div onclick="endEnigme('e7')" class="click-zone"></div>
+          <div onclick="endEnigme('e7')" class="click-zone"></div>
+        </div>
+        <div class="click-line">
+          <div onclick="endEnigme('e7')" class="click-zone"></div>
+          <div onclick="endEnigme('e7', true)" class="click-zone"></div>
+        </div>
+        <div class="click-line">
+          <div onclick="endEnigme('e7')" class="click-zone"></div>
+          <div onclick="endEnigme('e7')" class="click-zone"></div>
+        </div>
+      </div>
     </div>
   </div>
-  <div id="e8" doc="baleine">
+  <div id="e8" doc="baleine" answer="C'est grâce aux tubercules sur leur nageoirs">
     <h2 class="img-title title-e8"></h2>
-    <!-- <h2><img src="imgGame/baleine.jpg" alt="" class="img100" /></h2> -->
     <div>
       Les baleines à bosse sont particulièrement agile sous l’eau grâce à leur
       bosse.
     </div>
-    <div onclick="failEnigme('e8')" class="button-text button-text-small">
+    <div onclick="endEnigme('e8')" class="button-text button-text-small">
       Vrai
     </div>
-    <div onclick="solvEnigme('e8')" class="button-text button-text-small">
+    <div onclick="endEnigme('e8', true)" class="button-text button-text-small">
       Faux
     </div>
   </div>
-  <div id="e9" doc="biolum">
+  <div id="e9" doc="biolum" answer="On appelle ça la bioluminescence">
     <h2 class="img-title title-e9"></h2>
-    <!-- <h2><img src="imgGame/biolum.jpg" alt="" class="img100" /></h2> -->
     <div>
       Quel phénomène naturel permet d’éclairer vos promenades nocturnes au
       contact de l’eau sur certaines plages du monde ?
     </div>
-    <div onclick="failEnigme('e9')" class="button-text button-text-small">
+    <div onclick="endEnigme('e9')" class="button-text button-text-small">
       La fluorescence
     </div>
-    <div onclick="solvEnigme('e9')" class="button-text button-text-small">
+    <div onclick="endEnigme('e9', true)" class="button-text button-text-small">
       La bioluminescence
     </div>
-    <div onclick="failEnigme('e9')" class="button-text button-text-small">
+    <div onclick="endEnigme('e9')" class="button-text button-text-small">
       La phosphorescence
     </div>
   </div>
-  <div id="e10" doc="tournesol">
+  <div id="e10" doc="tournesol"
+    answer="Le tournesole pousse plus vite à l'ombre, ce qui courbe la fleur vers le soleil">
     <h2 class="img-title title-e10"></h2>
-    <!-- <h2><img src="imgGame/tournesol.jpg" alt="" class="img100" /></h2> -->
     <div>
-      Le mouvement de la fleur de tournesol est lié à une hormone de
-      croissance qui se concentre à l’ombre de la tige la faisant pousser plus
-      vite que la partie ensoleillée. Cela crée un déséquilibre qui courbe la
-      tige vers le soleil.
+      Le mouvement de la fleur des tournesol est lié à une hormone de croissance qui se concentre à l'ombre de la tige.
     </div>
-    <div onclick="solvEnigme('e10')" class="button-text button-text-small">
+    <div onclick="endEnigme('e10', true)" class="button-text button-text-small">
       Vrai
     </div>
-    <div onclick="failEnigme('e10')" class="button-text button-text-small">
+    <div onclick="endEnigme('e10')" class="button-text button-text-small">
       Faux
     </div>
   </div>
-  <div id="e11" doc="pommeDePin">
+  <div id="e11" doc="pommeDePin" answer="Les écailles de la pomme de pin s'ouvrent et se ferment selon l'humidité">
     <h2 class="img-title title-e11"></h2>
     <!-- <h2><img src="imgGame/h2o.jpg" alt="" class="img100" /></h2> -->
     <div>Quel fruit est capable de réguler son humidité ?</div>
-    <div onclick="failEnigme('e11')" class="button-text button-text-small">
+    <div onclick="endEnigme('e11')" class="button-text button-text-small">
       <img src="imgGame/physalis.jpg" alt="" class="img100" />La physalis
     </div>
-    <div onclick="solvEnigme('e11')" class="button-text button-text-small">
+    <div onclick="endEnigme('e11', true)" class="button-text button-text-small">
       <img src="imgGame/pommedepin.jpg" alt="" class="img100" />La pomme de
       pin
     </div>
-    <div onclick="failEnigme('e11')" class="button-text button-text-small">
+    <div onclick="endEnigme('e11')" class="button-text button-text-small">
       <img src="imgGame/chataigne.jpg" alt="" class="img100" />La chataigne
     </div>
   </div>
-  <div id="e12" doc="microalgues">
+  <div id="e12" doc="microalgues" answer="L'éfficaité peut atteindre 99%">
     <h2 class="img-title title-e12"></h2>
-    <!-- <h2><img src="imgGame/microalgues.jpg" alt="" class="img100" /></h2> -->
     <div>
       Les micro-algues ont une efficacité de dépollution allant jusqu’à 40% .
     </div>
-    <div onclick="failEnigme('e12')" class="button-text button-text-small">
+    <div onclick="endEnigme('e12')" class="button-text button-text-small">
       Vrai
     </div>
-    <div onclick="solvEnigme('e12')" class="button-text button-text-small">
+    <div onclick="endEnigme('e12', true)" class="button-text button-text-small">
       Faux
     </div>
   </div>
-  <div id="e13" doc="carbonate">
+  <div id="e13" doc="carbonate" answer="On en trouve aussi bien dans les coquillage, le calcaire et ou corail">
     <br />
     <div>Lequel de ces éléments contient du carbonate de calcium ?</div>
-    <div onclick="failEnigme('e13')" class="button-text button-text-small">
+    <div onclick="endEnigme('e13')" class="button-text button-text-small">
       <img src="imgGame/coquillage.jpg" alt="" class="img100" />Les
       coquillages
     </div>
-    <div onclick="failEnigme('e13')" class="button-text button-text-small">
+    <div onclick="endEnigme('e13')" class="button-text button-text-small">
       <img src="imgGame/calcaire.jpg" alt="" class="img100" />Le calcaire
     </div>
-    <div onclick="failEnigme('e13')" class="button-text button-text-small">
+    <div onclick="endEnigme('e13')" class="button-text button-text-small">
       <img src="imgGame/corail.jpg" alt="" class="img100" />Le corail
     </div>
-    <div onclick="solvEnigme('e13')" class="button-text button-text-small">
+    <div onclick="endEnigme('e13', true)" class="button-text button-text-small">
       Tous
     </div>
   </div>
-  <div id="e14" doc="termitiere">
+  <div id="e14" doc="termitiere" answer="Il prends exemple sur une termitière">
     <h2 class="img-title title-e14"></h2>
     <div>
-      De quelle habitat d'insecte s'inspire l'Eastgate building au Zimbabwe ?
+      L'Eastgate building, au Zimbabwe, est percé de multiples ouvertures pour réguler la chaleur. De quelle habitat
+      d'insecte s'inspire-t-il?
     </div>
-    <div onclick="failEnigme('e14')" class="button-text button-text-small">
+    <div onclick="endEnigme('e14')" class="button-text button-text-small">
       D'une ruche
     </div>
-    <div onclick="failEnigme('e14')" class="button-text button-text-small">
+    <div onclick="endEnigme('e14')" class="button-text button-text-small">
       D'une fourmilière
     </div>
-    <div onclick="failEnigme('e14')" class="button-text button-text-small">
+    <div onclick="endEnigme('e14')" class="button-text button-text-small">
       D'une coquille d'escargot
     </div>
-    <div onclick="solvEnigme('e14')" class="button-text button-text-small">
+    <div onclick="endEnigme('e14', true)" class="button-text button-text-small">
       D'une termitière
     </div>
   </div>
-  <div id="e15" doc="araignée">
+  <div id="e15" doc="araignée" answer="Elles sont hyper-solides, insonorisantes et antisismiques">
     <h2 class="img-title title-e15"></h2>
-    <!-- <h2><img src="imgGame/microalgues.jpg" alt="" class="img100" /></h2> -->
     <div>
-      Quelles types de caractéristiques possèdent une toile d’araignée ?
+      Quelles caractéristiques possèdent les toiles d’araignée ?
     </div>
-    <div onclick="failEnigme('e15')" class="button-text button-text-small">
+    <div onclick="endEnigme('e15')" class="button-text button-text-small">
       Hyper-solide, étanche, insonorisant
     </div>
-    <div onclick="solvEnigme('e15')" class="button-text button-text-small">
+    <div onclick="endEnigme('e15', true)" class="button-text button-text-small">
       Hyper-solide, insonorisant, antisismique
     </div>
-    <div onclick="failEnigme('e15')" class="button-text button-text-small">
+    <div onclick="endEnigme('e15')" class="button-text button-text-small">
       Hyper-solide, auto-régénérant, multicolor
     </div>
   </div>
-  <div id="e16" doc="impactBruit">
+  <div id="e16" doc="impactBruit"
+    answer="Le bruit crée du stress, de la fatigue, des pertes de mémoire et des crises cardiaque">
     <h2 class="img-title title-e16"></h2>
-    <!-- <h2><img src="imgGame/microalgues.jpg" alt="" class="img100" /></h2> -->
     <div>
       Quels sont les impacts de la pollution sonore sur le corps humain ?
     </div>
-    <div onclick="failEnigme('e16')" class="button-text button-text-small">
+    <div onclick="endEnigme('e16')" class="button-text button-text-small">
       Stress, bourdonnement d’oreille, asthme, fatigue
     </div>
-    <div onclick="failEnigme('e16')" class="button-text button-text-small">
+    <div onclick="endEnigme('e16')" class="button-text button-text-small">
       Stress, diabète, crise cardiaque
     </div>
-    <div onclick="solvEnigme('e16')" class="button-text button-text-small">
+    <div onclick="endEnigme('e16'), true" class="button-text button-text-small">
       Stress, perte de mémoire, crise cardiaque, fatigue
     </div>
   </div>
-  <div id="e17" doc="mycellium">
+  <div id="e17" doc="mycellium" answer="Il s'agit du blanc des champignons">
     <h2 class="img-title title-e17"></h2>
-    <div>Qu’est-ce que le mycélium ?</div>
-    <div onclick="failEnigme('e17')" class="button-text button-text-small">
-      Le chapeau des champignons7
+    <div>Qu’est-ce que le mycélium (vu ici au microscope) ?</div>
+    <div onclick="endEnigme('e17')" class="button-text button-text-small">
+      Les fleuves d'amazonie
     </div>
-    <div onclick="failEnigme('e17')" class="button-text button-text-small">
-      La tige des champignons
-    </div>
-    <div onclick="solvEnigme('e17')" class="button-text button-text-small">
+    <div onclick="endEnigme('e17'), true" class="button-text button-text-small">
       Le blanc des champignons
     </div>
-    <div onclick="failEnigme('e17')" class="button-text button-text-small">
-      Les racines des champignon7
+    <div onclick="endEnigme('e17')" class="button-text button-text-small">
+      L'écorce d'un arbre
+    </div>
+    <div onclick="endEnigme('e17')" class="button-text button-text-small">
+      Une carte routière après l'apocalypse
     </div>
   </div>
-  <div id="e18" doc="aquaporines">
+  <div id="e18" doc="aquaporines" answer="C'est une méthode efficace des dépollution des eaux">
     <h2 class="img-title title-e18"></h2>
     <div>Quelle utilisation peut-on faire des aquaporines ?</div>
-    <div onclick="solvEnigme('e18')" class="button-text button-text-small">
+    <div onclick="endEnigme('e18'), true" class="button-text button-text-small">
       Dépollution de l’eau
     </div>
-    <div onclick="failEnigme('e18')" class="button-text button-text-small">
+    <div onclick="endEnigme('e18')" class="button-text button-text-small">
       Dépollution de l’air
     </div>
-    <div onclick="failEnigme('e18')" class="button-text button-text-small">
+    <div onclick="endEnigme('e18')" class="button-text button-text-small">
       Dépollution des sols
     </div>
   </div>

@@ -33,7 +33,7 @@ window.onbeforeunload = function (e) {
 };
 
 window.onunload = function (e) {
-  if (gameStatus.enigmesToSolv.length !== 0) {
+  if (gameStatus.enigmesToSolv.length !== 0 && Object.keys(missions).length !== 0) {
     localStorage.setItem('missions', JSON.stringify(missions));
   }
 };
@@ -120,6 +120,7 @@ function endStep(step) {
     case "welcomeBack":
       screenDisplay("board");
       iaSpeaking(welcomeBackSpeech, "welcomeBackSpeech");
+      document.getElementById("buttonMissions").classList.add("button-pulse");
       break;
     case "enigmeDone":
       // document.getElementById('docEnigme').innerHTML = "";

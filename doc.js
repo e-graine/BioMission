@@ -32,11 +32,11 @@ var data = {
         body: "Le bruit causé par une aile est en grande partie causé par le passage de l’air sur sa partie arrière. Pour réduire ces turbulences et rendre son vol furtif, les ailes de la chouette sont recouvertes d’un revêtement duveteux et pelucheux, structure que les chercheurs ont cherché à imiter pour réduire le bruit des hélices des éoliennes."
     },
     libellule: {
-        title: "L'éolienne \"Libellule\"",
+        title: "La délicatesse du vent",
         body: "Le vent est imprévisible et la disponibilité de l'énergie éolienne n'est pas constante. Ce n’est donc pas très fiable en tant que source d’énergie de référence. A l’heure actuelle, nous n’avons pas de moyens rentables de stocker l'énergie éolienne. En revanche, une solution inspirée de la libellule a permi la création de petites éoliennes transparentes à deux pales capables de capter les brises légères dans les petits jardins."
     },
     baleine: {
-        title: "L'éolienne \"Libellule\"",
+        title: "L'agilité de la baleine",
         body: "Les baleines à bosse possèdent des “tubercules” sur leurs nageoires. En s’inspirant de ces nageoires, des turbines ont été développées avec des tubercules sur les hélices qui garantissent une meilleure efficacité dans de nombreuses applications allant d’éoliennes aux turbines hydroélectriques en passant par les pompes d’irrigation et  les ventilateurs. Utiliser ces hélices pour les éoliennes peut améliorer leur efficacité jusqu’à 20%, les rendant ainsi compétitives avec d’autres sources d’énergie."
     },
     biolum: {
@@ -49,7 +49,7 @@ var data = {
     },
     pommeDePin: {
         title: "Des écailles réactives",
-        body: "La nature a inspiré un habitat  réactif aux conditions climatiques, notamment au changement d’humidité. Des rainures sont intégrées au sein d’une structure en bois et selon l’humidité qui s’y infiltre, les ouvertures s’ouvriront ou se fermeront tout comme les écailles d’une pomme de pin. L’habitat régule donc lui-même l’entrée de l’air extérieur."
+        body: "La nature a inspiré un habitat réactif aux conditions climatiques, notamment au changement d’humidité. Des rainures sont intégrées au sein d’une structure en bois et selon l’humidité qui s’y infiltre, les ouvertures s’ouvriront ou se fermeront tout comme les écailles d’une pomme de pin. L’habitat régule donc lui-même l’entrée de l’air extérieur."
     },
     microalgues: {
         title: "Piège à carbonne",
