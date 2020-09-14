@@ -17,7 +17,7 @@ var data = {
     },
     microlatisse: {
         title: "Micro-Lattice",
-        body: "Le matériau le plus léger du monde, composé à 99,99% d’air, est une innovation majeure pour l'industrie, en particulier aéronautique. Utilisé pour faire un avion poids-plume, il pourrait permettre de réduire la consommation de carburant et les émissions polluantes. Il s'inspire des os humains, rigides à l'exterieur, mais on peut voir à l'intérieur des petites alvéoles creuses. C'est cela qui les rends très solide mais aussi très léger."
+        body: "Le matériau le plus léger du monde, composé à 99,99% d’air, est une innovation majeure pour l'industrie, en particulier aéronautique. Utilisé pour faire un avion poids-plume, il pourrait permettre de réduire la consommation de carburant et les émissions polluantes. Il s'inspire des os humains, rigides à l'exterieur, mais on peut voir à l'intérieur des petites alvéoles creuses. C'est cela qui les rends très solide mais aussi très léger. <br><br> <img src='imgGame/os.jpg' class='img100'>"
     },
     labyrinthe: {
         title: "Labyrinthe et réseaux",

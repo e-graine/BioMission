@@ -10,10 +10,13 @@ var gameStatus = {
   enigmesToSolv: [],
   missionTodo: [],
   dataEnigmes: [],
-  dataDoc: [{
-    title: "Sources",
-    body: "Bla blabla... ",
-  }, ],
+  dataDoc: [
+    data.biomimetisme,
+    {
+      title: "Sources",
+      body: "Bla blabla... ",
+    },
+  ],
   timesUp: false,
   missionsMemory: null,
   score: null,
@@ -33,12 +36,17 @@ window.onbeforeunload = function (e) {
 };
 
 window.onunload = function (e) {
-  if (gameStatus.enigmesToSolv.length !== 0 && Object.keys(missions).length !== 0) {
+  if (gameStatus.enigmesToSolv.length !== 0 &&
+    Object.keys(missions).length !== 0 &&
+    !timesUp) {
     localStorage.setItem('missions', JSON.stringify(missions));
   }
 };
 
 function differentialLoading(query) {
+  if (query === "testAll") {
+    return endStep("transitionIntro");
+  }
   if (query === "test") {
     missions = {
       Mobilité: {
@@ -117,6 +125,9 @@ function endStep(step) {
     case "welcomeSpeech2":
       document.getElementById("buttonMissions").classList.add("button-pulse");
       break;
+    case "nextMissionSpeech":
+      document.getElementById("buttonMissions").classList.add("button-pulse");
+      break;
     case "welcomeBack":
       screenDisplay("board");
       iaSpeaking(welcomeBackSpeech, "welcomeBackSpeech");
@@ -157,7 +168,7 @@ function endStep(step) {
     case "endGameSpeech3":
       document.getElementById("buttonReStart").classList.add("button-pulse");
       if (!gameStatus.score) {
-        document.getElementById("shareSpeech").style.display = 'block';
+        // document.getElementById("shareSpeech").style.display = 'block';
       }
       break;
     default:

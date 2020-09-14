@@ -38,7 +38,7 @@ function ending() {
     }
     screenCall("board");
     if (Object.keys(missions).length !== 0) {
-        iaSpeaking(nextMissionSpeech);
+        iaSpeaking(nextMissionSpeech, 'nextMissionSpeech');
     } else {
         gameStatus.endReason = looser;
         endStep("endGame");
