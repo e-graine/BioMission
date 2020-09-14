@@ -675,11 +675,13 @@ h3 {
 }
 
 .click-zone {
-  width: 100px;
-  height: 100px;
+  width: 40vw;
+  height: 40vw;
+  max-width: 250px;
+  max-height: 250px;
   cursor: pointer;
   background-color: black;
-  opacity: 0.3;
+  opacity: 0.1;
   margin: 2px;
 }
 
