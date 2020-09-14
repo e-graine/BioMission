@@ -15,17 +15,13 @@ function ending() {
         return;
     }
 
-    // gameStatus.missionTodo = gameStatus.missionTodo.filter(
-    //   (m) => m !== gameStatus.currentMission
-    // );
-
     if (gameStatus.currentMission) {
         if (missions[gameStatus.currentMission].enigmes.length !== 0) {
             document.getElementById(gameStatus.currentMission).style.display = "none";
             delete missions[gameStatus.currentMission];
         }
     }
-    // document.getElementById(gameStatus.currentMission).style.display = "none";
+
     for (mission in missions) {
         if (missions[mission].enigmes.length === 0) {
             document.getElementById(mission).style.display = "none";
@@ -33,16 +29,15 @@ function ending() {
             gameStatus.missionTodo = gameStatus.missionTodo.filter(function (m) {
                 return m !== mission;
             });
-            // document.getElementById(mission).style.display = "none";
         }
     }
+
     screenCall("board");
     if (Object.keys(missions).length !== 0) {
         iaSpeaking(nextMissionSpeech, 'nextMissionSpeech');
     } else {
         gameStatus.endReason = looser;
         endStep("endGame");
-        // iaSpeaking(looserSpeech, "rattrapage");
     }
 }
 
@@ -60,24 +55,9 @@ function winRateDisplay() {
         scoreWriter(0, gameStatus.score)
     } else {
         var score = parseInt(document.getElementById('winProgress').style.width);
-        // gameStatus.score = parseInt(document.getElementById('winProgress').style.width);
         endGameSpeech2 = ['Tu as atteint ' + score + ' % de la symbiose'];
         scoreWriter(0, score)
     }
-
-
-    var sharers = document.getElementsByClassName('share-button')
-
-    // for (s of sharers) {
-    //     s.href += url
-    // }
-
-    // var copyText = "qerg"
-    // copyText.select();
-    // document.execCommand("copy");
-
-
-
 }
 
 function scoreWriter(counter, limit) {

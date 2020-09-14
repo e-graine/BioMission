@@ -9,7 +9,7 @@ function displayEnigme() {
             addDocInGame(data[doc.value]);
         }
     }
-
+    document.getElementById('enigmeNumber').innerHTML = (gameStatus.numEnigme + 1) + "/" + gameStatus.dataEnigmes.length
 }
 
 function solvEnigme(enigme, answer) {

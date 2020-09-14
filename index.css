@@ -151,6 +151,25 @@ form {
   flex-direction: column;
 }
 
+.enigme-number {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  margin: 10px;
+  width: 3vw;
+  height: 3vw;
+  min-width: 40px;
+  min-height: 40px;
+  /* padding: 10px; */
+  border-radius: 50%;
+  color: black;
+  background-color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .enigme-container {
   justify-content: top;
 }
