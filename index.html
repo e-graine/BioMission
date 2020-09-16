@@ -100,16 +100,17 @@
       </div>
     </div>
   </div>
-  <div id=" endGame" class="end-game screen-div" nodoc>
-        <div id="speechEnd1" class="speech"></div>
-        <div class="win-rate speech" id="winRate"></div>
-        <div id="speechEnd2" class="speech" style="margin-bottom: 20px"></div>
-        <div id="speechEnd3" class="speech"></div>
-        <div class="button-text" id="buttonReStart" onclick="restart()">
-          Rejouer
-        </div>
-        <div class="speech share-speech" id="shareSpeech" onclick="sharedScore()">Partager ce score &#10140;</div>
-        <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class='share-button'>
+      <div id='endGame' class='end-game screen-div' nodoc>
+        <div id='speechEnd1' class='speech'></div>
+        <div class='win-rate speech' id='winRate'></div>
+      <!-- <div class=" win-rate speech" id="winRate"></div> -->
+      <div id="speechEnd2" class="speech" style="margin-bottom: 20px"></div>
+      <div id="speechEnd3" class="speech"></div>
+      <div class="button-text" id="buttonReStart" onclick="restart()">
+        Rejouer
+      </div>
+      <div class="speech share-speech" id="shareSpeech" onclick="sharedScore()">Partager ce score &#10140;</div>
+      <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class='share-button'>
       <img src="ui/facebook.svg" alt="Facebook" />
     </a>
     <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class='share-button'>
@@ -118,14 +119,14 @@
     <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class='share-button'>
       <img src="ui/tiktok.svg" alt="Facebook" />
     </a> -->
+    </div>
+    <div class="button-doc button" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'>
+      <div class="speech indice-alert" id="indiceAlert">
+        <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
       </div>
-      <div class="button-doc button" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'>
-        <div class="speech indice-alert" id="indiceAlert">
-          <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
-        </div>
-      </div>
-      <div id="exitButton" class="button button-exit" onclick="exit()">
-      </div>
+    </div>
+    <div id="exitButton" class="button button-exit" onclick="exit()">
+    </div>
 </body>
 
 <!-- <script type="text/javascript" src="visitCounter/visitCounter.js"></script> -->
