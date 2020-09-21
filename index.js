@@ -36,10 +36,12 @@ window.onbeforeunload = function (e) {
 };
 
 window.onunload = function (e) {
-  if (gameStatus.enigmesToSolv.length !== 0 &&
+  if (
+    gameStatus.enigmesToSolv.length !== 0 &&
     Object.keys(missions).length !== 0 &&
-    !timesUp) {
-    localStorage.setItem('missions', JSON.stringify(missions));
+    !gameStatus.timesUp
+  ) {
+    localStorage.setItem("missions", JSON.stringify(missions));
   }
 };
 
@@ -61,10 +63,10 @@ function differentialLoading(query) {
     // crypetr(gameStatus.score);
     return endStep("score");
   }
-  var storedMissions = localStorage.getItem('missions');
+  var storedMissions = localStorage.getItem("missions");
   if (storedMissions) {
     missions = JSON.parse(storedMissions);
-    localStorage.removeItem('missions');
+    localStorage.removeItem("missions");
     return endStep("welcomeBack");
   }
 
@@ -109,14 +111,14 @@ function endStep(step) {
         iaSpeaking(welcomeSpeech, "welcomeSpeech");
       }, 1000);
       break;
-      // case "alertSpeech":
-      //   // screenCall("board");
-      //   // addDocInGame(data.biomimetisme);
-      //   document.getElementById('alertText').style.display = 'none';
-      //   setTimeout(function () {
-      //     iaSpeaking(welcomeSpeech, "welcomeSpeech");
-      //   }, 1000);
-      //   break;
+    // case "alertSpeech":
+    //   // screenCall("board");
+    //   // addDocInGame(data.biomimetisme);
+    //   document.getElementById('alertText').style.display = 'none';
+    //   setTimeout(function () {
+    //     iaSpeaking(welcomeSpeech, "welcomeSpeech");
+    //   }, 1000);
+    //   break;
     case "welcomeSpeech":
       document.getElementById("alertPicto").style.display = "none";
       // addDocInGame(data.biomimetisme);
@@ -135,7 +137,7 @@ function endStep(step) {
       break;
     case "enigmeDone":
       // document.getElementById('docEnigme').innerHTML = "";
-      document.getElementById("docEnigme").style.display = "none"
+      document.getElementById("docEnigme").style.display = "none";
       setTimeout(function () {
         ending();
       }, 500);
@@ -173,7 +175,7 @@ function endStep(step) {
       break;
     default:
       break;
-      // console.log("step bug with " + step);
+    // console.log("step bug with " + step);
   }
 }
 
@@ -237,11 +239,11 @@ function visitCount(db, col, counter) {
   request.open(
     "GET",
     "https://ycallier-api.herokuapp.com/countAPI/" +
-    db +
-    "/" +
-    col +
-    "/" +
-    counter,
+      db +
+      "/" +
+      col +
+      "/" +
+      counter,
     true
   );
   request.send();
