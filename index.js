@@ -70,10 +70,10 @@ function differentialLoading(query) {
     // crypetr(gameStatus.score);
     return endStep("score");
   }
-  var storedMissions = localStorage.getItem("missions");
-  if (storedMissions) {
-    missions = JSON.parse(storedMissions);
-    gameStatus = JSON.parse(localStorage.getItem("gameStatus"));
+  var storedStatus = localStorage.getItem("gameStatus");
+  if (storedStatus) {
+    storedStatus = JSON.parse(storedStatus);
+    missions = JSON.parse(localStorage.getItem("missions"));
     progress('timeProgress', (gameStatus.curentTime * (100 / gameStatus.totalTime)));
     progress('winProgress', (100 / gameStatus.nbEnigme) * (gameStatus.nbEnigme - gameStatus.enigmesToSolv.length));
     return endStep("welcomeBack");
