@@ -53,6 +53,9 @@ window.onunload = function (e) {
 };
 
 function differentialLoading(query) {
+  if (query === "reset") {
+    return endStep("openApp");
+  }
   if (query === "testAll") {
     return endStep("transitionIntro");
   }
@@ -72,8 +75,9 @@ function differentialLoading(query) {
   }
   var storedStatus = localStorage.getItem("gameStatus");
   if (storedStatus) {
-    storedStatus = JSON.parse(storedStatus);
+    gameStatus = JSON.parse(storedStatus);
     missions = JSON.parse(localStorage.getItem("missions"));
+    console.log(gameStatus.curentTime);
     progress('timeProgress', (gameStatus.curentTime * (100 / gameStatus.totalTime)));
     progress('winProgress', (100 / gameStatus.nbEnigme) * (gameStatus.nbEnigme - gameStatus.enigmesToSolv.length));
     return endStep("welcomeBack");
@@ -225,7 +229,7 @@ function screenCall(screen) {
 }
 
 function majStatus(screen) {
-  if (gameStatus.currentScreen) {
+  if (screen !== gameStatus.currentScreen) {
     gameStatus.previousScreen = gameStatus.currentScreen;
   }
   gameStatus.currentScreen = screen;
