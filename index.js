@@ -3,11 +3,13 @@ var gameStatus = {
   viewDoc: false,
   viewMissions: false,
   currentScreen: "intro",
+  previousScreen: null,
   currentMission: null,
   currentEnigme: null,
   numEnigme: 0,
   textImpact: "",
   enigmesToSolv: [],
+  nbEnigme: null,
   missionTodo: [],
   dataEnigmes: [],
   dataDoc: [
@@ -17,6 +19,8 @@ var gameStatus = {
       body: "Bla blabla... ",
     },
   ],
+  totalTime: 30 * 60,
+  curentTime: 0,
   timesUp: false,
   missionsMemory: null,
   score: null,
@@ -42,6 +46,9 @@ window.onunload = function (e) {
     !gameStatus.timesUp
   ) {
     localStorage.setItem("missions", JSON.stringify(missions));
+    localStorage.setItem("gameStatus", JSON.stringify(gameStatus));
+  } else {
+    localStorage.clear();
   }
 };
 
@@ -66,7 +73,9 @@ function differentialLoading(query) {
   var storedMissions = localStorage.getItem("missions");
   if (storedMissions) {
     missions = JSON.parse(storedMissions);
-    localStorage.removeItem("missions");
+    gameStatus = JSON.parse(localStorage.getItem("gameStatus"));
+    progress('timeProgress', (gameStatus.curentTime * (100 / gameStatus.totalTime)));
+    progress('winProgress', (100 / gameStatus.nbEnigme) * (gameStatus.nbEnigme - gameStatus.enigmesToSolv.length));
     return endStep("welcomeBack");
   }
 
@@ -111,14 +120,14 @@ function endStep(step) {
         iaSpeaking(welcomeSpeech, "welcomeSpeech");
       }, 1000);
       break;
-    // case "alertSpeech":
-    //   // screenCall("board");
-    //   // addDocInGame(data.biomimetisme);
-    //   document.getElementById('alertText').style.display = 'none';
-    //   setTimeout(function () {
-    //     iaSpeaking(welcomeSpeech, "welcomeSpeech");
-    //   }, 1000);
-    //   break;
+      // case "alertSpeech":
+      //   // screenCall("board");
+      //   // addDocInGame(data.biomimetisme);
+      //   document.getElementById('alertText').style.display = 'none';
+      //   setTimeout(function () {
+      //     iaSpeaking(welcomeSpeech, "welcomeSpeech");
+      //   }, 1000);
+      //   break;
     case "welcomeSpeech":
       document.getElementById("alertPicto").style.display = "none";
       // addDocInGame(data.biomimetisme);
@@ -175,7 +184,7 @@ function endStep(step) {
       break;
     default:
       break;
-    // console.log("step bug with " + step);
+      // console.log("step bug with " + step);
   }
 }
 
@@ -216,22 +225,23 @@ function screenCall(screen) {
 }
 
 function majStatus(screen) {
+  if (gameStatus.currentScreen) {
+    gameStatus.previousScreen = gameStatus.currentScreen;
+  }
   gameStatus.currentScreen = screen;
 
   if (gameStatus.step === "welcomeSpeech2" && screen === "board") {
     endStep("tutoDoc");
   }
-  // else if (gameStatus.step === "welcomeSpeech3" && screen === "board") {
-  //   endStep("tutoMissions");
-  // }
 }
 
 function exit() {
-  if (gameStatus.currentEnigme) {
-    screenCall("enigme");
-  } else {
-    screenCall("board");
-  }
+  // if (gameStatus.currentEnigme) {
+  //   screenCall("missions");
+  // } else {
+  //   screenCall("board");
+  // }
+  screenCall(gameStatus.previousScreen);
 }
 
 function visitCount(db, col, counter) {
@@ -239,11 +249,11 @@ function visitCount(db, col, counter) {
   request.open(
     "GET",
     "https://ycallier-api.herokuapp.com/countAPI/" +
-      db +
-      "/" +
-      col +
-      "/" +
-      counter,
+    db +
+    "/" +
+    col +
+    "/" +
+    counter,
     true
   );
   request.send();
@@ -264,3 +274,4 @@ function crypetr(data) {
 
 //////////////////// lancement
 creaMission();
+if (!gameStatus.nbEnigme) gameStatus.nbEnigme = gameStatus.enigmesToSolv.length;

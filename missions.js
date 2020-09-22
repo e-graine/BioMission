@@ -27,7 +27,6 @@ function creaMission() {
   var container = document.getElementById("missionsContainer");
   container.innerHTML = "";
   for (mission in missions) {
-    // gameStatus.missionTodo.push(mission);
 
     var icon = document.createElement("img");
     icon.src = missions[mission].icon;
@@ -38,17 +37,10 @@ function creaMission() {
     missionTitle.appendChild(icon);
     missionTitle.appendChild(textTitle);
 
-    // var enigmeList = document.createElement('ul');
-    // enigmeList.className = 'mission-list';
-
     for (enigme of missions[mission].enigmes) {
       if (gameStatus.enigmesToSolv.indexOf(enigme) === -1) {
         gameStatus.enigmesToSolv.push(enigme);
       }
-      // var enigmePoint = document.createElement('li');
-      // enigmePoint.id = 'bull' + mission + enigme;
-      // enigmePoint.className = 'enigme-waiting-bullet bull' + enigme;
-      // enigmeList.appendChild(enigmePoint);
     }
 
     var glow = document.createElement("div");
@@ -68,19 +60,23 @@ function creaMission() {
     barContainer.className = "bar-container";
     barContainer.appendChild(progressBar);
 
-    missions[mission].stepProgress = 100 / missions[mission].enigmes.length;
-
     var missionViewer = document.createElement("div");
     missionViewer.className = "mission-viewer";
     missionViewer.id = mission;
     missionViewer.onclick = function () {
       goMission(this.id);
     };
-    missionViewer.appendChild(missionTitle);
-    // missionViewer.appendChild(enigmeList);
-    missionViewer.appendChild(barContainer);
 
+    missionViewer.appendChild(missionTitle);
+    missionViewer.appendChild(barContainer);
     container.appendChild(missionViewer);
+
+    if (!missions[mission].nbEnigme) {
+      missions[mission].nbEnigme = missions[mission].enigmes.length;
+    } else {
+      var nbEnigmeSolved = missions[mission].nbEnigme - missions[mission].enigmes.length;
+      progress(mission + 'Progress', (100 / missions[mission].nbEnigme) * nbEnigmeSolved);
+    }
   }
 }
 
