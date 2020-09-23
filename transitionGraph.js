@@ -32,7 +32,7 @@ function pixelize(ratioWhite) {
     }
 }
 
-function transitionGraph(min, max, screen, step) {
+function transitionGraph(min, max, step) {
     canvas.style.display = 'block';
     var counter = max;
     var pixLooper = setInterval(function () {
@@ -41,7 +41,6 @@ function transitionGraph(min, max, screen, step) {
         pixelize(counter);
 
         if (counter < min) {
-            screenDisplay(screen);
             clearInterval(pixLooper)
 
             canvas.style.display = 'none';

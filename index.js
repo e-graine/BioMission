@@ -3,7 +3,6 @@ var gameStatus = {
   viewDoc: false,
   viewMissions: false,
   currentScreen: "intro",
-  previousScreen: null,
   currentMission: null,
   currentEnigme: null,
   numEnigme: 0,
@@ -25,6 +24,7 @@ var gameStatus = {
   missionsMemory: null,
   score: null,
   doc: "",
+  history: [],
 };
 
 window.onbeforeunload = function (e) {
@@ -101,17 +101,12 @@ function endStep(step) {
       screenDisplay("intro");
       loading();
       visitCount("biomissions", "visitcounter", "openApp");
-      // iaSpeaking(introSpeech, 'introSpeech', 'introSpeech');
       break;
     case "loading":
-      // document.getElementById("fullScreen").style.display = "block";
-      // document.getElementById("clickSpeech").style.display = "block";
+
       setTimeout(function () {
-        transitionGraph(2, 50, "board", "Intro");
+        transitionGraph(2, 50, 'Intro');
       }, 500);
-      break;
-    case "fullScreen":
-      transitionGraph(2, 50, "board", "Intro");
       break;
     case "transitionIntro":
       document.getElementById("alertPicto").style.display = "block";
@@ -124,14 +119,6 @@ function endStep(step) {
         iaSpeaking(welcomeSpeech, "welcomeSpeech");
       }, 1000);
       break;
-      // case "alertSpeech":
-      //   // screenCall("board");
-      //   // addDocInGame(data.biomimetisme);
-      //   document.getElementById('alertText').style.display = 'none';
-      //   setTimeout(function () {
-      //     iaSpeaking(welcomeSpeech, "welcomeSpeech");
-      //   }, 1000);
-      //   break;
     case "welcomeSpeech":
       document.getElementById("alertPicto").style.display = "none";
       // addDocInGame(data.biomimetisme);
@@ -225,27 +212,23 @@ function screenCall(screen) {
       document.getElementById("indiceAlert").classList.remove("blink-picto");
     }
   }
-  transitionGraph(2, 4, screen);
+  transitionGraph(2, 4);
+  screenDisplay(screen);
+
 }
 
 function majStatus(screen) {
-  if (screen !== gameStatus.currentScreen) {
-    gameStatus.previousScreen = gameStatus.currentScreen;
+  var lastH = gameStatus.history[gameStatus.history.length - 1];
+  if (screen !== gameStatus.currentScreen && screen !== lastH) {
+    gameStatus.history.push(screen);
   }
   gameStatus.currentScreen = screen;
-
-  if (gameStatus.step === "welcomeSpeech2" && screen === "board") {
-    endStep("tutoDoc");
-  }
 }
 
 function exit() {
-  // if (gameStatus.currentEnigme) {
-  //   screenCall("missions");
-  // } else {
-  //   screenCall("board");
-  // }
-  screenCall(gameStatus.previousScreen);
+  gameStatus.history.pop();
+  console.log(gameStatus.history);
+  screenCall(gameStatus.history[gameStatus.history.length - 1]);
 }
 
 function visitCount(db, col, counter) {
