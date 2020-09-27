@@ -117,11 +117,11 @@ function endStep(step) {
         iaGraphFct(2);
       }, 500);
       setTimeout(function () {
-        iaSpeaking(welcomeSpeech, "welcomeSpeech", "speechAlert");
+        // iaSpeaking(welcomeSpeech, "welcomeSpeech", "speechAlert");
       }, 1000);
       break;
     case "welcomeSpeech":
-      screenCall("board");
+      // screenCall("board");
       document.getElementById("alertPicto").style.display = "none";
       // addDocInGame(data.biomimetisme);
       iaSpeaking(welcomeSpeech2, "welcomeSpeech2");

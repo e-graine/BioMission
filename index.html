@@ -40,9 +40,17 @@
     <canvas id="iaGraph" class="ia-graph"></canvas>
     <!-- <div class="speech" id="alertPicto"><img src="ui/alert.svg"> test </div> -->
     <!-- <img src="ui/alert.svg" class="alert-picto" id="alertPicto"> -->
-    <div class="speech alert-picto" id="alertPicto">
-      &#9888; alert &#9888;
-      <div id="speechAlert"></div>
+    <!-- <div class="speech alert-picto" id="alertPicto"> -->
+    <div class="speech alert-speech" id="alertPicto" onclick='endStep("welcomeSpeech")'>
+      <span class="blink-speech">&#9888; alert &#9888;</span>
+      <br><br><br>
+      Trop de missions en attente...<br>
+      Symbiose impossible...<br>
+      Crash du système prévu dans 30 minutes...<br>
+      <br><br>
+      <span class="blink-speech">suivant &#10140;</span>
+
+      <!-- <div id="speechAlert"></div> -->
     </div>
     <div id="iaSpeech" class="ia-speech speech"></div>
     <div class="button button-missions" id="buttonMissions" onclick='screenCall("missions"); checkMission()'></div>

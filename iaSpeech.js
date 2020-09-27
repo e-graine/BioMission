@@ -55,7 +55,7 @@ function iaSpeaking(speech, speechName, speechBox) {
     gameStatus.speech = JSON.parse(JSON.stringify(speech));
 
     gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-    // gameStatus.speechLine.push("<span/class='blink-speech'>&#10140;</span>");
+    gameStatus.speechLine.push("<span/class='blink-speech'>&#10140;</span>");
     gameStatus.speechBox = document.getElementById("iaSpeech");
     if (speechBox) gameStatus.speechBox = document.getElementById(speechBox);
     gameStatus.speechBox.innerHTML = "";
@@ -69,8 +69,8 @@ function writer(word, speechName) {
     if (word) {
         // word = document.createTextNode(word);
         // gameStatus.speechBox.appendChild(word);
-        gameStatus.speechBox.appendChild(document.createTextNode(word + ' '));
-        // gameStatus.speechBox.innerHTML += word + " ";
+        // gameStatus.speechBox.appendChild(document.createTextNode(word + ' '));
+        gameStatus.speechBox.innerHTML += word + " ";
         return setTimeout(function () {
             writer(gameStatus.speechLine.shift(), speechName);
         }, 50);
@@ -80,7 +80,7 @@ function writer(word, speechName) {
 function nextLine() {
     if (gameStatus.speech.length > 0) {
         gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-        // gameStatus.speechLine.push("<span/class='blink-speech'>&#10140;</span>");
+        gameStatus.speechLine.push("<span/class='blink-speech'>&#10140;</span>");
         gameStatus.speechBox.innerHTML = "";
         // gameStatus.speechBox.innerHTML += "<br>";
         return writer(gameStatus.speechLine.shift());
