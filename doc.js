@@ -9,7 +9,7 @@ var data = {
     },
     aerodynamisme: {
         title: "Aérodynamisme",
-        body: "Un oiseau pécheur de nos campagnes a inspiré la forme d'un des trains les plus rapides du monde : le Shinkansen au Japon. Tellement rapide qu'on entendait \"BANG\" quand il entrait dans un tunnel, où l'air est plus comprimé qu'à l'exterieur. Le nez du train reprends aujourd'hui le long bec de l'oiseau, fait pour perforer la surface de l'eau. Grâce à ça le train consomme est moins d'énergie, il fait moins de bruit et il est encore plus rapide !"
+        body: "Un oiseau pécheur de nos campagnes a inspiré la forme d'un des trains les plus rapides du monde : le Shinkansen au Japon. Tellement rapide qu'on entendait \"BANG\" quand il entrait dans un tunnel, où l'air est plus comprimé qu'à l'exterieur. Le nez du train reprends aujourd'hui le long bec de l'oiseau, fait pour perforer la surface de l'eau. Grâce à ça le train consomme moins d'énergie, il fait moins de bruit et il est encore plus rapide !"
     },
     transportsGES: {
         title: "Transport et GES",
@@ -65,7 +65,7 @@ var data = {
     },
     araignée: {
         title: "La solidité des toiles d'araignée",
-        body: "Les caractéristiques de la toile d’araignée ont inspirées un matériau acoustique aux propriétés remarquables comme bloquer les ondes sonores et les vibrations mécaniques. Très utile pour la construction de ponts, de structures antisismiques ou de véhicules légers amortissants les vibrations et absorbants les chocs.",
+        body: "Les caractéristiques de la toile d’araignée ont inspiré un matériau acoustique aux propriétés remarquables pour bloquer les ondes sonores et les vibrations mécaniques. Très utile pour la construction de ponts, de structures antisismiques ou de véhicules légers amortissant les vibrations et absorbant les chocs.",
     },
     impactBruit: {
         title: "La pollution sonore",

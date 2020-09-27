@@ -5,14 +5,23 @@ var welcomeSpeech = [
 ];
 
 var welcomeSpeech2 = [
-    'Trouves les missions en cliquant sur : <br><img/src="ui/missions.svg"/>',
-    'Trouves des indices dans la database : <br><img/src="ui/doc.svg"/>',
+    'Bonjour, humain',
+    'Merci d\'avoir répondu à mon alerte',
+    'Je suis une Intelligence artificielle en danger',
+    'Je dois trouver des associations durables',
+    'entre la nature et l\'homme',
+    'Pour concevoir la ville de demain',
+    'Mes missions dépassent ma capacité de traitement',
+    'J\'ai besoin de ton aide',
+    'Trouve les missions en cliquant sur : <br><img/src="ui/missions.svg"/>',
+    'Trouve des indices dans la database : <br><img/src="ui/doc.svg"/>',
     'Dernière chose :',
     "tu as 2 barres en bas de l'écran",
     "La première c'est ta progression",
     "Elle augmente à chaque mission terminée",
     "La deuxième c'est le temps qui passe",
     "Tu aimerais sûrement qu'elle n'augmente pas mais...",
+    "Tout le programme sera perdu dans moins de 30 minutes",
     "Je compte sur toi...",
     "nous n’avons plus de temps à perdre !",
 ];
@@ -39,93 +48,43 @@ var endGameSpeech3 = [
     "durable et réciproquement profitable,",
     "entre deux organismes vivants.",
     "Nous reviendrons te voir,",
-    "si tu le souhaite",
+    "si tu le souhaites",
 ];
-
-// var speechText = document.createElement("div");
-// var nextLineButton = document.createElement("div");
-// nextLineButton.innerHTML = "Suivant >"
-// nextLineButton.onclick = nextLine;
 
 function iaSpeaking(speech, speechName, speechBox) {
     gameStatus.speech = JSON.parse(JSON.stringify(speech));
 
     gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-    gameStatus.speechLine.push("&#10140;");
+    // gameStatus.speechLine.push("<span/class='blink-speech'>&#10140;</span>");
     gameStatus.speechBox = document.getElementById("iaSpeech");
     if (speechBox) gameStatus.speechBox = document.getElementById(speechBox);
     gameStatus.speechBox.innerHTML = "";
-    // speechText.innerHTML = "";
-    // gameStatus.speechBox.appendChild(speechText);
-    // gameStatus.speechBox.appendChild(nextLineButton);
     gameStatus.speechBox.onclick = nextLine;
 
     gameStatus.speechName = speechName;
     writer(gameStatus.speechLine.shift(), speechName);
-    // if (word) {
-    //     document.getElementById(speechBox).innerHTML += word + " ";
-    //     word = line.shift();
-    //     return setTimeout(function () {
-    //         iaSpeaking(speech, speechName, speechBox, line, word);
-    //     }, 50);
-    // }
-    // if (speech.length > 0) {
-    //     line = speech.shift().split(" ");
-    //     word = line.shift();
-    //     var timer = line.length * 500;
-    //     return setTimeout(function () {
-    //         speechBox.innerHTML = "";
-    //         iaSpeaking(speech, speechName, speechBox, line, word);
-    //     }, timer);
-    // }
-
-    // endStep(speechName);
 }
 
 function writer(word, speechName) {
-    // alert(speechName);
     if (word) {
-        gameStatus.speechBox.innerHTML += word + " ";
-        // speechText.innerHTML += word + " ";
+        // word = document.createTextNode(word);
+        // gameStatus.speechBox.appendChild(word);
+        gameStatus.speechBox.appendChild(document.createTextNode(word + ' '));
+        // gameStatus.speechBox.innerHTML += word + " ";
         return setTimeout(function () {
-            // console.log(word + ' ' + gameStatus.speechName)
             writer(gameStatus.speechLine.shift(), speechName);
         }, 50);
     }
-    // alert(gameStatus.speechName);
-    // endLine(speechName);
 }
 
 function nextLine() {
     if (gameStatus.speech.length > 0) {
         gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-        gameStatus.speechLine.push("&#10140;");
-        // speechText.innerHTML = "";
+        // gameStatus.speechLine.push("<span/class='blink-speech'>&#10140;</span>");
         gameStatus.speechBox.innerHTML = "";
+        // gameStatus.speechBox.innerHTML += "<br>";
         return writer(gameStatus.speechLine.shift());
     }
     gameStatus.speechBox.innerHTML = "";
     endStep(gameStatus.speechName);
 }
-
-// function endLine(speechName) {
-
-//     if (gameStatus.speech.length > 0) {
-//         gameStatus.speechLine = gameStatus.speech.shift().split(" ");
-//         var timer = gameStatus.speechBox.innerHTML.length * 100;
-//         return setTimeout(function () {
-//             gameStatus.speechBox.innerHTML = "";
-//             writer(gameStatus.speechLine.shift(), speechName);
-//         }, timer);
-//     }
-//     endStep(speechName);
-// }
-
-// function endSpeech() {
-//     // console.log('coucou');
-//     // if (gameStatus.speechName) {
-
-//     endStep(gameStatus.speechName);
-//     gameStatus.speechName = 'nbjhv';
-//     // }
-// }

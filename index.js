@@ -74,6 +74,7 @@ function differentialLoading(query) {
     return endStep("score");
   }
   var storedStatus = localStorage.getItem("gameStatus");
+  console.log(storedStatus);
   if (storedStatus) {
     gameStatus = JSON.parse(storedStatus);
     missions = JSON.parse(localStorage.getItem("missions"));
@@ -116,10 +117,11 @@ function endStep(step) {
         iaGraphFct(2);
       }, 500);
       setTimeout(function () {
-        iaSpeaking(welcomeSpeech, "welcomeSpeech");
+        iaSpeaking(welcomeSpeech, "welcomeSpeech", "speechAlert");
       }, 1000);
       break;
     case "welcomeSpeech":
+      screenCall("board");
       document.getElementById("alertPicto").style.display = "none";
       // addDocInGame(data.biomimetisme);
       iaSpeaking(welcomeSpeech2, "welcomeSpeech2");

@@ -41,8 +41,8 @@
     <!-- <div class="speech" id="alertPicto"><img src="ui/alert.svg"> test </div> -->
     <!-- <img src="ui/alert.svg" class="alert-picto" id="alertPicto"> -->
     <div class="speech alert-picto" id="alertPicto">
-      <!-- <span class='picto-text'>&#9888;</span><br> -->
       &#9888; alert &#9888;
+      <div id="speechAlert"></div>
     </div>
     <div id="iaSpeech" class="ia-speech speech"></div>
     <div class="button button-missions" id="buttonMissions" onclick='screenCall("missions"); checkMission()'></div>
@@ -153,7 +153,7 @@
       Se comporter comme des animaux
     </div>
     <div onclick="endEnigme('e0')" class="button-text button-text-small">
-      Consomer des produits d'origine naturelle
+      Consommer des produits d'origine naturelle
     </div>
     <div onclick="endEnigme('e0', true)" class="button-text button-text-small">
       S'inspirer de la nature
@@ -255,7 +255,7 @@
       Leur pelage
     </div>
   </div>
-  <div id="e6" doc="chouette" answer="C'est la caresse de leur plumes sur l'air !">
+  <div id="e6" doc="chouette" answer="C'est la caresse de leurs plumes sur l'air !">
     <h2 class="img-title title-e6"></h2>
     <div>Pourquoi la chouette est-il le rapace le plus silencieux ?</div>
     <div onclick="endEnigme('e6')" class="button-text button-text-small">
@@ -292,10 +292,10 @@
       </div>
     </div>
   </div>
-  <div id="e8" doc="baleine" answer="C'est grâce aux tubercules sur leur nageoirs">
+  <div id="e8" doc="baleine" answer="C'est grâce aux tubercules sur leur nageoires">
     <h2 class="img-title title-e8"></h2>
     <div>
-      Les baleines à bosse sont particulièrement agile sous l’eau grâce à leur
+      Les baleines à bosse sont particulièrement agiles sous l’eau grâce à leur
       bosse.
     </div>
     <div onclick="endEnigme('e8')" class="button-text button-text-small">
@@ -321,11 +321,10 @@
       La phosphorescence
     </div>
   </div>
-  <div id="e10" doc="tournesol"
-    answer="Le tournesole pousse plus vite à l'ombre, ce qui courbe la fleur vers le soleil">
+  <div id="e10" doc="tournesol" answer="Le tournesol pousse plus vite à l'ombre, ce qui courbe la fleur vers le soleil">
     <h2 class="img-title title-e10"></h2>
     <div>
-      Le mouvement de la fleur des tournesol est lié à une hormone de croissance qui se concentre à l'ombre de la tige.
+      Le mouvement de la fleur des tournesols est lié à une hormone de croissance qui se concentre à l'ombre de la tige.
     </div>
     <div onclick="endEnigme('e10', true)" class="button-text button-text-small">
       Vrai
@@ -336,7 +335,6 @@
   </div>
   <div id="e11" doc="pommeDePin" answer="Les écailles de la pomme de pin s'ouvrent et se ferment selon l'humidité">
     <h2 class="img-title title-e11"></h2>
-    <!-- <h2><img src="imgGame/h2o.jpg" alt="" class="img100" /></h2> -->
     <div>Quel fruit est capable de réguler son humidité ?</div>
     <div onclick="endEnigme('e11')" class="button-text button-text-small">
       <img src="imgGame/physalis.jpg" alt="" class="img100" />La physalis
@@ -349,7 +347,7 @@
       <img src="imgGame/chataigne.jpg" alt="" class="img100" />La chataigne
     </div>
   </div>
-  <div id="e12" doc="microalgues" answer="L'éfficaité peut atteindre 99%">
+  <div id="e12" doc="microalgues" answer="L'éfficacité peut atteindre 99%">
     <h2 class="img-title title-e12"></h2>
     <div>
       Les micro-algues ont une efficacité de dépollution allant jusqu’à 40% .
@@ -361,7 +359,7 @@
       Faux
     </div>
   </div>
-  <div id="e13" doc="carbonate" answer="On en trouve aussi bien dans les coquillage, le calcaire et ou corail">
+  <div id="e13" doc="carbonate" answer="On en trouve aussi bien dans les coquillages, le calcaire et ou corail">
     <br />
     <div>Lequel de ces éléments contient du carbonate de calcium ?</div>
     <div onclick="endEnigme('e13')" class="button-text button-text-small">
@@ -378,7 +376,7 @@
       Tous
     </div>
   </div>
-  <div id="e14" doc="termitiere" answer="Il prends exemple sur une termitière">
+  <div id="e14" doc="termitiere" answer="Il prend exemple sur une termitière">
     <h2 class="img-title title-e14"></h2>
     <div>
       L'Eastgate building, au Zimbabwe, est un immeuble percé de multiples ouvertures pour gérer la température. De
@@ -445,7 +443,7 @@
       Une carte routière après l'apocalypse
     </div>
   </div>
-  <div id="e18" doc="aquaporines" answer="C'est une méthode efficace des dépollution des eaux">
+  <div id="e18" doc="aquaporines" answer="C'est une méthode efficace de dépollution des eaux">
     <h2 class="img-title title-e18"></h2>
     <div>Quelle utilisation peut-on faire des aquaporines ?</div>
     <div onclick="endEnigme('e18', true)" class="button-text button-text-small">
