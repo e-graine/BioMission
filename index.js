@@ -12,11 +12,7 @@ var gameStatus = {
   missionTodo: [],
   dataEnigmes: [],
   dataDoc: [
-    data.biomimetisme,
-    {
-      title: "Sources",
-      body: "Bla blabla... ",
-    },
+    data.credits
   ],
   totalTime: 30 * 60,
   curentTime: 0,
@@ -53,7 +49,6 @@ window.onunload = function (e) {
 };
 
 function differentialLoading(query) {
-  document.getElementById("alertPicto").style.display = "none";
   if (query === "reset") {
     return endStep("openApp");
   }
@@ -75,11 +70,9 @@ function differentialLoading(query) {
     return endStep("score");
   }
   var storedStatus = localStorage.getItem("gameStatus");
-  console.log(storedStatus);
   if (storedStatus) {
     gameStatus = JSON.parse(storedStatus);
     missions = JSON.parse(localStorage.getItem("missions"));
-    console.log(gameStatus.curentTime);
     progress('timeProgress', (gameStatus.curentTime * (100 / gameStatus.totalTime)));
     progress('winProgress', (100 / gameStatus.nbEnigme) * (gameStatus.nbEnigme - gameStatus.enigmesToSolv.length));
     return endStep("welcomeBack");
@@ -97,6 +90,7 @@ differentialLoading(window.location.search.substr(1));
 // endStep("openApp");
 
 function endStep(step) {
+  document.getElementById("alertPicto").style.display = "none";
   gameStatus.step = step;
   switch (step) {
     case "openApp":
@@ -124,10 +118,10 @@ function endStep(step) {
     case "welcomeSpeech":
       // screenCall("board");
       document.getElementById("alertPicto").style.display = "none";
-      // addDocInGame(data.biomimetisme);
       iaSpeaking(welcomeSpeech2, "welcomeSpeech2");
       break;
     case "welcomeSpeech2":
+      addDocInGame(data.biomimetisme);
       document.getElementById("buttonMissions").classList.add("button-pulse");
       break;
     case "nextMissionSpeech":
@@ -172,6 +166,8 @@ function endStep(step) {
       break;
     case "endGameSpeech3":
       document.getElementById("buttonReStart").classList.add("button-pulse");
+      // iaSpeaking(credits, "credits", "creditSpeech");
+      document.getElementById("creditSpeech").style.display = 'block';
       if (!gameStatus.score) {
         // document.getElementById("shareSpeech").style.display = 'block';
       }
@@ -230,8 +226,13 @@ function majStatus(screen) {
 
 function exit() {
   gameStatus.history.pop();
-  console.log(gameStatus.history);
   screenCall(gameStatus.history[gameStatus.history.length - 1]);
+}
+
+function callCredits() {
+  addDocInGame(data.credits);
+  displayDoc();
+  return screenCall("doc");
 }
 
 function visitCount(db, col, counter) {

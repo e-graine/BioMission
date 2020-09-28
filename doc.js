@@ -1,4 +1,19 @@
 var data = {
+    credits: {
+        title: "Crédits",
+        body: "Un jeu proposé par l'association <a href='https://www.e-graine.org'>e-graine</a><br><br>\
+        <a href='https://www.ycallier.fr'>Yan Callier</a> : conception, développement, graphisme<br><br>\
+        Eléna Riot : conception, contenu<br><br>\
+        Pierre Wagner : conception, scénario<br><br>\
+        <a href='https://arthurducoteau.ultra-book.com/'>Arthur du Coteau</a> : illustration<br><br>\
+        Sources :<br>Biomim’review Galerie d’exemples d’innovations bio-inspirées. ©NewCorp Conseil, créateur/organisateur de Biomim’expo, rédacteur de la Biomim’review, partenaire adhérent du CEEBIOS<br>\
+        <a href='https://mrmondialisation.org/la-pollution-sonore-affecte-les-espaces-naturels'>Mr Mondialisation</a>,\
+        <a href='https://www.bioxegy.com/biomimetisme-acoustique-vibrations<br>https://www.leparisien.fr/environnement/innovation-des-eoliennes-silencieuses-comme-des-chouettes-29-07-2015-4973663.php'>Le Parisien</a>,\
+        <a href='https://www.notre-planete.info/actualites/4553-ville-vegetale-biomimetisme'>Notre Planète</a>,\
+        <a href='https://www.franceculture.fr/sciences/le-blob-4-superpouvoirs-a-connaitre'>France Culture</a>,\
+        <a href='https://www.parczoologiquedeparis.fr/fr/les-animaux/le-blob-3035<br>https://www.ladn.eu/tech-a-suivre/biotech/biomimetisme-durable-biomimexpo/'>Parc Zoologique de Paris</a>,\
+        <a href='https://www.lefigaro.fr/societes/2015/10/14/20005-20151014ARTFIG00020-boeing-invente-l-avion-poids-plume.php'>Le Figaro</a>"
+    },
     biomimetisme: {
         title: "Biomimétisme",
         body: "bio” vient du grec et veut dire “vie”, “mimétisme” signifie “imiter”. Le “biomimétisme” c’est donc “imiter le vivant”. cela consiste à regarder comment la nature fait les choses pour s’en inspirer et proposer des solutions durables à nos défis les plus urgents. C’est de l’innovation inspirée par la nature."

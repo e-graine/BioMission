@@ -51,6 +51,8 @@ var endGameSpeech3 = [
     "si tu le souhaites",
 ];
 
+var credits = ["Crédits <span/class='blink-speech'>&#10140;</span>"]
+
 function iaSpeaking(speech, speechName, speechBox) {
     gameStatus.speech = JSON.parse(JSON.stringify(speech));
 

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="index.css" />
   <link href="https://fonts.googleapis.com/css?family=Sora:thin,regular,bold,Semi-Bold,black" rel="stylesheet" />
+  <base target="_blank">
   <!-- <script src="/socket.io/socket.io.js"></script> -->
   <!-- <script src="/visitCounter/socket.io/socket.io.js"></script> -->
   <!-- <script src="./visitCounter/visitCounter.js"></script> -->
@@ -49,8 +50,6 @@
       Crash du système prévu dans 30 minutes...<br>
       <br><br>
       <span class="blink-speech">suivant &#10140;</span>
-
-      <!-- <div id="speechAlert"></div> -->
     </div>
     <div id="iaSpeech" class="ia-speech speech"></div>
     <div class="button button-missions" id="buttonMissions" onclick='screenCall("missions"); checkMission()'></div>
@@ -105,9 +104,10 @@
       </div>
     </div>
   </div>
-      <div id='endGame' class='end-game screen-div' nodoc>
-        <div id='speechEnd1' class='speech'></div>
-        <div class='win-rate speech' id='winRate'></div>
+
+    <div id='endGame' class='end-game screen-div' nodoc>
+      <div id='speechEnd1' class='speech'></div>
+      <div class='win-rate speech' id='winRate'></div>
       <!-- <div class=" win-rate speech" id="winRate"></div> -->
       <div id="speechEnd2" class="speech" style="margin-bottom: 20px"></div>
       <div id="speechEnd3" class="speech"></div>
@@ -115,20 +115,15 @@
         Rejouer
       </div>
       <div class="speech share-speech" id="shareSpeech" onclick="sharedScore()">Partager ce score &#10140;</div>
-      <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class='share-button'>
-      <img src="ui/facebook.svg" alt="Facebook" />
-    </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class='share-button'>
-      <img src="ui/insta.svg" alt="Facebook" />
-    </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class='share-button'>
-      <img src="ui/tiktok.svg" alt="Facebook" />
-    </a> -->
+      <div class="speech credits-speech hide smallText" id="creditSpeech" onclick="callCredits()">Crédits</div>
     </div>
+
     <div class="button-doc button" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'>
       <div class="speech indice-alert" id="indiceAlert">
         <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
       </div>
+      <!-- <br><br><br><br>
+      <div>database</div> -->
     </div>
     <div id="exitButton" class="button button-exit" onclick="exit()">
     </div>

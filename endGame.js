@@ -81,12 +81,9 @@ function restart() {
   gameStatus.timesUp = false;
   gameStatus.enigmesToSolv = [];
   gameStatus.dataDoc = [
-    {
-      title: "Sources",
-      body: "Bla blabla... ",
-    },
-  ];
-  missions = gameStatus.missionsMemory;
+      data.credits
+    ],
+    missions = gameStatus.missionsMemory;
   creaMission();
   screenCall("board");
   iaSpeaking(["Hello, human", "tes missions t'attendent"]);
