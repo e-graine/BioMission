@@ -53,6 +53,7 @@ window.onunload = function (e) {
 };
 
 function differentialLoading(query) {
+  document.getElementById("alertPicto").style.display = "none";
   if (query === "reset") {
     return endStep("openApp");
   }

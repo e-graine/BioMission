@@ -346,6 +346,7 @@ h3 {
 .alert-speech {
   top: 30%;
   position: absolute;
+  display: none;
 }
 
 .blink-speech {
