@@ -11,9 +11,7 @@ var gameStatus = {
   nbEnigme: null,
   missionTodo: [],
   dataEnigmes: [],
-  dataDoc: [
-    data.credits
-  ],
+  dataDoc: [data.credits],
   totalTime: 30 * 60,
   curentTime: 0,
   timesUp: false,
@@ -73,8 +71,15 @@ function differentialLoading(query) {
   if (storedStatus) {
     gameStatus = JSON.parse(storedStatus);
     missions = JSON.parse(localStorage.getItem("missions"));
-    progress('timeProgress', (gameStatus.curentTime * (100 / gameStatus.totalTime)));
-    progress('winProgress', (100 / gameStatus.nbEnigme) * (gameStatus.nbEnigme - gameStatus.enigmesToSolv.length));
+    progress(
+      "timeProgress",
+      gameStatus.curentTime * (100 / gameStatus.totalTime)
+    );
+    progress(
+      "winProgress",
+      (100 / gameStatus.nbEnigme) *
+        (gameStatus.nbEnigme - gameStatus.enigmesToSolv.length)
+    );
     return endStep("welcomeBack");
   }
 
@@ -99,9 +104,8 @@ function endStep(step) {
       visitCount("biomissions", "visitcounter", "openApp");
       break;
     case "loading":
-
       setTimeout(function () {
-        transitionGraph(2, 50, 'Intro');
+        transitionGraph(2, 50, "Intro");
       }, 500);
       break;
     case "transitionIntro":
@@ -167,14 +171,14 @@ function endStep(step) {
     case "endGameSpeech3":
       document.getElementById("buttonReStart").classList.add("button-pulse");
       // iaSpeaking(credits, "credits", "creditSpeech");
-      document.getElementById("creditSpeech").style.display = 'block';
+      document.getElementById("creditSpeech").style.display = "block";
       if (!gameStatus.score) {
         // document.getElementById("shareSpeech").style.display = 'block';
       }
       break;
     default:
       break;
-      // console.log("step bug with " + step);
+    // console.log("step bug with " + step);
   }
 }
 
@@ -206,6 +210,7 @@ function screenCall(screen) {
   if (event) {
     var button = document.getElementById(event.srcElement.id);
     if (button) {
+      console.log(button.classList);
       button.classList.remove("button-pulse");
       document.getElementById("indiceSlide").classList.remove("indice-slide");
       document.getElementById("indiceAlert").classList.remove("blink-picto");
@@ -213,7 +218,6 @@ function screenCall(screen) {
   }
   transitionGraph(2, 4);
   screenDisplay(screen);
-
 }
 
 function majStatus(screen) {
@@ -240,11 +244,11 @@ function visitCount(db, col, counter) {
   request.open(
     "GET",
     "https://ycallier-api.herokuapp.com/countAPI/" +
-    db +
-    "/" +
-    col +
-    "/" +
-    counter,
+      db +
+      "/" +
+      col +
+      "/" +
+      counter,
     true
   );
   request.send();

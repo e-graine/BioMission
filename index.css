@@ -89,14 +89,20 @@ form {
 }
 
 .indice-alert {
-  position: relative;
-  /* left: 60px; */
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
   font-size: small;
   white-space: nowrap;
   opacity: 0;
 }
 
 .indice-slide {
+  height: 5vw;
+  min-height: 50px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
   animation: slideout 1s ease-out 0s;
   animation-fill-mode: forwards;
 }

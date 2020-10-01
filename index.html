@@ -99,34 +99,32 @@
     <div id="enigmeContainer" class="container enigme-container">
       <div id="bodyEnigme" class="enigme-body"></div>
       <div id="speechEnigme" class="speech enigme-speech"></div>
-      <div class="button-text button-text-small" id="docEnigme" onclick='screenCall("doc"); resetDoc()'">
+      <div class="button-text button-text-small" id="docEnigme" onclick='screenCall("doc"); resetDoc()'>
         En savoir +
       </div>
     </div>
   </div>
 
-    <div id='endGame' class='end-game screen-div' nodoc>
-      <div id='speechEnd1' class='speech'></div>
-      <div class='win-rate speech' id='winRate'></div>
-      <!-- <div class=" win-rate speech" id="winRate"></div> -->
-      <div id="speechEnd2" class="speech" style="margin-bottom: 20px"></div>
-      <div id="speechEnd3" class="speech"></div>
-      <div class="button-text" id="buttonReStart" onclick="restart()">
-        Rejouer
-      </div>
-      <div class="speech share-speech" id="shareSpeech" onclick="sharedScore()">Partager ce score &#10140;</div>
-      <div class="speech credits-speech hide smallText" id="creditSpeech" onclick="callCredits()">Crédits</div>
+  <div id='endGame' class='end-game screen-div' nodoc>
+    <div id='speechEnd1' class='speech'></div>
+    <div class='win-rate speech' id='winRate'></div>
+    <!-- <div class=" win-rate speech" id="winRate"></div> -->
+    <div id="speechEnd2" class="speech" style="margin-bottom: 20px"></div>
+    <div id="speechEnd3" class="speech"></div>
+    <div class="button-text" id="buttonReStart" onclick="restart()">
+      Rejouer
     </div>
+    <div class="speech share-speech" id="shareSpeech" onclick="sharedScore()">Partager ce score &#10140;</div>
+    <div class="speech credits-speech hide smallText" id="creditSpeech" onclick="callCredits()">Crédits</div>
+  </div>
 
-    <div class="button-doc button" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'>
-      <div class="speech indice-alert" id="indiceAlert">
-        <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
-      </div>
-      <!-- <br><br><br><br>
-      <div>database</div> -->
-    </div>
-    <div id="exitButton" class="button button-exit" onclick="exit()">
-    </div>
+  <div class="speech indice-alert" id="indiceAlert">
+    <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
+  </div>
+  <div class="button-doc button" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'>
+  </div>
+  <div id="exitButton" class="button button-exit" onclick="exit()">
+  </div>
 </body>
 
 <!-- <script type="text/javascript" src="visitCounter/visitCounter.js"></script> -->
@@ -376,7 +374,7 @@
       <img src="imgGame/corail.jpg" alt="" class="img100" />Le corail
     </div>
     <div onclick="endEnigme('e13', true)" class="button-text button-text-small">
-      Tous
+      <img src="imgGame/tousCalcaire.jpg" alt="" class="img100" />Tous
     </div>
   </div>
   <div id="e14" doc="termitiere" answer="Il prend exemple sur une termitière">
