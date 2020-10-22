@@ -101,7 +101,7 @@ function endStep(step) {
     case "openApp":
       screenDisplay("intro");
       loading();
-      visitCount("biomissions", "visitcounter", "openApp");
+      // visitCount("biomissions", "visitcounter", "openApp");
       break;
     case "loading":
       setTimeout(function () {
@@ -155,7 +155,7 @@ function endStep(step) {
       break;
     case "endGame":
       screenCall("board");
-      visitCount("biomissions", "visitcounter", "endGame");
+      // visitCount("biomissions", "visitcounter", "endGame");
       iaSpeaking(gameStatus.endReason, "score");
       break;
     case "score":
@@ -239,33 +239,33 @@ function callCredits() {
   return screenCall("doc");
 }
 
-function visitCount(db, col, counter) {
-  var request = new XMLHttpRequest();
-  request.open(
-    "GET",
-    "https://ycallier-api.herokuapp.com/countAPI/" +
-      db +
-      "/" +
-      col +
-      "/" +
-      counter,
-    true
-  );
-  request.send();
-}
+// function visitCount(db, col, counter) {
+//   var request = new XMLHttpRequest();
+//   request.open(
+//     "GET",
+//     "https://ycallier-api.herokuapp.com/countAPI/" +
+//       db +
+//       "/" +
+//       col +
+//       "/" +
+//       counter,
+//     true
+//   );
+//   request.send();
+// }
 
-function crypetr(data) {
-  var request = new XMLHttpRequest();
-  request.open(
-    "GET",
-    "https://ycallier-api.herokuapp.com/encrypt/" + data,
-    true
-  );
-  request.onload = function () {
-    console.log(request.response);
-  };
-  request.send();
-}
+// function crypetr(data) {
+//   var request = new XMLHttpRequest();
+//   request.open(
+//     "GET",
+//     "https://ycallier-api.herokuapp.com/encrypt/" + data,
+//     true
+//   );
+//   request.onload = function () {
+//     console.log(request.response);
+//   };
+//   request.send();
+// }
 
 //////////////////// lancement
 creaMission();
