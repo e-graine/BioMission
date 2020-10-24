@@ -279,7 +279,7 @@ function fetchData(data) {
   };
   request.send();
 }
-fetchData();
+fetchData({db:"biomissions", col:"highScores"});
 
 //////////////////// lancement
 creaMission();
