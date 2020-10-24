@@ -267,6 +267,20 @@ function callCredits() {
 //   request.send();
 // }
 
+function fetchData(data) {
+  var request = new XMLHttpRequest();
+  request.open(
+    "GET",
+    "https://ycallier-api.herokuapp.com/fetchData/" + data,
+    true
+  );
+  request.onload = function () {
+    console.log(request.response);
+  };
+  request.send();
+}
+fetchData();
+
 //////////////////// lancement
 creaMission();
 if (!gameStatus.nbEnigme) gameStatus.nbEnigme = gameStatus.enigmesToSolv.length;
