@@ -233,12 +233,6 @@ function exit() {
   screenCall(gameStatus.history[gameStatus.history.length - 1]);
 }
 
-function callCredits() {
-  addDocInGame(data.credits);
-  displayDoc();
-  return screenCall("doc");
-}
-
 // function visitCount(db, col, counter) {
 //   var request = new XMLHttpRequest();
 //   request.open(
@@ -268,6 +262,7 @@ function callCredits() {
 // }
 
 function fetchData(data) {
+  data = JSON.stringify(data);
   var request = new XMLHttpRequest();
   request.open(
     "GET",
@@ -279,8 +274,11 @@ function fetchData(data) {
   };
   request.send();
 }
-fetchData(JSON.stringify({db:"biomissions", col:"highScores"})
-);
+
+fetchData({db:"biomissions", col:"highScores"}).then(res =>{
+  console.log(res);
+});
+
 //////////////////// lancement
 creaMission();
 if (!gameStatus.nbEnigme) gameStatus.nbEnigme = gameStatus.enigmesToSolv.length;

@@ -94,3 +94,23 @@ function sharedScore() {
   var url = window.location.hostname + "?score=" + gameStatus.score;
   window.prompt("Copie le lien de ton score :", url);
 }
+
+function callCredits() {
+  addDocInGame(data.credits);
+  displayDoc();
+  return screenCall("doc");
+}
+
+function callHighScores() {
+  fetchData({db:"biomissions", col:"highScores"});
+  addDocInGame(
+    {
+      title: "High Scores",
+      body: "test"
+  }
+  );
+  displayDoc();
+  return screenCall("doc");
+}
+
+// fetchData({db:"biomissions", col:"highScores"});
