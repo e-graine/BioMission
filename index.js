@@ -270,7 +270,7 @@ function fetchData(data) {
     true
   );
   request.onload = function () {
-    console.log(request.response);
+    // console.log(request.response);
   };
   request.send();
 }
