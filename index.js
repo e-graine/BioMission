@@ -279,8 +279,8 @@ function fetchData(data) {
   };
   request.send();
 }
-fetchData({db:"biomissions", col:"highScores"});
-
+fetchData(JSON.stringify({db:"biomissions", col:"highScores"})
+);
 //////////////////// lancement
 creaMission();
 if (!gameStatus.nbEnigme) gameStatus.nbEnigme = gameStatus.enigmesToSolv.length;
