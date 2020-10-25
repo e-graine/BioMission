@@ -168,7 +168,7 @@ function endStep(step) {
       break;
     case "endGameSpeech2":
       if (gameStatus.scoreIsHigh === true){
-        alert(gameStatus.scoreIsHigh);
+        alert("qetazeg");
         higScoresSpeech.style.display = "block";
       }
       else {
