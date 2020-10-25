@@ -168,22 +168,21 @@ function endStep(step) {
       break;
     case "endGameSpeech2":
       if (gameStatus.scoreIsHigh){
-        alert("bibi");
-        higScoresSpeech.style.display = "";
+        document.getElementById("higScoresSpeech").style.display = "block";
       }
       else {
         iaSpeaking(endGameSpeech3, "endGameSpeech3", "speechEnd3");
       }
       break;
     case "majHighScore":
-      higScoresSpeech.style.display = "none";
+      document.getElementById("higScoresSpeech").style.display = "none";
       endGameSpeech3.unshift("ton niveau de symbiose est enregistré :)")
       iaSpeaking(endGameSpeech3, "endGameSpeech3", "speechEnd3");
       break;
     case "endGameSpeech3":
       document.getElementById("buttonReStart").classList.add("button-pulse");
-      document.getElementById("creditSpeech").style.display = "block";
-      document.getElementById("higScoresSpeech").style.display = "block";
+      // document.getElementById("creditSpeech").style.display = "block";
+      // document.getElementById("higScoresSpeech").style.display = "block";
       break;
     default:
       break;
