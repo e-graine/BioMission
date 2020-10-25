@@ -101,18 +101,24 @@
     <!-- <div class=" win-rate speech" id="winRate"></div> -->
     <div id="speechEnd2" class="speech" style="margin-bottom: 20px"></div>
     <div id="speechEnd3" class="speech"></div>
+    <div class="high-scores-speech speech hide" id="higScoresSpeech">
+      Inscrit ton nom dans les annales : <input type='text' class='scorer-name' id="scorerName"> <span class='blink-speech' onclick="newHighScore()">&#10140;</span>
+    </div>
     <div class="button-text" id="buttonReStart" onclick="restart()">
       Rejouer
     </div>
+    
     <!-- <div class="speech share-speech" id="shareSpeech" onclick="sharedScore()">Partager ce score &#10140;</div> -->
-    <div class="speech high-scores-speech hide smallText" id="higScoresSpeech" onclick="callHigScores()">High Scores</div>
-    <div class="speech credits-speech hide smallText" id="creditSpeech" onclick="callCredits()">Crédits</div>
+    <div class="speech smallText margin10" id="higScoresSpeech" onclick="callHighScores(gotHighScores)">High Scores</div>
+    <div class="speech credits-speech smallText margin10" id="creditSpeech" onclick="callCredits()">Crédits</div>
   </div>
 
-  <div class="speech indice-alert" id="indiceAlert">
-    <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
-  </div>
+  <!-- <div class="popup"><div>test</div></div> -->
+
   <div class="button-doc button" id="buttonDoc" onclick='screenCall("doc"); resetDoc()'>
+    <div class="speech indice-alert" id="indiceAlert">
+      <div id="indiceSlide"><span class="indice-arrow">&#8592;</span>indice</div>
+    </div>
   </div>
   <div id="exitButton" class="button button-exit" onclick="exit()">
   </div>

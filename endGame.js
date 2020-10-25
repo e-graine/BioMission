@@ -47,19 +47,25 @@ function winRateDisplay() {
   document.getElementById("speechEnd3").innerHTML = "";
   document.getElementById("winRate").innerHTML = "";
 
-  if (gameStatus.score) {
-    endGameSpeech1 = [
-      "Salut, j'ai fait " + gameStatus.score + " sur BIO-MISSION !",
-    ];
-    endGameSpeech2 = ["C'est un petit jeux écolo"];
-    endGameSpeech3 = ["Tu veux tenter ?"];
-    document.getElementById("buttonReStart").innerHTML = "Jouer";
-    scoreWriter(0, gameStatus.score);
-  } else {
-    var score = parseInt(document.getElementById("winProgress").style.width);
-    endGameSpeech2 = ["Tu as atteint " + score + " % de la symbiose"];
-    scoreWriter(0, score);
-  }
+  // if (gameStatus.score) {
+  //   endGameSpeech1 = [
+  //     "Salut, j'ai fait " + gameStatus.score + " sur BIO-MISSION !",
+  //   ];
+  //   endGameSpeech2 = ["C'est un petit jeux écolo"];
+  //   endGameSpeech3 = ["Tu veux tenter ?"];
+  //   document.getElementById("buttonReStart").innerHTML = "Jouer";
+  //   scoreWriter(0, gameStatus.score);
+  // } else {
+  //   var score = parseInt(document.getElementById("winProgress").style.width);
+  //   endGameSpeech2 = ["Tu as atteint " + score + " % de la symbiose"];
+  //   scoreWriter(0, score);
+  // }
+  var score = parseInt(document.getElementById("winProgress").style.width);
+  if (gameStatus.score) score = gameStatus.score;
+  gameStatus.score = score;
+  endGameSpeech2 = ["Tu as atteint " + score + " % de la symbiose"];
+  scoreWriter(0, score);
+  callHighScores(comparScore);
 }
 
 function scoreWriter(counter, limit) {
@@ -101,16 +107,41 @@ function callCredits() {
   return screenCall("doc");
 }
 
-function callHighScores() {
-  fetchData({db:"biomissions", col:"highScores"});
+function callHighScores(callBack) {
+  fetchData({db:"biomissions", col:"highScores"}, callBack);
+}
+
+function gotHighScores (scorers){
+  scorers = scorers.sort((a, b) => (a.score > b.score) ? -1 : 1);
+  var scoresList = "";
+  for (scorer of scorers){
+    console.log(scorer);
+    scoresList +=  
+    "<span/class='blueText'>" +
+    scorer.name + 
+    "</span> à atteint <span/class='blueText'>" + 
+    scorer.score 
+    + "%</span> de la symbiose <br><br>"
+  }
+
+  var centeredScoreList = "<div/style='text-align:center'>" + scoresList + "</div>"
   addDocInGame(
     {
-      title: "High Scores",
-      body: "test"
+      title: "Hall of fame",
+      body: centeredScoreList,
+    });
+    
+    displayDoc();
+    return screenCall("doc");
+}
+
+function comparScore (scorers){
+  for (scorer of scorers){
+    if (gameStatus.score > scorer.score) gameStatus.scoreIsHigh = true;
   }
-  );
-  displayDoc();
-  return screenCall("doc");
+  if (gameStatus.scoreIsHigh){
+    endGameSpeech2.push("C'est un record !");
+  }
 }
 
 // fetchData({db:"biomissions", col:"highScores"});

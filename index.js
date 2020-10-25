@@ -17,6 +17,7 @@ var gameStatus = {
   timesUp: false,
   missionsMemory: null,
   score: null,
+  scoreIsHigh: false,
   doc: "",
   history: [],
 };
@@ -166,15 +167,22 @@ function endStep(step) {
       iaSpeaking(endGameSpeech2, "endGameSpeech2", "speechEnd2");
       break;
     case "endGameSpeech2":
+      if (gameStatus.scoreIsHigh){
+        higScoresSpeech.style.display = "block";
+      }
+      else {
+        iaSpeaking(endGameSpeech3, "endGameSpeech3", "speechEnd3");
+      }
+      break;
+    case "majHighScore":
+      higScoresSpeech.style.display = "none";
+      endGameSpeech3.unshift("ton niveau de symbiose est enregistré :)")
       iaSpeaking(endGameSpeech3, "endGameSpeech3", "speechEnd3");
       break;
     case "endGameSpeech3":
       document.getElementById("buttonReStart").classList.add("button-pulse");
-      // iaSpeaking(credits, "credits", "creditSpeech");
       document.getElementById("creditSpeech").style.display = "block";
-      if (!gameStatus.score) {
-        // document.getElementById("shareSpeech").style.display = 'block';
-      }
+      document.getElementById("higScoresSpeech").style.display = "block";
       break;
     default:
       break;
@@ -261,7 +269,7 @@ function exit() {
 //   request.send();
 // }
 
-function fetchData(data) {
+function fetchData(data, callback) {
   data = JSON.stringify(data);
   var request = new XMLHttpRequest();
   request.open(
@@ -270,14 +278,35 @@ function fetchData(data) {
     true
   );
   request.onload = function () {
-    // console.log(request.response);
+    callback(JSON.parse(request.response));
   };
   request.send();
 }
 
-fetchData({db:"biomissions", col:"highScores"}).then(res =>{
-  console.log(res);
-});
+function newHighScore() {
+  var scoreName = document.getElementById("scorerName").value;
+  if(scoreName === "") return alert("Nom invalide");
+
+  var request = new XMLHttpRequest();
+  request.open(
+    "GET",
+    "https://ycallier-api.herokuapp.com/newHighScore/" + "biomissions/" + "highScores/" + gameStatus.score + "/" + scoreName,
+    true
+  );
+  request.onload = function () {
+    endStep("majHighScore");
+  };
+  request.send();
+}
+
+// fetchData({db:"biomissions", col:"highScores"}).then(res =>{
+//   console.log(res);
+// });
+// fetchData({db:"biomissions", col:"highScores"}, testBack);
+
+// function testBack (data){
+//   console.log(data);
+// }
 
 //////////////////// lancement
 creaMission();
