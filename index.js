@@ -168,6 +168,7 @@ function endStep(step) {
       break;
     case "endGameSpeech2":
       if (gameStatus.scoreIsHigh){
+        alert("ok");
         higScoresSpeech.style.display = "block";
       }
       else {
