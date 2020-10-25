@@ -167,8 +167,8 @@ function endStep(step) {
       iaSpeaking(endGameSpeech2, "endGameSpeech2", "speechEnd2");
       break;
     case "endGameSpeech2":
-      alert(gameStatus.scoreIsHigh);
-      if (gameStatus.scoreIsHigh){
+      if (gameStatus.scoreIsHigh === true){
+        alert(gameStatus.scoreIsHigh);
         higScoresSpeech.style.display = "block";
       }
       else {
