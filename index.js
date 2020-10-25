@@ -167,9 +167,9 @@ function endStep(step) {
       iaSpeaking(endGameSpeech2, "endGameSpeech2", "speechEnd2");
       break;
     case "endGameSpeech2":
-      if (gameStatus.scoreIsHigh === true){
-        alert("qetazeg");
-        higScoresSpeech.style.display = "block";
+      if (gameStatus.scoreIsHigh){
+        alert("bibi");
+        higScoresSpeech.style.display = "";
       }
       else {
         iaSpeaking(endGameSpeech3, "endGameSpeech3", "speechEnd3");
